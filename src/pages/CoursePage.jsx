@@ -1,11 +1,10 @@
 import { useParams, Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { courses } from '../data/courses';
 import './CoursePage.css';
 
 function CoursePage() {
   const { courseId } = useParams();
-  const [currentUnit, setCurrentUnit] = useState('1.1');
   const [course, setCourse] = useState(null);
   const [categoryColor, setCategoryColor] = useState('#000');
 
@@ -30,8 +29,6 @@ function CoursePage() {
     );
   }
 
-  const currentUnitData = course.units.find(u => u.id === currentUnit);
-
   return (
     <div className="course-page">
       <Link to="/" className="back-link">← Back to Home</Link>
@@ -47,18 +44,20 @@ function CoursePage() {
 
           <nav className="units-nav">
             {course.units.map((unit) => (
-              <button
-                key={unit.id}
-                className={`unit-nav-item ${currentUnit === unit.id ? 'active' : ''}`}
-                onClick={() => setCurrentUnit(unit.id)}
-                style={
-                  currentUnit === unit.id
-                    ? { borderLeftColor: categoryColor }
-                    : {}
-                }
-              >
-                {unit.title}
-              </button>
+              <div key={unit.id} className="unit-section">
+                <div className="unit-header">{unit.name}</div>
+                <div className="topics-nav">
+                  {unit.topics.map((topic) => (
+                    <Link
+                      key={topic.id}
+                      to={`/course/${courseId}/${topic.id}`}
+                      className="topic-link"
+                    >
+                      {topic.id} {topic.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
             ))}
           </nav>
         </aside>
@@ -66,31 +65,16 @@ function CoursePage() {
         <main className="content-area">
           <header className="content-header">
             <h1 className="content-title" style={{ color: categoryColor }}>
-              {currentUnitData?.title || 'Select a unit'}
+              {course.name}
             </h1>
+            {course.subtitle && (
+              <p className="content-subtitle">{course.subtitle}</p>
+            )}
           </header>
 
           <article className="content-body">
-            <div className="placeholder-content">
-              <p>Content for {currentUnitData?.title} will go here.</p>
-              <p>This is a placeholder for your advanced STEM notes.</p>
-
-              <div className="sample-sections">
-                <section>
-                  <h3>Section 1: Introduction</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </section>
-
-                <section>
-                  <h3>Section 2: Key Concepts</h3>
-                  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </section>
-
-                <section>
-                  <h3>Section 3: Examples</h3>
-                  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                </section>
-              </div>
+            <div className="course-welcome">
+              <p>Select a topic from the sidebar to view notes.</p>
             </div>
           </article>
         </main>

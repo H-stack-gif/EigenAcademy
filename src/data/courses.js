@@ -7,34 +7,88 @@ export const courses = {
         id: "linear-algebra",
         name: "Linear Algebra",
         units: [
-          { id: "1.1", title: "Unit 1.1: Introduction to Vectors" },
-          { id: "1.2", title: "Unit 1.2: Vector Spaces" },
-          { id: "1.3", title: "Unit 1.3: Linear Transformations" },
-          { id: "2.1", title: "Unit 2.1: Matrices and Matrix Operations" },
-          { id: "2.2", title: "Unit 2.2: Determinants" },
-          { id: "3.1", title: "Unit 3.1: Eigenvalues and Eigenvectors" },
+          {
+            id: "unit-1",
+            name: "Unit 1",
+            topics: [
+              { id: "1.1", title: "Introduction to Vectors" },
+              { id: "1.2", title: "Vector Spaces" },
+              { id: "1.3", title: "Linear Transformations" },
+            ]
+          },
+          {
+            id: "unit-2",
+            name: "Unit 2",
+            topics: [
+              { id: "2.1", title: "Matrices and Matrix Operations" },
+              { id: "2.2", title: "Determinants" },
+            ]
+          },
+          {
+            id: "unit-3",
+            name: "Unit 3",
+            topics: [
+              { id: "3.1", title: "Eigenvalues and Eigenvectors" },
+            ]
+          }
         ]
       },
       {
         id: "odes",
         name: "Ordinary Differential Equations",
         units: [
-          { id: "1.1", title: "Unit 1.1: Introduction to ODEs" },
-          { id: "1.2", title: "Unit 1.2: First-Order Equations" },
-          { id: "2.1", title: "Unit 2.1: Second-Order Linear Equations" },
-          { id: "2.2", title: "Unit 2.2: Laplace Transforms" },
-          { id: "3.1", title: "Unit 3.1: Systems of ODEs" },
+          {
+            id: "unit-1",
+            name: "Unit 1",
+            topics: [
+              { id: "1.1", title: "Introduction to ODEs" },
+              { id: "1.2", title: "First-Order Equations" },
+            ]
+          },
+          {
+            id: "unit-2",
+            name: "Unit 2",
+            topics: [
+              { id: "2.1", title: "Second-Order Linear Equations" },
+              { id: "2.2", title: "Laplace Transforms" },
+            ]
+          },
+          {
+            id: "unit-3",
+            name: "Unit 3",
+            topics: [
+              { id: "3.1", title: "Systems of ODEs" },
+            ]
+          }
         ]
       },
       {
         id: "multivariable-calculus",
         name: "Multivariable Calculus",
         units: [
-          { id: "1.1", title: "Unit 1.1: Vectors and Curves" },
-          { id: "1.2", title: "Unit 1.2: Partial Derivatives" },
-          { id: "2.1", title: "Unit 2.1: Multiple Integrals" },
-          { id: "2.2", title: "Unit 2.2: Line and Surface Integrals" },
-          { id: "3.1", title: "Unit 3.1: Vector Calculus" },
+          {
+            id: "unit-1",
+            name: "Unit 1",
+            topics: [
+              { id: "1.1", title: "Vectors and Curves" },
+              { id: "1.2", title: "Partial Derivatives" },
+            ]
+          },
+          {
+            id: "unit-2",
+            name: "Unit 2",
+            topics: [
+              { id: "2.1", title: "Multiple Integrals" },
+              { id: "2.2", title: "Line and Surface Integrals" },
+            ]
+          },
+          {
+            id: "unit-3",
+            name: "Unit 3",
+            topics: [
+              { id: "3.1", title: "Vector Calculus" },
+            ]
+          }
         ]
       }
     ]
@@ -48,23 +102,53 @@ export const courses = {
         name: "Foundational Physics",
         subtitle: "Classical Mechanics & Electricity & Magnetism",
         units: [
-          { id: "1.1", title: "Unit 1.1: Kinematics" },
-          { id: "1.2", title: "Unit 1.2: Newton's Laws" },
-          { id: "1.3", title: "Unit 1.3: Energy and Momentum" },
-          { id: "2.1", title: "Unit 2.1: Electric Fields and Forces" },
-          { id: "2.2", title: "Unit 2.2: Magnetic Fields" },
-          { id: "2.3", title: "Unit 2.3: Electromagnetic Induction" },
+          {
+            id: "unit-1",
+            name: "Unit 1",
+            topics: [
+              { id: "1.1", title: "Kinematics" },
+              { id: "1.2", title: "Newton's Laws" },
+              { id: "1.3", title: "Energy and Momentum" },
+            ]
+          },
+          {
+            id: "unit-2",
+            name: "Unit 2",
+            topics: [
+              { id: "2.1", title: "Electric Fields and Forces" },
+              { id: "2.2", title: "Magnetic Fields" },
+              { id: "2.3", title: "Electromagnetic Induction" },
+            ]
+          }
         ]
       },
       {
         id: "electromagnetism",
         name: "Electromagnetism",
         units: [
-          { id: "1.1", title: "Unit 1.1: Maxwell's Equations" },
-          { id: "1.2", title: "Unit 1.2: Electromagnetic Waves" },
-          { id: "2.1", title: "Unit 2.1: Electrostatics" },
-          { id: "2.2", title: "Unit 2.2: Magnetostatics" },
-          { id: "3.1", title: "Unit 3.1: Advanced Topics" },
+          {
+            id: "unit-1",
+            name: "Unit 1",
+            topics: [
+              { id: "1.1", title: "Maxwell's Equations" },
+              { id: "1.2", title: "Electromagnetic Waves" },
+            ]
+          },
+          {
+            id: "unit-2",
+            name: "Unit 2",
+            topics: [
+              { id: "2.1", title: "Electrostatics" },
+              { id: "2.2", title: "Magnetostatics" },
+            ]
+          },
+          {
+            id: "unit-3",
+            name: "Unit 3",
+            topics: [
+              { id: "3.1", title: "Advanced Topics" },
+            ]
+          }
         ]
       }
     ]
@@ -78,23 +162,59 @@ export const courses = {
         name: "Organic Chemistry",
         subtitle: "Organic Chemistry 1 & 2",
         units: [
-          { id: "1.1", title: "Unit 1.1: Structure and Bonding" },
-          { id: "1.2", title: "Unit 1.2: Alkanes and Cycloalkanes" },
-          { id: "2.1", title: "Unit 2.1: Stereochemistry" },
-          { id: "2.2", title: "Unit 2.2: Substitution and Elimination" },
-          { id: "3.1", title: "Unit 3.1: Aromatic Compounds" },
-          { id: "3.2", title: "Unit 3.2: Carbonyl Chemistry" },
+          {
+            id: "unit-1",
+            name: "Unit 1",
+            topics: [
+              { id: "1.1", title: "Structure and Bonding" },
+              { id: "1.2", title: "Alkanes and Cycloalkanes" },
+            ]
+          },
+          {
+            id: "unit-2",
+            name: "Unit 2",
+            topics: [
+              { id: "2.1", title: "Stereochemistry" },
+              { id: "2.2", title: "Substitution and Elimination" },
+            ]
+          },
+          {
+            id: "unit-3",
+            name: "Unit 3",
+            topics: [
+              { id: "3.1", title: "Aromatic Compounds" },
+              { id: "3.2", title: "Carbonyl Chemistry" },
+            ]
+          }
         ]
       },
       {
         id: "material-science",
         name: "Introduction to Material Science",
         units: [
-          { id: "1.1", title: "Unit 1.1: Atomic Structure and Bonding" },
-          { id: "1.2", title: "Unit 1.2: Crystal Structures" },
-          { id: "2.1", title: "Unit 2.1: Imperfections in Solids" },
-          { id: "2.2", title: "Unit 2.2: Mechanical Properties" },
-          { id: "3.1", title: "Unit 3.1: Phase Diagrams" },
+          {
+            id: "unit-1",
+            name: "Unit 1",
+            topics: [
+              { id: "1.1", title: "Atomic Structure and Bonding" },
+              { id: "1.2", title: "Crystal Structures" },
+            ]
+          },
+          {
+            id: "unit-2",
+            name: "Unit 2",
+            topics: [
+              { id: "2.1", title: "Imperfections in Solids" },
+              { id: "2.2", title: "Mechanical Properties" },
+            ]
+          },
+          {
+            id: "unit-3",
+            name: "Unit 3",
+            topics: [
+              { id: "3.1", title: "Phase Diagrams" },
+            ]
+          }
         ]
       }
     ]

@@ -31,17 +31,19 @@ function Homepage() {
                     )}
                   </Link>
 
-                  <div className="units-preview">
-                    {course.units.slice(0, 4).map((unit) => (
-                      <div key={unit.id} className="unit-item">
-                        {unit.title}
+                  <div className="units-tree">
+                    {course.units.map((unit) => (
+                      <div key={unit.id} className="unit-group">
+                        <div className="unit-title">{unit.name}</div>
+                        <div className="topics-list">
+                          {unit.topics.map((topic) => (
+                            <div key={topic.id} className="topic-item">
+                              {topic.id} {topic.title}
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     ))}
-                    {course.units.length > 4 && (
-                      <div className="unit-item more-units">
-                        +{course.units.length - 4} more units
-                      </div>
-                    )}
                   </div>
                 </div>
               ))}
