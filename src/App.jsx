@@ -10,6 +10,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/course/:courseId" element={<CoursePage />} />
+          <Route path="/course/:courseId/:topicId" element={<CoursePage />} />
         </Routes>
       </div>
     </Router>

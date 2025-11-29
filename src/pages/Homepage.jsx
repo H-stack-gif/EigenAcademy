@@ -43,9 +43,9 @@ function Homepage() {
                         </div>
                         {unit.topics && unit.topics.length > 0 && (
                           <div className="topics-list">
-                            {unit.topics.map((topic, idx) => (
-                              <div key={`${unit.id}-topic-${idx}`} className="topic-item">
-                                {topic}
+                            {unit.topics.map((topic) => (
+                              <div key={topic.id} className="topic-item">
+                                {topic.title}
                               </div>
                             ))}
                           </div>

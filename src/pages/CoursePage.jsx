@@ -1,11 +1,10 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, Navigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { courses } from '../data/courses';
 import './CoursePage.css';
 
 function CoursePage() {
-  const { courseId } = useParams();
-  const [currentTopic, setCurrentTopic] = useState('1.1');
+  const { courseId, topicId } = useParams();
   const [course, setCourse] = useState(null);
   const [categoryColor, setCategoryColor] = useState('#000');
 
@@ -16,10 +15,6 @@ function CoursePage() {
       if (foundCourse) {
         setCourse(foundCourse);
         setCategoryColor(category.color);
-        // Set initial topic to the first topic of the first unit
-        if (foundCourse.units.length > 0 && foundCourse.units[0].topics.length > 0) {
-          setCurrentTopic(foundCourse.units[0].topics[0].id);
-        }
         break;
       }
     }
@@ -34,15 +29,26 @@ function CoursePage() {
     );
   }
 
-  // Find the current topic data
-  let currentTopicData = null;
-  for (const unit of course.units) {
-    const topic = unit.topics.find(t => t.id === currentTopic);
-    if (topic) {
-      currentTopicData = topic;
-      break;
-    }
+  // If no topicId, redirect to first topic
+  if (!topicId && course.units.length > 0 && course.units[0].topics.length > 0) {
+    return <Navigate to={`/course/${courseId}/${course.units[0].topics[0].id}`} replace />;
   }
+
+  // Build a flat list of all topics for navigation
+  const allTopics = [];
+  course.units.forEach(unit => {
+    unit.topics.forEach(topic => {
+      allTopics.push(topic);
+    });
+  });
+
+  // Find the current topic data and index
+  const currentTopicIndex = allTopics.findIndex(t => t.id === topicId);
+  const currentTopicData = allTopics[currentTopicIndex];
+
+  // Find previous and next topics
+  const previousTopic = currentTopicIndex > 0 ? allTopics[currentTopicIndex - 1] : null;
+  const nextTopic = currentTopicIndex < allTopics.length - 1 ? allTopics[currentTopicIndex + 1] : null;
 
   return (
     <div className="course-page">
@@ -63,18 +69,18 @@ function CoursePage() {
                 <div className="nav-unit-title">{unit.title}</div>
                 <div className="nav-topics-list">
                   {unit.topics.map((topic) => (
-                    <button
+                    <Link
                       key={topic.id}
-                      className={`topic-nav-item ${currentTopic === topic.id ? 'active' : ''}`}
-                      onClick={() => setCurrentTopic(topic.id)}
+                      to={`/course/${courseId}/${topic.id}`}
+                      className={`topic-nav-item ${topicId === topic.id ? 'active' : ''}`}
                       style={
-                        currentTopic === topic.id
+                        topicId === topic.id
                           ? { borderLeftColor: categoryColor }
                           : {}
                       }
                     >
                       {topic.title}
-                    </button>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -91,7 +97,7 @@ function CoursePage() {
 
           <article className="content-body">
             <div className="placeholder-content">
-              <p className="placeholder-marker">PLACEHOLDER-{course.id.toUpperCase()}-{currentTopic}</p>
+              <p className="placeholder-marker">PLACEHOLDER-{course.id.toUpperCase()}-{topicId}</p>
               <p>Content for {course.name} - {currentTopicData?.title} will go here.</p>
 
               <div className="sample-sections">
@@ -110,6 +116,35 @@ function CoursePage() {
                   <p>Worked examples and problem sets for {course.name} - {currentTopicData?.title}.</p>
                 </section>
               </div>
+            </div>
+
+            <div className="topic-navigation">
+              {previousTopic && (
+                <Link
+                  to={`/course/${courseId}/${previousTopic.id}`}
+                  className="nav-button nav-previous"
+                  style={{ borderColor: categoryColor }}
+                >
+                  <span className="nav-arrow">←</span>
+                  <span className="nav-label">
+                    <span className="nav-label-text">Previous</span>
+                    <span className="nav-topic-title">{previousTopic.title}</span>
+                  </span>
+                </Link>
+              )}
+              {nextTopic && (
+                <Link
+                  to={`/course/${courseId}/${nextTopic.id}`}
+                  className="nav-button nav-next"
+                  style={{ borderColor: categoryColor }}
+                >
+                  <span className="nav-label">
+                    <span className="nav-label-text">Next</span>
+                    <span className="nav-topic-title">{nextTopic.title}</span>
+                  </span>
+                  <span className="nav-arrow">→</span>
+                </Link>
+              )}
             </div>
           </article>
         </main>
