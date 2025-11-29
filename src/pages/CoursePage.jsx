@@ -97,8 +97,10 @@ function CoursePage() {
 
           <article className="content-body">
             <div className="placeholder-content">
-              <p className="placeholder-marker">PLACEHOLDER-{course.id.toUpperCase()}-{topicId}</p>
-              <p>Content for {course.name} - {currentTopicData?.title} will go here.</p>
+              <p className="placeholder-marker">
+                PLACEHOLDER: {currentTopicData?.description || `Content for ${course.name} - ${currentTopicData?.title}`}
+              </p>
+              <p>Detailed notes and explanations for {currentTopicData?.title} will go here.</p>
 
               <div className="sample-sections">
                 <section>

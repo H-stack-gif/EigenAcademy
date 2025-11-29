@@ -44,9 +44,13 @@ function Homepage() {
                         {unit.topics && unit.topics.length > 0 && (
                           <div className="topics-list">
                             {unit.topics.map((topic) => (
-                              <div key={topic.id} className="topic-item">
+                              <Link
+                                key={topic.id}
+                                to={`/course/${course.id}/${topic.id}`}
+                                className="topic-item"
+                              >
                                 {topic.title}
-                              </div>
+                              </Link>
                             ))}
                           </div>
                         )}
