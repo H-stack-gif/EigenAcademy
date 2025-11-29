@@ -63,29 +63,54 @@
 .units-nav {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+}
+
+.nav-unit-group {
+  display: flex;
+  flex-direction: column;
   gap: 0.5rem;
 }
 
-.unit-nav-item {
-  background: rgba(255, 255, 255, 0.03);
-  border: none;
-  border-left: 3px solid var(--border-subtle);
+.nav-unit-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  padding: 0.5rem 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 6px;
-  padding: 0.75rem 1rem;
+  border-left: 3px solid var(--border-subtle);
+}
+
+.nav-topics-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-left: 0.75rem;
+  padding-left: 0.5rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.topic-nav-item {
+  background: rgba(255, 255, 255, 0.02);
+  border: none;
+  border-left: 2px solid var(--border-subtle);
+  border-radius: 4px;
+  padding: 0.6rem 0.75rem;
   text-align: left;
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   transition: all 0.2s ease;
   cursor: pointer;
 }
 
-.unit-nav-item:hover {
-  background: rgba(255, 255, 255, 0.06);
+.topic-nav-item:hover {
+  background: rgba(255, 255, 255, 0.05);
   color: var(--text-primary);
   transform: translateX(2px);
 }
 
-.unit-nav-item.active {
+.topic-nav-item.active {
   background: rgba(255, 255, 255, 0.08);
   color: var(--text-primary);
   font-weight: 500;
