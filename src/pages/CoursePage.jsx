@@ -72,23 +72,23 @@ function CoursePage() {
 
           <article className="content-body">
             <div className="placeholder-content">
-              <p>Content for {currentUnitData?.title} will go here.</p>
-              <p>This is a placeholder for your advanced STEM notes.</p>
+              <p className="placeholder-marker">PLACEHOLDER-{course.id.toUpperCase()}-{currentUnit}</p>
+              <p>Content for {course.name} - {currentUnitData?.title} will go here.</p>
 
               <div className="sample-sections">
                 <section>
                   <h3>Section 1: Introduction</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <p>Placeholder content for {course.name}. This section will contain detailed notes and explanations.</p>
                 </section>
 
                 <section>
                   <h3>Section 2: Key Concepts</h3>
-                  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  <p>Key concepts and theories for {course.name} will be documented here with examples and derivations.</p>
                 </section>
 
                 <section>
                   <h3>Section 3: Examples</h3>
-                  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                  <p>Worked examples and problem sets for {course.name} - {currentUnitData?.title}.</p>
                 </section>
               </div>
             </div>

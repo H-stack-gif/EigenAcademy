@@ -6,8 +6,12 @@ function Homepage() {
   return (
     <div className="homepage">
       <header className="hero">
+        <div className="logo-container">
+          <img src="/stem-logo.png" alt="STEM Logo" className="stem-logo" />
+        </div>
         <h1 className="main-title">STEMfolio</h1>
         <p className="subtitle">Advanced Mathematics, Physics & Chemistry Notes</p>
+        <p className="author-name">by Krishna Patel</p>
       </header>
 
       <div className="courses-container">
@@ -49,6 +53,19 @@ function Homepage() {
           </section>
         ))}
       </div>
+
+      <footer className="homepage-footer">
+        <div className="footer-content">
+          <p className="footer-text">© 2024 Krishna Patel - STEMfolio</p>
+          <div className="footer-contact">
+            <a href="mailto:createcuz@gmail.com" className="footer-link">createcuz@gmail.com</a>
+            <span className="footer-separator">•</span>
+            <a href="tel:+14015720055" className="footer-link">401-572-0055</a>
+            <span className="footer-separator">•</span>
+            <span className="footer-id">CommonApp ID: 48387645</span>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

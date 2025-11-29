@@ -126,6 +126,20 @@
   margin-bottom: 1rem;
 }
 
+.placeholder-marker {
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+  color: #FF6B6B;
+  background: rgba(255, 107, 107, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border-left: 4px solid #FF6B6B;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
 .sample-sections {
   margin-top: 3rem;
   display: flex;

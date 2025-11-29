@@ -11,6 +11,28 @@
   padding: 2rem 0;
 }
 
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.stem-logo {
+  height: 120px;
+  width: auto;
+  object-fit: contain;
+  /* Seamless background handling for PNG */
+  background: transparent;
+  mix-blend-mode: normal;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+  transition: transform 0.3s ease;
+}
+
+.stem-logo:hover {
+  transform: scale(1.05);
+}
+
 .main-title {
   font-size: clamp(3rem, 8vw, 5.5rem);
   font-weight: 700;
@@ -27,6 +49,18 @@
   color: var(--text-secondary);
   font-weight: 300;
   letter-spacing: 0.05em;
+}
+
+.author-name {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: var(--text-primary);
+  font-weight: 500;
+  margin-top: 1rem;
+  letter-spacing: 0.02em;
+  background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .courses-container {
@@ -150,6 +184,64 @@
   }
 }
 
+/* Footer Styles */
+.homepage-footer {
+  margin-top: 6rem;
+  padding: 2rem 0 3rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+  font-weight: 400;
+}
+
+.footer-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.footer-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: var(--text-primary);
+}
+
+.footer-separator {
+  color: var(--border-subtle);
+  font-weight: 300;
+}
+
+.footer-id {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @media (max-width: 768px) {
   .homepage {
     padding: 2rem 1rem;
@@ -159,11 +251,24 @@
     margin-bottom: 3rem;
   }
 
+  .stem-logo {
+    height: 90px;
+  }
+
   .courses-container {
     gap: 3rem;
   }
 
   .courses-grid {
     grid-template-columns: 1fr;
+  }
+
+  .footer-contact {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-separator {
+    display: none;
   }
 }
