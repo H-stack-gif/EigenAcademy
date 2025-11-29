@@ -9,26 +9,79 @@ export const courses = {
         units: [
           {
             id: "unit-1",
-            name: "Unit 1",
+            name: "Unit 1 – Systems of Linear Equations and Matrices",
             topics: [
-              { id: "1.1", title: "Introduction to Vectors" },
-              { id: "1.2", title: "Vector Spaces" },
-              { id: "1.3", title: "Linear Transformations" },
+              { id: "1.1", title: "Systems of Linear Equations" },
+              { id: "1.2", title: "Row Reduction and Echelon Forms" },
+              { id: "1.3", title: "Matrix Operations" },
+              { id: "1.4", title: "Matrix Inverses" },
             ]
           },
           {
             id: "unit-2",
-            name: "Unit 2",
+            name: "Unit 2 – Vector Spaces",
             topics: [
-              { id: "2.1", title: "Matrices and Matrix Operations" },
-              { id: "2.2", title: "Determinants" },
+              { id: "2.1", title: "Vector Spaces and Subspaces" },
+              { id: "2.2", title: "Linear Independence" },
+              { id: "2.3", title: "Bases and Dimension" },
+              { id: "2.4", title: "Coordinate Systems" },
             ]
           },
           {
             id: "unit-3",
-            name: "Unit 3",
+            name: "Unit 3 – Linear Transformations",
             topics: [
-              { id: "3.1", title: "Eigenvalues and Eigenvectors" },
+              { id: "3.1", title: "Introduction to Linear Transformations" },
+              { id: "3.2", title: "Kernel and Range" },
+              { id: "3.3", title: "Composition and Invertibility" },
+            ]
+          },
+          {
+            id: "unit-4",
+            name: "Unit 4 – Determinants",
+            topics: [
+              { id: "4.1", title: "Determinant Calculation" },
+              { id: "4.2", title: "Properties of Determinants" },
+              { id: "4.3", title: "Geometric Interpretation" },
+            ]
+          },
+          {
+            id: "unit-5",
+            name: "Unit 5 – Eigenvalues and Eigenvectors",
+            topics: [
+              { id: "5.1", title: "Eigenvalues and Eigenvectors" },
+              { id: "5.2", title: "Diagonalization" },
+              { id: "5.3", title: "Applications of Eigenvalues" },
+            ]
+          },
+          {
+            id: "unit-6",
+            name: "Unit 6 – Orthogonality and Least Squares",
+            topics: [
+              { id: "6.1", title: "Inner Products and Orthogonality" },
+              { id: "6.2", title: "Orthogonal Projections" },
+              { id: "6.3", title: "Orthogonal Bases and Gram-Schmidt" },
+              { id: "6.4", title: "QR Factorization" },
+              { id: "6.5", title: "Least Squares Problems" },
+            ]
+          },
+          {
+            id: "unit-7",
+            name: "Unit 7 – Symmetric Matrices and Quadratic Forms",
+            topics: [
+              { id: "7.1", title: "Symmetric Matrices" },
+              { id: "7.2", title: "Quadratic Forms" },
+              { id: "7.3", title: "Applications of Spectral Decomposition" },
+            ]
+          },
+          {
+            id: "unit-8",
+            name: "Unit 8 – Additional Topics and Applications",
+            topics: [
+              { id: "8.1", title: "Complex Vector Spaces" },
+              { id: "8.2", title: "Singular Value Decomposition" },
+              { id: "8.3", title: "Linear Programming (Introductory)" },
+              { id: "8.4", title: "Vector Calculus Connections" },
             ]
           }
         ]
@@ -39,25 +92,59 @@ export const courses = {
         units: [
           {
             id: "unit-1",
-            name: "Unit 1",
+            name: "Unit 1 – First-Order Differential Equations",
             topics: [
-              { id: "1.1", title: "Introduction to ODEs" },
-              { id: "1.2", title: "First-Order Equations" },
+              { id: "1.1", title: "Introduction and Direction Fields" },
+              { id: "1.2", title: "Separable Equations" },
+              { id: "1.3", title: "Linear First-Order Equations" },
+              { id: "1.4", title: "Exact Equations and Substitutions" },
             ]
           },
           {
             id: "unit-2",
-            name: "Unit 2",
+            name: "Unit 2 – Second-Order Linear Differential Equations",
             topics: [
-              { id: "2.1", title: "Second-Order Linear Equations" },
-              { id: "2.2", title: "Laplace Transforms" },
+              { id: "2.1", title: "Homogeneous Equations with Constant Coefficients" },
+              { id: "2.2", title: "Method of Undetermined Coefficients" },
+              { id: "2.3", title: "Variation of Parameters" },
+              { id: "2.4", title: "Applications: Mechanical and Electrical Systems" },
             ]
           },
           {
             id: "unit-3",
-            name: "Unit 3",
+            name: "Unit 3 – Systems of Differential Equations",
             topics: [
-              { id: "3.1", title: "Systems of ODEs" },
+              { id: "3.1", title: "Systems and Matrix Form" },
+              { id: "3.2", title: "Phase Plane Analysis" },
+              { id: "3.3", title: "Nonlinear Systems and Linearization" },
+            ]
+          },
+          {
+            id: "unit-4",
+            name: "Unit 4 – Laplace Transforms",
+            topics: [
+              { id: "4.1", title: "Laplace Transform Definition and Properties" },
+              { id: "4.2", title: "Inverse Laplace Transforms" },
+              { id: "4.3", title: "Solving IVPs with Laplace Transforms" },
+              { id: "4.4", title: "Step Functions and Impulses" },
+            ]
+          },
+          {
+            id: "unit-5",
+            name: "Unit 5 – Series Solutions and Special Functions",
+            topics: [
+              { id: "5.1", title: "Power Series Solutions" },
+              { id: "5.2", title: "Frobenius Method" },
+              { id: "5.3", title: "Bessel and Legendre Equations" },
+            ]
+          },
+          {
+            id: "unit-6",
+            name: "Unit 6 – Numerical Methods and Modeling",
+            topics: [
+              { id: "6.1", title: "Euler's Method" },
+              { id: "6.2", title: "Runge-Kutta Methods" },
+              { id: "6.3", title: "Mathematical Modeling" },
             ]
           }
         ]
@@ -68,25 +155,50 @@ export const courses = {
         units: [
           {
             id: "unit-1",
-            name: "Unit 1",
+            name: "Unit 1 – Vectors and the Geometry of Space",
             topics: [
-              { id: "1.1", title: "Vectors and Curves" },
-              { id: "1.2", title: "Partial Derivatives" },
+              { id: "1.1", title: "Vectors in Space" },
+              { id: "1.2", title: "Dot Product and Cross Product" },
+              { id: "1.3", title: "Lines, Planes, and Surfaces" },
             ]
           },
           {
             id: "unit-2",
-            name: "Unit 2",
+            name: "Unit 2 – Vector-Valued Functions",
             topics: [
-              { id: "2.1", title: "Multiple Integrals" },
-              { id: "2.2", title: "Line and Surface Integrals" },
+              { id: "2.1", title: "Curves and Parametrizations" },
+              { id: "2.2", title: "Derivatives and Integrals" },
+              { id: "2.3", title: "Arc Length and Curvature" },
             ]
           },
           {
             id: "unit-3",
-            name: "Unit 3",
+            name: "Unit 3 – Partial Derivatives",
             topics: [
-              { id: "3.1", title: "Vector Calculus" },
+              { id: "3.1", title: "Functions of Several Variables" },
+              { id: "3.2", title: "Partial Derivatives" },
+              { id: "3.3", title: "Chain Rule and Directional Derivatives" },
+              { id: "3.4", title: "Optimization and Lagrange Multipliers" },
+            ]
+          },
+          {
+            id: "unit-4",
+            name: "Unit 4 – Multiple Integrals",
+            topics: [
+              { id: "4.1", title: "Double Integrals" },
+              { id: "4.2", title: "Double Integrals in Polar Coordinates" },
+              { id: "4.3", title: "Triple Integrals" },
+              { id: "4.4", title: "Cylindrical and Spherical Coordinates" },
+            ]
+          },
+          {
+            id: "unit-5",
+            name: "Unit 5 – Vector Calculus",
+            topics: [
+              { id: "5.1", title: "Vector Fields" },
+              { id: "5.2", title: "Line Integrals" },
+              { id: "5.3", title: "Curl and Divergence" },
+              { id: "5.4", title: "Surface Integrals and Major Theorems" },
             ]
           }
         ]
