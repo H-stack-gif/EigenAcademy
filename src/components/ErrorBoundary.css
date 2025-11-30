@@ -1,0 +1,19 @@
+.error-boundary-root {
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.error-boundary-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 0, 0, 0.08);
+  padding: 1.5rem;
+  border-radius: 12px;
+  max-width: 900px;
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.error-boundary-stack { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace; margin-top: 0.5rem; color: var(--text-secondary); }

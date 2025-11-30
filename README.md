@@ -82,6 +82,22 @@ To add or modify course content, edit the `src/data/courses.js` file. The struct
           { id: "1.1", title: "Unit 1.1: Topic" }
         ]
       }
+
+          ### Importing unit content automatically
+
+          There are two ways to import article content for a unit (recommended when you paste/upload a whole unit at once):
+
+          - Admin UI (browser):
+            1. Start the dev server: `npm run dev`
+            2. Open `http://localhost:5173/admin/import`
+            3. Paste the full unit text (use topic headings like `1.1: Topic Title`) and click `Parse unit`.
+            4. Download the individual `.md` files for each detected topic or follow the CLI option below to write files directly into the repo.
+
+          - CLI importer (repo-side):
+            1. Create a plaintext file with the full unit content (example: `scripts/sample_unit_linear_algebra_1.txt`).
+            2. Run `npm run import-unit -- --course linear-algebra --unit 1 --file scripts/sample_unit_linear_algebra_1.txt`.
+            3. The script writes markdown files into `public/articles/<courseId>/` and attempts to add `contentPath` entries inside `src/data/courses.js` for matching topic ids.
+
     ]
   }
 }

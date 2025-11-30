@@ -5,14 +5,21 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "import-unit": "node ./scripts/import_unit.js",
+    "test:import": "node ./scripts/test_import.js",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "katex": "^0.16.8",
+    "marked": "^5.1.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-router-dom": "^7.9.6"
+    "react-markdown": "^8.0.0",
+    "react-router-dom": "^7.9.6",
+    "rehype-katex": "^6.0.0",
+    "remark-math": "^6.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
@@ -23,6 +30,7 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
+    "minimist": "^1.2.8",
     "vite": "^7.2.4"
   }
 }
