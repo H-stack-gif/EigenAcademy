@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "clean:practices": "node ./scripts/cleanup_practice_explanations.js",
     "import-unit": "node ./scripts/import_unit.js",
     "test:import": "node ./scripts/test_import.js",
     "build": "vite build",

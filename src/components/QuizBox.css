@@ -6,9 +6,9 @@
   overflow: hidden;
   box-shadow: 0 4px 14px rgba(0,0,0,0.06);
   /* Math category gradient (same as Homepage math category border) */
-  /* background gradient fills the whole box */
-  background: linear-gradient(135deg, rgba(255,107,107,0.06), rgba(142,68,255,0.06));
-  border-image: linear-gradient(135deg, rgba(255,107,107,0.55), rgba(142,68,255,0.55)) 1;
+  /* math category gradient (match homepage math style) */
+  background: linear-gradient(135deg, rgba(255,107,107,0.55), rgba(142,68,255,0.55));
+  border: 1px solid rgba(255,255,255,0.06); /* subtle border */
 }
 /* remove smaller padding override */
 .quizbox-title { display:none; }
@@ -55,5 +55,11 @@
   border-image: linear-gradient(135deg, rgba(255,107,107,0.95), rgba(142,68,255,0.95)) 1;
 }
 .btn-arrow[disabled] { opacity: 0.5; cursor: not-allowed; }
-.btn-prev { margin-right: 12px; }
-.btn-next { margin-left: 12px; }
+.btn-prev { margin-right: 16px; background: #fff; }
+.btn-next { margin-left: 16px; background: #fff; }
+
+/* Make the button long because user asked for a longer straight line, but keep arrow head size modest.
+   We'll use an inline pseudo-element for the shaft/arrow styling if needed. */
+.btn-prev::after, .btn-next::after {
+  content: '';
+}
