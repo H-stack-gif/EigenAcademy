@@ -210,7 +210,8 @@ function TopicMarkdownRenderer({ contentPath }) {
           practiceBlock = content.slice(prStart, ansStart);
           answerKeyBlock = content.slice(ansStart);
           // Keep the header line in the content, but remove the practice questions block
-          contentWithoutPractice = content.slice(0, headerLineEnd) + '\n' + (content.slice(ansStart + answerKeyBlock.length) || '');
+          // Keep the header line and everything after the answer key, but remove the practice questions themselves
+          contentWithoutPractice = content.slice(0, headerLineEnd) + '\n' + content.slice(ansStart);
         }
 
         // Use withAllMath to render content and practice blocks later

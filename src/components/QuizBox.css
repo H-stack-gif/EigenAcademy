@@ -43,21 +43,24 @@
   background: #fff;
   color: #000;
   border: none;
-  padding: 24px 90px; /* 1.5x button size larger */
+  padding: 12px 45px; /* half of previous dimensions */
   border-radius: 999px;
   cursor: pointer;
   font-weight: 800;
-  font-size: 2.2rem; /* larger arrow icon */
-  min-width: 200px;
+  font-size: 1.1rem; /* half size for arrow glyph */
+  min-width: 100px;
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 12px 34px rgba(0,0,0,0.15);
+  align-items: center; /* center vertically */
+  justify-content: center; /* center horizontally */
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
   overflow: visible;
 }
 .btn-arrow[disabled] { opacity: 0.5; cursor: not-allowed; }
 .btn-prev { margin-right: 28px; background: #fff; }
 .btn-next { margin-left: 28px; background: #fff; }
+
+.arrow-glyph { display:inline-block; font-size:1.25rem; line-height:1; }
+.btn-arrow:focus { outline: 3px solid rgba(142,68,255,0.2); outline-offset: 3px; }
 
 /* Make the button long because user asked for a longer straight line, but keep arrow head size modest.
    We'll use an inline pseudo-element for the shaft/arrow styling if needed. */

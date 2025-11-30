@@ -90,7 +90,7 @@ export default function QuizBox({ questions }) {
               className += ' selected';
             }
             return (
-              <div key={i} className={className} onClick={() => selectChoice(index, i)} role="button" tabIndex={0}>
+              <div key={i} className={className} onClick={() => selectChoice(index, i)} role="button" tabIndex={0} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectChoice(index, i); } }}>
                 <div className="choice-letter">{String.fromCharCode(65 + i)}</div>
                 <div className="choice-text" dangerouslySetInnerHTML={{ __html: html.choices[i] }} />
               </div>
@@ -102,14 +102,26 @@ export default function QuizBox({ questions }) {
         )}
       </div>
       <div className="quizbox-footer">
-        <button className="btn-arrow btn-prev" onClick={prev} disabled={index === 0} aria-label="Previous">
-          ←
-        </button>
+          <button
+            className="btn-arrow btn-prev"
+            onClick={prev}
+            disabled={index === 0}
+            aria-label="Previous"
+          >
+            <span className="arrow-glyph">←</span>
+          </button>
         <div style={{ flex: 1 }} />
         {index < questions.length - 1 ? (
-          <button className="btn-arrow btn-next" onClick={next} disabled={answers[index] == null} aria-label="Next">→</button>
+            <button
+              className="btn-arrow btn-next"
+              onClick={next}
+              disabled={answers[index] == null}
+              aria-label="Next"
+            >
+              <span className="arrow-glyph">→</span>
+            </button>
         ) : (
-          <button className="btn-arrow btn-next" onClick={submit} disabled={submitted || answers[index] == null} aria-label="Submit">→</button>
+          <button className="btn-arrow btn-next" onClick={submit} disabled={submitted || answers[index] == null} aria-label="Submit"><span className="arrow-glyph">→</span></button>
         )}
       </div>
     </div>
