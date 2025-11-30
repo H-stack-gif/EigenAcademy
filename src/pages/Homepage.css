@@ -1,6 +1,7 @@
 .homepage {
   min-height: 100vh;
-  padding: 3rem 2rem;
+  /* extra top padding so fixed top-ticker doesn't overlap page content (updated for smaller ticker) */
+  padding: calc(3rem + 92px) 2rem 3rem;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -9,7 +10,49 @@
   text-align: center;
   margin-bottom: 4rem;
   padding: 2rem 0;
+  position: relative; /* enable absolute decorations */
 }
+
+/* Top ticker styling */
+.top-ticker { position: fixed; top: 0; left: 0; right: 0; z-index: 1200; width: 100%; display: block; }
+.ticker-accent { display:none; }
+.ticker-bar { background: linear-gradient(90deg, rgba(255,107,107,0.95), rgba(58,124,165,0.95), rgba(67,185,127,0.95), rgba(142,68,255,0.95)); color: #000; display:flex; align-items:center; height:80px; padding: 0; border-bottom-left-radius: 0; border-bottom-right-radius: 0; position: relative; overflow: hidden; }
+.ticker-track { display: flex; align-items: center; animation: slide-left 28s linear infinite; }
+.ticker-column { display:flex; flex: none; flex-direction:row; justify-content: flex-start; align-items: center; padding: 0 60px; box-sizing: border-box; gap: 160px; }
+.ticker-row { color: #000; font-weight: 900; letter-spacing: 0.02em; font-family: 'Poppins', 'Roboto Slab', serif; font-size: 2.4rem; transform: scaleY(1.0); white-space: nowrap; line-height: 1; }
+
+@keyframes slide-left {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-50%); }
+}
+
+/* subtle decorative course icons (benzene + atom) */
+.decor-benzene, .decor-atom {
+  position: absolute;
+  width: 110px;
+  height: auto;
+  opacity: 0.32;
+  pointer-events: none;
+  transform-origin: center;
+  transition: transform 0.6s ease, opacity 0.4s ease;
+}
+.decor-benzene { left: 6%; top: 8%; transform: rotate(-6deg); z-index: 0; }
+.decor-atom { right: 6%; top: 12%; transform: rotate(8deg); z-index: 0; }
+
+@keyframes floating-slow { 0% { transform: translateY(0) } 50% { transform: translateY(-6px) } 100% { transform: translateY(0) } }
+.decor-benzene { animation: floating-slow 6s ease-in-out infinite; }
+.decor-atom { animation: floating-slow 7.4s ease-in-out infinite; }
+
+/* hide decorations on small screens */
+@media (max-width: 768px) {
+  .decor-benzene, .decor-atom { display: none; }
+}
+
+/* (removed) snowflake decorations — user requested these gone */
+
+/* (removed) holiday tree decoration — handled in JSX so CSS is removed */
+
+/* hero is centered in this layout (single-column) - keep simple and vertical */
 
 .logo-container {
   display: flex;
@@ -35,34 +78,37 @@
 
 .main-title {
   font-size: clamp(3rem, 8vw, 5.5rem);
-  font-weight: 700;
+  font-weight: 800; /* make it thicker */
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #FF6B6B, #4ECDC4, #95E1D3);
+  /* bolder red -> purple gradient as requested (dimmed a bit) */
+  background: linear-gradient(135deg, rgba(255,59,48,0.75) 0%, rgba(142,68,255,0.75) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   letter-spacing: -0.02em;
+  font-family: 'Dancing Script', 'Great Vibes', serif; /* subtle cursive accent */
+  text-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  transform-origin: center;
 }
-
 .subtitle {
   font-size: clamp(1rem, 2vw, 1.25rem);
   color: var(--text-secondary);
   font-weight: 300;
   letter-spacing: 0.05em;
 }
-
 .author-name {
   font-size: clamp(1.1rem, 2.5vw, 1.4rem);
   color: var(--text-primary);
   font-weight: 500;
   margin-top: 1rem;
   letter-spacing: 0.02em;
-  background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+  background: linear-gradient(135deg, rgba(255,107,107,0.7), rgba(78,205,196,0.7));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
+/* hero call-to-action styles were removed to keep original layout */
 .courses-container {
   display: flex;
   flex-direction: column;
@@ -71,23 +117,42 @@
 
 .category-section {
   animation: fadeInUp 0.6s ease-out;
+  position: relative;
+  /* equal padding on all sides so border/background is the samoke distance from top/right/bottom/left */
+  padding: 22px; /* slightly larger inset so titles sit comfortably inside the border */
+  margin-bottom: 2.5rem;
+  border: 4.5px solid transparent; /* slightly thicker border so the title sits well */
+  border-radius: 22px;
+  background: none;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+  background-image: var(--border);
+  background-origin: border-box;
+  background-clip: border-box;
+  border-image: var(--border) 1;
 }
 
 .category-title {
-  font-size: clamp(2rem, 4vw, 2.5rem);
-  margin-bottom: 2rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid currentColor;
+  font-size: 2.4rem; /* 1.5x larger, more prominent and solid */
+  font-weight: 900;
+  margin: 0 0 1rem 0;
+  padding: 10px 18px; /* accommodate the larger font */
   display: inline-block;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  border-radius: 8px;
+  /* solid black text per request — remove gradient/text-stroke */
+  background: transparent !important;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: unset;
+  -webkit-text-fill-color: initial;
+  color: #000;
+  text-shadow: none;
 }
 
 .courses-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  align-items: flex-start;
 }
 
 .course-card {
@@ -98,6 +163,7 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  flex: 1 1 340px;
 }
 
 .course-card::before {
@@ -159,20 +225,19 @@
 }
 
 .unit-item {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
+  font-size: 0.95rem;
+  color: var(--accent); /* use section's accent color */
   padding: 0.5rem 0.75rem;
-  background: rgba(255, 255, 255, 0.03);
-  border-left: 2px solid var(--border-subtle);
+  background: transparent; /* no block background as requested */
+  border-left: 3px solid var(--accent); /* keep the colored line */
   border-radius: 4px;
-  transition: all 0.2s ease;
-  font-weight: 500;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+  font-weight: 600;
 }
 
 .unit-item:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-left-color: rgba(255, 255, 255, 0.2);
   transform: translateX(2px);
+  opacity: 0.95;
 }
 
 .topics-list {
@@ -291,7 +356,7 @@
   }
 
   .stem-logo {
-    height: 90px;
+    height: 72px;
   }
 
   .courses-container {
@@ -299,9 +364,13 @@
   }
 
   .courses-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 
+  /* keep hero single-column on small screens */
+
+
+/* removed decorative hero art — keep layout minimal */
   .footer-contact {
     flex-direction: column;
     gap: 0.5rem;

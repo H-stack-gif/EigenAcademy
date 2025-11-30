@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+ // no hooks required for the conveyor ticker component
 import { courses } from '../data/courses';
 import './Homepage.css';
 
@@ -6,8 +7,12 @@ function Homepage() {
   return (
     <div className="homepage">
       <header className="hero">
+        {/* Top ticker - conveyor style vertical stack moving right */}
+        <Ticker />
+        
+        
         <div className="logo-container">
-          <img src="/stem-logo.png" alt="STEM Logo" className="stem-logo" />
+          <img src="/image-removebg-preview.png" alt="STEM Logo" className="stem-logo" />
         </div>
         <h1 className="main-title">STEMfolio</h1>
         <p className="subtitle">Advanced Mathematics, Physics & Chemistry Notes</p>
@@ -16,8 +21,18 @@ function Homepage() {
 
       <div className="courses-container">
         {Object.entries(courses).map(([key, category]) => (
-          <section key={key} className="category-section">
-            <h2 className="category-title" style={{ color: category.color }}>
+          <section
+            key={key}
+            className="category-section"
+            style={{
+              ['--accent']: category.color,
+              ['--border']: key === 'math'
+                ? 'linear-gradient(135deg, rgba(255,107,107,0.55), rgba(142,68,255,0.55))'
+                : key === 'physics'
+                ? 'linear-gradient(135deg, rgba(58,124,165,0.55), rgba(142,68,255,0.55))'
+                : 'linear-gradient(135deg, rgba(67,185,127,0.55), rgba(142,68,255,0.55))'
+            }}>
+            <h2 className="category-title">
               {category.title}
             </h2>
 
@@ -38,9 +53,7 @@ function Homepage() {
                   <div className="units-preview">
                     {course.units.map((unit) => (
                       <div key={unit.id} className="unit-section">
-                        <div className="unit-item">
-                          {unit.title}
-                        </div>
+                        <div className="unit-item">{unit.title}</div>
                         {unit.topics && unit.topics.length > 0 && (
                           <div className="topics-list">
                             {unit.topics.map((topic) => (
@@ -64,6 +77,8 @@ function Homepage() {
         ))}
       </div>
 
+      
+
       <footer className="homepage-footer">
         <div className="footer-content">
           <p className="footer-text">© 2024 Krishna Patel - STEMfolio</p>
@@ -81,3 +96,36 @@ function Homepage() {
 }
 
 export default Homepage;
+
+function Ticker() {
+  const items = [
+    'Physics',
+    'Linear Algebra',
+    'Ordinary Differential Equations',
+    'Multivariable Calculus',
+    'Electromagnetism',
+    'STEM',
+    'Materials Science'
+  ];
+
+  // Pure CSS animation handles the motion — render two copies so we can slide continuously without gaps.
+  return (
+    <div className="top-ticker" role="region" aria-label="site topics ticker">
+      <div className="ticker-accent" aria-hidden="true" />
+      <div className="ticker-bar">
+        <div className="ticker-track">
+          <div className="ticker-column">
+            {items.map((t, i) => (
+              <div className="ticker-row" key={i}>{t}</div>
+            ))}
+          </div>
+          <div className="ticker-column" aria-hidden="true">
+            {items.map((t, i) => (
+              <div className="ticker-row" key={'dup-' + i}>{t}</div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

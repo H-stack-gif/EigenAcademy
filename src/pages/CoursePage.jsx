@@ -46,6 +46,15 @@ function CoursePage() {
   const currentTopicIndex = allTopics.findIndex(t => t.id === topicId);
   const currentTopicData = allTopics[currentTopicIndex];
 
+  // Small helper: use a one-sentence summary if available (first sentence of description)
+  const topicSummary = (() => {
+    const src = currentTopicData?.description;
+    if (!src) return null;
+    // split into sentences (simple heuristic) and take the first
+    const parts = src.split(/(?<=[.!?])\s+/);
+    return parts[0] || src;
+  })();
+
   // Find previous and next topics
   const previousTopic = currentTopicIndex > 0 ? allTopics[currentTopicIndex - 1] : null;
   const nextTopic = currentTopicIndex < allTopics.length - 1 ? allTopics[currentTopicIndex + 1] : null;
@@ -97,30 +106,12 @@ function CoursePage() {
 
           <article className="content-body">
             <div className="placeholder-content">
-              <p className="placeholder-marker">
-                PLACEHOLDER: {currentTopicData?.description || `Content for ${course.name} - ${currentTopicData?.title}`}
-              </p>
-              <p>Detailed notes and explanations for {currentTopicData?.title} will go here.</p>
-
-              <div className="sample-sections">
-                <section>
-                  <h3>Section 1: Introduction</h3>
-                  <p>Placeholder content for {course.name}. This section will contain detailed notes and explanations.</p>
-                </section>
-
-                <section>
-                  <h3>Section 2: Key Concepts</h3>
-                  <p>Key concepts and theories for {course.name} will be documented here with examples and derivations.</p>
-                </section>
-
-                <section>
-                  <h3>Section 3: Examples</h3>
-                  <p>Worked examples and problem sets for {course.name} - {currentTopicData?.title}.</p>
-                </section>
+              <div className="article-placeholder">
+                <p className="article-placeholder-text">{topicSummary ?? `This is a placeholder sentence — the full article content for "${currentTopicData?.title || 'this topic'}" will appear here in plain, readable text.`}</p>
               </div>
             </div>
 
-            <div className="topic-navigation">
+            <div className={`topic-navigation ${previousTopic && nextTopic ? 'two' : 'single'}`}>
               {previousTopic && (
                 <Link
                   to={`/course/${courseId}/${previousTopic.id}`}
