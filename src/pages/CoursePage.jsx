@@ -168,6 +168,7 @@ function TopicMarkdownRenderer({ contentPath }) {
   const [content, setContent] = useState(null);
   // Keep html state declared unconditionally so hooks order is stable across renders
   const [html, setHtml] = useState(null);
+  const [practice, setPractice] = useState(null);
 
   useEffect(() => {
     let mounted = true;
@@ -194,17 +195,17 @@ function TopicMarkdownRenderer({ contentPath }) {
       try {
         // 1) Replace block math $$...$$ with KaTeX
         // Extract practice / answer key block if present
-        let practice = null;
-        let answerKey = null;
+        let practiceBlock = null;
+        let answerKeyBlock = null;
         let contentWithoutPractice = content;
         // Look for '## Practice Problems' heading followed by '## Answer Key'
         const prStart = content.search(/##\s*Practice Problems/i);
         const ansStart = content.search(/##\s*Answer Key/i);
         if (prStart !== -1 && ansStart !== -1 && prStart < ansStart) {
-          practice = content.slice(prStart, ansStart);
+          practiceBlock = content.slice(prStart, ansStart);
           // include Answer Key to parse explanations
-          answerKey = content.slice(ansStart);
-          contentWithoutPractice = content.slice(0, prStart) + '\n' + (content.slice(ansStart + (answerKey.length)) || '');
+          answerKeyBlock = content.slice(ansStart);
+          contentWithoutPractice = content.slice(0, prStart) + '\n' + (content.slice(ansStart + (answerKeyBlock.length)) || '');
         }
 
         // Use withAllMath to render content and practice blocks later
@@ -230,8 +231,8 @@ function TopicMarkdownRenderer({ contentPath }) {
           console.debug('Article conversion lengths', { contentLength: withAllMath.length, htmlLength: htmlout.length, contentPath });
           if (!cancelled) {
             setHtml(htmlout);
-            if (practice && answerKey) {
-              const parsed = parsePracticeAndAnswers(practice, answerKey);
+            if (practiceBlock && answerKeyBlock) {
+              const parsed = parsePracticeAndAnswers(practiceBlock, answerKeyBlock);
               setPractice(parsed);
             } else {
               setPractice(null);
@@ -239,7 +240,17 @@ function TopicMarkdownRenderer({ contentPath }) {
           }
         } catch (err) {
           console.warn('marked not available or failed to parse — falling back to raw markdown preview', err);
-          if (!cancelled) setHtml(null); // leave null to indicate fallback
+          // As a graceful fallback we'll show the raw markdown but with LaTeX replaced by KaTeX HTML
+          // This keeps math rendering intact even without `marked`.
+          if (!cancelled) {
+            setHtml(withAllMath);
+            if (practiceBlock && answerKeyBlock) {
+              const parsed = parsePracticeAndAnswers(practiceBlock, answerKeyBlock);
+              setPractice(parsed);
+            } else {
+              setPractice(null);
+            }
+          }
         }
       } catch (err) {
         console.error('convert markdown with katex failed', err);
