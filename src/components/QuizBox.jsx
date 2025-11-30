@@ -102,14 +102,15 @@ export default function QuizBox({ questions }) {
         )}
       </div>
       <div className="quizbox-footer">
-        <div className="quiz-controls">
-          <button className="btn-ghost" onClick={prev} disabled={index === 0}>Previous</button>
-          {index < questions.length - 1 ? (
-            <button className="btn-primary" onClick={next} disabled={answers[index] == null}>Next</button>
-          ) : (
-            <button className="btn-primary" onClick={submit} disabled={submitted || answers[index] == null}>Submit</button>
-          )}
-        </div>
+        <button className="btn-arrow btn-prev" onClick={prev} disabled={index === 0} aria-label="Previous">
+          ←
+        </button>
+        <div style={{ flex: 1 }} />
+        {index < questions.length - 1 ? (
+          <button className="btn-arrow btn-next" onClick={next} disabled={answers[index] == null} aria-label="Next">→</button>
+        ) : (
+          <button className="btn-arrow btn-next" onClick={submit} disabled={submitted || answers[index] == null} aria-label="Submit">→</button>
+        )}
       </div>
     </div>
   );

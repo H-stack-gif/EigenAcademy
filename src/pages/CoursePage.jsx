@@ -381,10 +381,12 @@ function TopicMarkdownRenderer({ contentPath }) {
         const after = block.replace(/^(?:\*\*Problem\s+\d+:\*\*|Problem\s+\d+:)\s*/i, '').trim();
         // The first token may be the answer letter
         const ansLetterMatch = after.match(/^([A-E])\b[:.,-]?\s*/i);
-        let explanation = after;
+          let explanation = after;
         if (ansLetterMatch) {
           explanation = after.replace(/^([A-E])\b[:.,-]?\s*/i, '').trim();
         }
+          // Trim surrounding bold markers (e.g., '**explanation**') that appear to remain
+          explanation = explanation.replace(/^\s*\*+\s*/, '').replace(/\s*\*+\s*$/, '');
         // find question map entry
         const qIndex = questions.findIndex((q, idx) => idx === (Number(num) - 1));
         if (qIndex !== -1) {
