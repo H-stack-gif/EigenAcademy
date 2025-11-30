@@ -1,9 +1,15 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
  // no hooks required for the conveyor ticker component
 import { courses } from '../data/courses';
 import './Homepage.css';
 
 function Homepage() {
+  const navigate = useNavigate();
+
+  const handleTitleClick = () => {
+    navigate('/courses-list');
+  };
+
   return (
     <div className="homepage">
       <header className="hero">
@@ -14,8 +20,11 @@ function Homepage() {
         <div className="logo-container">
           <img src="/image-removebg-preview.png" alt="STEM Logo" className="stem-logo" />
         </div>
-        <h1 className="main-title">STEMfolio</h1>
-        <p className="subtitle">Advanced Mathematics, Physics & Chemistry Notes</p>
+        <h1 className="main-title" onClick={handleTitleClick}>STEMfolio</h1>
+        <div className="subtitle-container">
+          <img src="/pngtree-creative-arrows-png-image_2951081-removebg-preview.png" alt="" className="arrow-decoration" />
+          <p className="subtitle">Advanced Mathematics, Physics & Chemistry Notes</p>
+        </div>
         <p className="author-name">by Krishna Patel</p>
       </header>
 

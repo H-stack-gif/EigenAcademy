@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Homepage from './pages/Homepage';
 import CoursePage from './pages/CoursePage';
 import AdminImport from './pages/AdminImport';
+import CoursesListPage from './pages/CoursesListPage';
 import ErrorBoundary from './components/ErrorBoundary';
 import './App.css';
 
@@ -12,6 +13,7 @@ function App() {
         <ErrorBoundary>
         <Routes>
           <Route path="/" element={<Homepage />} />
+          <Route path="/courses-list" element={<CoursesListPage />} />
           <Route path="/course/:courseId" element={<CoursePage />} />
           <Route path="/admin/import" element={<AdminImport />} />
           <Route path="/course/:courseId/:topicId" element={<CoursePage />} />

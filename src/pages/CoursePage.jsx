@@ -169,9 +169,13 @@ function TopicMarkdownRenderer({ contentPath }) {
   // Keep html state declared unconditionally so hooks order is stable across renders
   const [html, setHtml] = useState(null);
   const [practice, setPractice] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     let mounted = true;
+    setIsLoading(true);
+    setContent(null);
+    setHtml(null);
     console.debug('Fetching article', contentPath);
     fetch(contentPath)
       .then((res) => {
@@ -242,6 +246,7 @@ function TopicMarkdownRenderer({ contentPath }) {
             } else {
               setPractice(null);
             }
+            setIsLoading(false);
           }
         } catch (err) {
           console.warn('marked not available or failed to parse — falling back to raw markdown preview', err);
@@ -255,6 +260,7 @@ function TopicMarkdownRenderer({ contentPath }) {
             } else {
               setPractice(null);
             }
+            setIsLoading(false);
           }
         }
       } catch (err) {
@@ -265,12 +271,20 @@ function TopicMarkdownRenderer({ contentPath }) {
 
     // only run conversion when we have content
     if (!content) return;
-    convert();
+    convert().finally(() => {
+      if (!cancelled) setIsLoading(false);
+    });
 
     return () => { cancelled = true; };
   }, [content]);
 
-  if (!content) return <div className="article-loading">Loading article…</div>;
+  if (!content || isLoading) {
+    return (
+      <div className="article-loading">
+        <div className="loading-spinner"></div>
+      </div>
+    );
+  }
 
   // Local error boundary for the markdown renderer — if ReactMarkdown or plugins throw,
   // catch them and show the raw markdown so the page doesn't go blank.

@@ -1,0 +1,81 @@
+.courses-list-page {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.courses-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+}
+
+.course-list-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.course-list-title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: -0.02em;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: underline;
+  text-decoration-thickness: 8px;
+  text-underline-offset: 0.2em;
+  margin: 0;
+  padding: 0;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+  background: linear-gradient(135deg, #FF3B30 0%, #8E44FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.course-list-title:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+.math-gradient {
+  background: linear-gradient(135deg, #FF3B30 0%, #8E44FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration-color: #FF3B30;
+}
+
+.physics-gradient {
+  background: linear-gradient(135deg, #3A7CA5 0%, #8E44FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration-color: #3A7CA5;
+}
+
+.chemistry-gradient {
+  background: linear-gradient(135deg, #43B97F 0%, #8E44FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration-color: #43B97F;
+}
+
+@media (max-width: 768px) {
+  .courses-list-page {
+    padding: 2rem 1rem;
+  }
+  
+  .course-list-title {
+    font-size: clamp(2rem, 10vw, 4rem);
+    text-decoration-thickness: 5px;
+  }
+}

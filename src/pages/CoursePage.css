@@ -159,9 +159,52 @@
 }
 
 .article-loading {
-  color: var(--text-secondary);
-  font-size: 1rem;
-  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  padding: 3rem 0;
+}
+
+.loading-spinner {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    #FF3B30 0deg,
+    #8E44FF 90deg,
+    #3A7CA5 180deg,
+    #43B97F 270deg,
+    #FF3B30 360deg
+  );
+  animation: spin-gradient 1s linear infinite;
+  position: relative;
+  mask: radial-gradient(transparent 60%, black 60%);
+  -webkit-mask: radial-gradient(transparent 60%, black 60%);
+}
+
+.loading-spinner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    rgba(255, 59, 48, 0.3) 0deg,
+    rgba(142, 68, 255, 0.3) 90deg,
+    rgba(58, 124, 165, 0.3) 180deg,
+    rgba(67, 185, 127, 0.3) 270deg,
+    rgba(255, 59, 48, 0.3) 360deg
+  );
+  animation: spin-gradient 1.5s linear infinite reverse;
+  mask: radial-gradient(transparent 50%, black 50%);
+  -webkit-mask: radial-gradient(transparent 50%, black 50%);
+}
+
+@keyframes spin-gradient {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .markdown-body {

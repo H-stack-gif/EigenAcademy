@@ -26,13 +26,13 @@
 
 html, body {
   height: 100%;
-  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: linear-gradient(135deg, #0A0E14 0%, #13181F 50%, #1A1F28 100%);
+  background: linear-gradient(135deg, #1A1E24 0%, #23282F 50%, #2A2F38 100%);
   background-attachment: fixed;
   color: var(--text-primary);
   line-height: 1.6;
@@ -43,7 +43,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   line-height: 1.3;
 }
