@@ -13,7 +13,7 @@
 /* remove smaller padding override */
 .quizbox-title { display:none; }
 .quizbox-subtitle { display:none; }
-.quizbox-wrapper { font-family: inherit; color: #000; }
+.quizbox-wrapper { font-family: 'Poppins', 'Manrope', sans-serif; color: #000; }
 .quizbox-wrapper .quiz-question,
 .quizbox-wrapper .choice-text,
 .quizbox-wrapper .quiz-choice .choice-letter,
@@ -21,17 +21,17 @@
 .quizbox-wrapper .btn-primary,
 .quizbox-wrapper .btn-ghost {
   color: #000 !important;
-  font-family: inherit !important;
+  font-family: 'Poppins', 'Manrope', sans-serif !important;
 }
 .quizbox-body { padding: 36px; background: transparent; }
 .quiz-question { margin-top: 14px; margin-bottom: 24px; color: #000; font-size: 1.15rem; font-weight: 600; }
 .quiz-choices { display: flex; flex-direction: column; gap: 20px; }
 .quiz-choice { display:flex; gap:12px; align-items: flex-start; padding: 12px; background: #fff; border-radius: 8px; border: 1px solid rgba(0,0,0,0.08); cursor:pointer; transition: all 140ms ease; }
-.quiz-choice.selected { border-width: 3px; border-color: #000; background: #fff; box-shadow: 0 6px 18px rgba(0,0,0,0.08); transform: translateY(-2px); }
+.quiz-choice.selected { border: 1px solid rgba(0,0,0,0.08); background: linear-gradient(135deg, rgba(142,68,255,0.55), rgba(255,107,107,0.55));; box-shadow: none; transform: none; }
 /* removed duplicate selected style */
-.quiz-choice.correct { border-color: #2ecc71; background: rgba(46,204,113,0.06); }
-.quiz-choice.incorrect { border-color: #e74c3c; background: rgba(231,76,60,0.06); }
-.quiz-explanation { margin-top: 20px; padding: 14px; background: #fff; border-radius: 10px; color: #000; font-family: inherit; }
+.quiz-choice.correct { border: 1px solid rgba(0,0,0,0.08); background: rgba(75, 209, 160, 0.705); }
+.quiz-choice.incorrect { border: 1px solid rgba(0,0,0,0.08); background: rgba(238, 105, 93, 0.705); }
+.quiz-explanation { margin-top: 20px; padding: 14px; background: #fff; border-radius: 10px; color: #000; font-family: 'Poppins', 'Manrope', sans-serif; }
 .quizbox-footer { display:flex; justify-content:space-between; align-items:center; padding: 34px 56px; background: transparent; }
 .btn-primary { background: #fff; color: #000; border: 2px solid transparent; padding: 14px 22px; border-radius: 12px; cursor:pointer; font-weight:700; font-size: 1.06rem; min-width: 110px; box-shadow: 0 8px 26px rgba(0,0,0,0.08); border-image: linear-gradient(135deg, rgba(255,107,107,0.95), rgba(142,68,255,0.95)) 1; }
 .btn-ghost { background: transparent; color: #333; border: 1px solid rgba(0,0,0,0.06); padding: 8px 12px; border-radius: 6px; cursor:pointer; }

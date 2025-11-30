@@ -76,7 +76,10 @@ export default function QuizBox({ questions }) {
   return (
     <div className="quizbox-wrapper">
       <div className="quizbox-body">
-        <div className="quiz-question" dangerouslySetInnerHTML={{ __html: html.question }} />
+        <div className="quiz-question">
+          <span style={{ fontWeight: 700, marginRight: '8px' }}>{index + 1}.</span>
+          <span dangerouslySetInnerHTML={{ __html: html.question }} />
+        </div>
         <div className="quiz-choices">
           {q.choices.map((choice, i) => {
             const selected = answers[index] === i;
