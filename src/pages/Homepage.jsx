@@ -1,10 +1,11 @@
 import { Link, useNavigate } from 'react-router-dom';
- // no hooks required for the conveyor ticker component
+import { useState } from 'react';
 import { courses } from '../data/courses';
 import './Homepage.css';
 
 function Homepage() {
   const navigate = useNavigate();
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const handleTitleClick = () => {
     navigate('/courses-list');
@@ -12,6 +13,62 @@ function Homepage() {
 
   return (
     <div className="homepage">
+      {/* Hamburger menu button */}
+      <button 
+        className="hamburger-menu" 
+        onClick={() => setSidebarOpen(!sidebarOpen)}
+        aria-label="Toggle navigation menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      {/* Sidebar overlay */}
+      {sidebarOpen && (
+        <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)} />
+      )}
+
+      {/* Sidebar */}
+      <nav className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
+        <button 
+          className="sidebar-close" 
+          onClick={() => setSidebarOpen(false)}
+          aria-label="Close menu"
+        >
+          ×
+        </button>
+        <div className="sidebar-content">
+          {Object.entries(courses).map(([key, category]) => (
+            <div key={key} className="sidebar-category">
+              <h3 className="sidebar-category-title" style={{ color: category.color }}>
+                {category.title}
+              </h3>
+              <div className="sidebar-courses">
+                {category.courses.map((course) => (
+                  <Link
+                    key={course.id}
+                    to={`/course/${course.id}`}
+                    className="sidebar-course-link"
+                    onClick={() => setSidebarOpen(false)}
+                    style={{
+                      background: key === 'math'
+                        ? 'linear-gradient(135deg, rgba(255,107,107,0.15), rgba(142,68,255,0.15))'
+                        : key === 'physics'
+                        ? 'linear-gradient(135deg, rgba(58,124,165,0.15), rgba(142,68,255,0.15))'
+                        : 'linear-gradient(135deg, rgba(67,185,127,0.15), rgba(142,68,255,0.15))',
+                      borderBottom: `2px solid ${category.color}`
+                    }}
+                  >
+                    {course.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </nav>
+
       <header className="hero">
         {/* Top ticker - conveyor style vertical stack moving right */}
         <Ticker />
@@ -114,7 +171,9 @@ function Ticker() {
     'Thermodynamics & StatMech',
     'Atomic & Molecular Physics',
     'Physical Chemistry',
-    'Solid State Chemistry'
+    'Solid State Chemistry',
+    'Organic Chemistry',
+    'Material Science'
   ];
 
   // Pure CSS animation handles the motion — render two copies so we can slide continuously without gaps.

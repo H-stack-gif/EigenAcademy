@@ -346,6 +346,29 @@ export const courses = {
         ]
       },
       {
+        id: "organic-chemistry",
+        name: "Organic Chemistry",
+        subtitle: "Organic Chemistry — Structure, Reaction & Mechanisms",
+        units: [
+          {
+            id: "1",
+            title: "Unit 1: Structure and Bonding",
+            topics: [
+              { id: "1.1", title: "1.1: Structure and Bonding", contentPath: "/articles/chemistry/organic-chemistry/1_1.md" },
+              { id: "1.2", title: "1.2: Alkanes and Functional Groups", contentPath: "/articles/chemistry/organic-chemistry/1_2.md" }
+            ]
+          },
+          {
+            id: "2",
+            title: "Unit 2: Reactions and Mechanisms",
+            topics: [
+              { id: "2.1", title: "2.1: Reaction Mechanisms" },
+              { id: "2.2", title: "2.2: Stereochemistry and Rearrangements" }
+            ]
+          }
+        ]
+      },
+      {
         id: "solid-state-chemistry",
         name: "Solid State Chemistry",
         subtitle: "Crystal structures, bonding, and solid properties",
@@ -371,6 +394,36 @@ export const courses = {
             title: "Unit 3: Phase Diagrams",
             topics: [
               { id: "3.1", title: "3.1: Phase Diagrams" }
+            ]
+          }
+        ]
+      }
+    ,
+      {
+        id: "material-science",
+        name: "Introduction to Material Science",
+        units: [
+          {
+            id: "1",
+            title: "Unit 1: Atomic Structure and Crystals",
+            topics: [
+              { id: "1.1", title: "1.1: Atomic Structure and Bonding", contentPath: "/articles/chemistry/material-science/1_1.md" },
+              { id: "1.2", title: "1.2: Crystal Structures", contentPath: "/articles/chemistry/material-science/1_2.md" }
+            ]
+          },
+          {
+            id: "2",
+            title: "Unit 2: Material Properties",
+            topics: [
+              { id: "2.1", title: "2.1: Imperfections in Solids", contentPath: "/articles/chemistry/material-science/2_1.md" },
+              { id: "2.2", title: "2.2: Mechanical Properties", contentPath: "/articles/chemistry/material-science/2_2.md" }
+            ]
+          },
+          {
+            id: "3",
+            title: "Unit 3: Phase Diagrams",
+            topics: [
+              { id: "3.1", title: "3.1: Phase Diagrams", contentPath: "/articles/chemistry/material-science/3_1.md" }
             ]
           }
         ]
