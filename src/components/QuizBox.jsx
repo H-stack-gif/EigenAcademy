@@ -11,23 +11,26 @@ export default function QuizBox({ questions }) {
   useEffect(() => {
     let cancelled = false;
     async function convertAll() {
+      // default fallback parse = identity (no markdown -> HTML conversion)
+      let parseFallback = (s) => s;
       try {
         const mod = await import('marked');
-        const parse = mod.marked?.parse ?? mod.default?.parse ?? mod.default ?? mod.marked;
-        const map = {};
-        for (let i = 0; i < questions.length; i++) {
-          const q = questions[i];
-          // convert question text, choices, and explanation separately
-          const qHtml = convertMathThenMarkdown(parse, q.question);
-          const choicesHtml = q.choices.map(c => convertMathThenMarkdown(parse, c.text));
-          const explHtml = convertMathThenMarkdown(parse, q.explanation || '');
-          map[i] = { question: qHtml, choices: choicesHtml, explanation: explHtml };
-        }
-        if (!cancelled) setHtmlCache(map);
+        const parseLib = mod.marked?.parse ?? mod.default?.parse ?? mod.default ?? mod.marked;
+        if (parseLib) parseFallback = parseLib;
       } catch (e) {
-        // leave empty and show raw markdown fallback
-        if (!cancelled) setHtmlCache({});
+        // marked not available — we still want math to render via KaTeX, so use identity parse
+        console.warn('marked not available in QuizBox, rendering raw Markdown with KaTeX only', e);
       }
+      const map = {};
+      for (let i = 0; i < questions.length; i++) {
+        const q = questions[i];
+        // convert question text, choices, and explanation separately
+        const qHtml = convertMathThenMarkdown(parseFallback, q.question);
+        const choicesHtml = q.choices.map(c => convertMathThenMarkdown(parseFallback, c.text));
+        const explHtml = convertMathThenMarkdown(parseFallback, q.explanation || '');
+        map[i] = { question: qHtml, choices: choicesHtml, explanation: explHtml };
+      }
+      if (!cancelled) setHtmlCache(map);
     }
     convertAll();
     return () => { cancelled = true; };
@@ -72,10 +75,6 @@ export default function QuizBox({ questions }) {
 
   return (
     <div className="quizbox-wrapper">
-      <div className="quizbox-header" style={{ borderImage: 'linear-gradient(135deg, #FF6B6B, #9B59B6) 1' }}>
-        <div className="quizbox-title">Practice</div>
-        <div className="quizbox-subtitle">Question {index+1} of {questions.length}</div>
-      </div>
       <div className="quizbox-body">
         <div className="quiz-question" dangerouslySetInnerHTML={{ __html: html.question }} />
         <div className="quiz-choices">

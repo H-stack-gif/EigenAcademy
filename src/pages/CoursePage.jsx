@@ -202,10 +202,15 @@ function TopicMarkdownRenderer({ contentPath }) {
         const prStart = content.search(/##\s*Practice Problems/i);
         const ansStart = content.search(/##\s*Answer Key/i);
         if (prStart !== -1 && ansStart !== -1 && prStart < ansStart) {
+          // Keep the heading line (## Practice Problems) but remove the practice content itself
+          // Find end of the 'Practice Problems' header line so we keep the header text
+          const headerEnd = content.indexOf('\n', prStart);
+          const headerLineEnd = headerEnd === -1 ? prStart : headerEnd + 1;
+          // Extract the header and the practice block and answer block
           practiceBlock = content.slice(prStart, ansStart);
-          // include Answer Key to parse explanations
           answerKeyBlock = content.slice(ansStart);
-          contentWithoutPractice = content.slice(0, prStart) + '\n' + (content.slice(ansStart + (answerKeyBlock.length)) || '');
+          // Keep the header line in the content, but remove the practice questions block
+          contentWithoutPractice = content.slice(0, headerLineEnd) + '\n' + (content.slice(ansStart + answerKeyBlock.length) || '');
         }
 
         // Use withAllMath to render content and practice blocks later
