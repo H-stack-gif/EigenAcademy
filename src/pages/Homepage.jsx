@@ -108,13 +108,13 @@ export default Homepage;
 
 function Ticker() {
   const items = [
-    'Physics',
-    'Linear Algebra',
-    'Ordinary Differential Equations',
-    'Multivariable Calculus',
-    'Electromagnetism',
-    'STEM',
-    'Materials Science'
+    'Classical Mechanics',
+    'Partial Differential Equations',
+    'Complex Analysis',
+    'Thermodynamics & StatMech',
+    'Atomic & Molecular Physics',
+    'Physical Chemistry',
+    'Solid State Chemistry'
   ];
 
   // Pure CSS animation handles the motion — render two copies so we can slide continuously without gaps.

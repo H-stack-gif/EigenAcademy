@@ -150,6 +150,32 @@ export const courses = {
         ]
       },
       {
+        id: "partial-differential-equations",
+        name: "Partial Differential Equations",
+        units: [
+          {
+            id: "1",
+            title: "Unit 1: Introduction to PDEs",
+            topics: [
+              { id: "1.1", title: "1.1: First-order PDEs", description: "Introduction to first-order PDEs and basic solution methods", contentPath: "/articles/partial-differential-equations/1_1.md" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "complex-analysis",
+        name: "Complex Analysis",
+        units: [
+          {
+            id: "1",
+            title: "Unit 1: Complex Numbers and Functions",
+            topics: [
+              { id: "1.1", title: "1.1: Complex Numbers and Geometry", description: "Complex arithmetic, polar form, and geometric interpretations", contentPath: "/articles/complex-analysis/1_1.md" }
+            ]
+          }
+        ]
+      },
+      {
         id: "multivariable-calculus",
         name: "Multivariable Calculus",
         units: [
@@ -210,26 +236,45 @@ export const courses = {
     color: "#3A7CA5",
     courses: [
       {
-        id: "foundational-physics",
-        name: "Foundational Physics",
-        subtitle: "Classical Mechanics & Electricity & Magnetism",
+        id: "classical-mechanics",
+        name: "Classical Mechanics",
+        subtitle: "Kinematics, Dynamics, Energy & Momentum",
         units: [
           {
             id: "1",
-            title: "Unit 1: Classical Mechanics",
+            title: "Unit 1: Kinematics and Dynamics",
             topics: [
-              { id: "1.1", title: "1.1: Kinematics" },
-              { id: "1.2", title: "1.2: Newton's Laws" },
-              { id: "1.3", title: "1.3: Energy and Momentum" }
+              { id: "1.1", title: "1.1: Kinematics", description: "Motion in one and multiple dimensions; velocity and acceleration", contentPath: "/articles/physics/classical-mechanics/1_1.md" },
+              { id: "1.2", title: "1.2: Newton's Laws", description: "Forces, free body diagrams, and applications of Newton's laws", contentPath: "/articles/physics/classical-mechanics/1_2.md" },
+              { id: "1.3", title: "1.3: Energy and Momentum", description: "Work, energy conservation, and momentum & collisions", contentPath: "/articles/physics/classical-mechanics/1_3.md" }
             ]
-          },
+          }
+        ]
+      },
+      {
+        id: "thermodynamics-statmech",
+        name: "Thermodynamics & Statistical Mechanics",
+        subtitle: "Thermodynamics and Foundations of Statistical Mechanics",
+        units: [
           {
-            id: "2",
-            title: "Unit 2: Electricity & Magnetism",
+            id: "1",
+            title: "Unit 1: Thermodynamics Basics",
             topics: [
-              { id: "2.1", title: "2.1: Electric Fields and Forces" },
-              { id: "2.2", title: "2.2: Magnetic Fields" },
-              { id: "2.3", title: "2.3: Electromagnetic Induction" }
+              { id: "1.1", title: "1.1: Laws of Thermodynamics", description: "Zeroth, first, second laws and thermodynamic potentials", contentPath: "/articles/physics/thermodynamics-statmech/1_1.md" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "atomic-molecular",
+        name: "Atomic & Molecular Physics",
+        subtitle: "Quantum basics for atoms and molecules",
+        units: [
+          {
+            id: "1",
+            title: "Unit 1: Atomic Structure",
+            topics: [
+              { id: "1.1", title: "1.1: Atomic Models", description: "Bohr model, quantum numbers, and spectroscopy basics", contentPath: "/articles/physics/atomic-molecular/1_1.md" }
             ]
           }
         ]
@@ -242,23 +287,23 @@ export const courses = {
             id: "1",
             title: "Unit 1: Maxwell's Equations and Waves",
             topics: [
-              { id: "1.1", title: "1.1: Maxwell's Equations" },
-              { id: "1.2", title: "1.2: Electromagnetic Waves" }
+              { id: "1.1", title: "1.1: Maxwell's Equations", contentPath: "/articles/physics/electromagnetism/1_1.md" },
+              { id: "1.2", title: "1.2: Electromagnetic Waves", contentPath: "/articles/physics/electromagnetism/1_2.md" }
             ]
           },
           {
             id: "2",
             title: "Unit 2: Statics",
             topics: [
-              { id: "2.1", title: "2.1: Electrostatics" },
-              { id: "2.2", title: "2.2: Magnetostatics" }
+              { id: "2.1", title: "2.1: Electrostatics", contentPath: "/articles/physics/electromagnetism/2_1.md" },
+              { id: "2.2", title: "2.2: Magnetostatics", contentPath: "/articles/physics/electromagnetism/2_2.md" }
             ]
           },
           {
             id: "3",
             title: "Unit 3: Advanced Topics",
             topics: [
-              { id: "3.1", title: "3.1: Advanced Topics" }
+              { id: "3.1", title: "3.1: Advanced Topics", contentPath: "/articles/physics/electromagnetism/3_1.md" }
             ]
           }
         ]
@@ -270,46 +315,47 @@ export const courses = {
     color: "#4A9B7F",
     courses: [
       {
-        id: "organic-chemistry",
-        name: "Organic Chemistry",
-        subtitle: "Organic Chemistry 1 & 2",
+        id: "physical-chemistry",
+        name: "Physical Chemistry",
+        subtitle: "Thermodynamics, Kinetics & Quantum Chemistry",
         units: [
           {
             id: "1",
-            title: "Unit 1: Structure and Basic Compounds",
+            title: "Unit 1: Thermodynamics & Kinetics",
             topics: [
-              { id: "1.1", title: "1.1: Structure and Bonding" },
-              { id: "1.2", title: "1.2: Alkanes and Cycloalkanes" }
+              { id: "1.1", title: "1.1: Thermodynamics Basics", contentPath: "/articles/chemistry/physical-chemistry/1_1.md" },
+              { id: "1.2", title: "1.2: Reaction Kinetics", contentPath: "/articles/chemistry/physical-chemistry/1_2.md" }
             ]
           },
           {
             id: "2",
-            title: "Unit 2: Stereochemistry and Reactions",
+            title: "Unit 2: Quantum Mechanics & Spectroscopy",
             topics: [
-              { id: "2.1", title: "2.1: Stereochemistry" },
-              { id: "2.2", title: "2.2: Substitution and Elimination" }
+              { id: "2.1", title: "2.1: Quantum Chemistry Basics" },
+              { id: "2.2", title: "2.2: Spectroscopy Overview" }
             ]
           },
           {
             id: "3",
-            title: "Unit 3: Advanced Organic Chemistry",
+            title: "Unit 3: Statistical Mechanics & Applications",
             topics: [
-              { id: "3.1", title: "3.1: Aromatic Compounds" },
-              { id: "3.2", title: "3.2: Carbonyl Chemistry" }
+              { id: "3.1", title: "3.1: Statistical Ensembles" },
+              { id: "3.2", title: "3.2: Thermodynamic Applications" }
             ]
           }
         ]
       },
       {
-        id: "material-science",
-        name: "Introduction to Material Science",
+        id: "solid-state-chemistry",
+        name: "Solid State Chemistry",
+        subtitle: "Crystal structures, bonding, and solid properties",
         units: [
           {
             id: "1",
-            title: "Unit 1: Atomic Structure and Crystals",
+            title: "Unit 1: Crystal and Solid Structure",
             topics: [
-              { id: "1.1", title: "1.1: Atomic Structure and Bonding" },
-              { id: "1.2", title: "1.2: Crystal Structures" }
+              { id: "1.1", title: "1.1: Crystal Lattices and Unit Cells", description: "Bravais lattices, unit cell types and basic diffraction concepts", contentPath: "/articles/chemistry/solid-state-chemistry/1_1.md" },
+              { id: "1.2", title: "1.2: Bonding and Band Theory", description: "Overview of bonding in solids and basic band theory", contentPath: "/articles/chemistry/solid-state-chemistry/1_2.md" }
             ]
           },
           {
