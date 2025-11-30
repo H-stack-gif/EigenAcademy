@@ -32,34 +32,33 @@
 .quiz-choice.correct { border-color: #2ecc71; background: rgba(46,204,113,0.06); }
 .quiz-choice.incorrect { border-color: #e74c3c; background: rgba(231,76,60,0.06); }
 .quiz-explanation { margin-top: 20px; padding: 14px; background: #fff; border-radius: 10px; color: #000; font-family: inherit; }
-.quizbox-footer { display:flex; justify-content:space-between; align-items:center; padding: 22px 40px; background: transparent; }
+.quizbox-footer { display:flex; justify-content:space-between; align-items:center; padding: 34px 56px; background: transparent; }
 .btn-primary { background: #fff; color: #000; border: 2px solid transparent; padding: 14px 22px; border-radius: 12px; cursor:pointer; font-weight:700; font-size: 1.06rem; min-width: 110px; box-shadow: 0 8px 26px rgba(0,0,0,0.08); border-image: linear-gradient(135deg, rgba(255,107,107,0.95), rgba(142,68,255,0.95)) 1; }
 .btn-ghost { background: transparent; color: #333; border: 1px solid rgba(0,0,0,0.06); padding: 8px 12px; border-radius: 6px; cursor:pointer; }
 .btn-primary:disabled, .btn-ghost:disabled { opacity: 0.5; cursor: not-allowed; }
 
 /* Arrow buttons (prev/next) */
 .btn-arrow {
+  position: relative;
   background: #fff;
   color: #000;
-  border: 2px solid transparent;
-  padding: 12px 52px; /* wider to create long straight line */
+  border: none;
+  padding: 24px 90px; /* 1.5x button size larger */
   border-radius: 999px;
   cursor: pointer;
-  font-weight: 700;
-  font-size: 1.1rem;
-  min-width: 120px;
+  font-weight: 800;
+  font-size: 2.2rem; /* larger arrow icon */
+  min-width: 200px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
-  border-image: linear-gradient(135deg, rgba(255,107,107,0.95), rgba(142,68,255,0.95)) 1;
+  box-shadow: 0 12px 34px rgba(0,0,0,0.15);
+  overflow: visible;
 }
 .btn-arrow[disabled] { opacity: 0.5; cursor: not-allowed; }
-.btn-prev { margin-right: 16px; background: #fff; }
-.btn-next { margin-left: 16px; background: #fff; }
+.btn-prev { margin-right: 28px; background: #fff; }
+.btn-next { margin-left: 28px; background: #fff; }
 
 /* Make the button long because user asked for a longer straight line, but keep arrow head size modest.
    We'll use an inline pseudo-element for the shaft/arrow styling if needed. */
-.btn-prev::after, .btn-next::after {
-  content: '';
-}
+/* removed pseudo element gradient to avoid rectangular artifacts */
