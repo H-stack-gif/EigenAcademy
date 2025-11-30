@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import 'katex/dist/katex.min.css';
 import katex from 'katex';
+import QuizBox from '../components/QuizBox';
 import { courses } from '../data/courses';
 import './CoursePage.css';
 
@@ -183,7 +184,7 @@ function TopicMarkdownRenderer({ contentPath }) {
     return () => { mounted = false; };
   }, [contentPath]);
 
-  // We'll asynchronously prepare an HTML version of the article.
+  // We'll asynchronously prepare an HTML version of the article and extract interactive practice blocks if present.
   // This effect must be declared before any early returns so hooks remain
   // consistent across renders (avoids "rendered more hooks" errors).
   useEffect(() => {
@@ -192,7 +193,22 @@ function TopicMarkdownRenderer({ contentPath }) {
     async function convert() {
       try {
         // 1) Replace block math $$...$$ with KaTeX
-        const withBlockMath = content.replace(/\$\$([\s\S]+?)\$\$/g, (m, expr) => {
+        // Extract practice / answer key block if present
+        let practice = null;
+        let answerKey = null;
+        let contentWithoutPractice = content;
+        // Look for '## Practice Problems' heading followed by '## Answer Key'
+        const prStart = content.search(/##\s*Practice Problems/i);
+        const ansStart = content.search(/##\s*Answer Key/i);
+        if (prStart !== -1 && ansStart !== -1 && prStart < ansStart) {
+          practice = content.slice(prStart, ansStart);
+          // include Answer Key to parse explanations
+          answerKey = content.slice(ansStart);
+          contentWithoutPractice = content.slice(0, prStart) + '\n' + (content.slice(ansStart + (answerKey.length)) || '');
+        }
+
+        // Use withAllMath to render content and practice blocks later
+        const withBlockMath = contentWithoutPractice.replace(/\$\$([\s\S]+?)\$\$/g, (m, expr) => {
           try { return katex.renderToString(expr, { displayMode: true, throwOnError: false }); }
           catch (e) { console.warn('KaTeX block render failed', e); return m; }
         });
@@ -212,7 +228,15 @@ function TopicMarkdownRenderer({ contentPath }) {
           const htmlout = parse(withAllMath);
           // Diagnostic: log fetched content and output sizes so we can verify nothing is being truncated
           console.debug('Article conversion lengths', { contentLength: withAllMath.length, htmlLength: htmlout.length, contentPath });
-          if (!cancelled) setHtml(htmlout);
+          if (!cancelled) {
+            setHtml(htmlout);
+            if (practice && answerKey) {
+              const parsed = parsePracticeAndAnswers(practice, answerKey);
+              setPractice(parsed);
+            } else {
+              setPractice(null);
+            }
+          }
         } catch (err) {
           console.warn('marked not available or failed to parse — falling back to raw markdown preview', err);
           if (!cancelled) setHtml(null); // leave null to indicate fallback
@@ -277,8 +301,105 @@ function TopicMarkdownRenderer({ contentPath }) {
   }
 
   return (
-    <div className="article-content markdown-body" dangerouslySetInnerHTML={{ __html: html }} />
+    <>
+      <div className="article-content markdown-body" dangerouslySetInnerHTML={{ __html: html }} />
+      {practice && practice.questions && practice.questions.length > 0 && (
+        <div style={{ marginTop: 18 }}>
+          <QuizBox questions={practice.questions} />
+        </div>
+      )}
+    </>
   );
 }
+
+  function parsePracticeAndAnswers(practiceText, answerText) {
+    // Extract questions from practiceText: split on '**Problem N:**' or '^Problem N:'
+    const questionMatches = [...practiceText.matchAll(/(?:\*\*Problem\s+(\d+):\*\*)|(?:\bProblem\s+(\d+):)/gi)];
+    const parts = [];
+    if (questionMatches.length === 0) {
+      return { questions: [] };
+    }
+    // Determine positions
+    const indexes = questionMatches.map(m => ({ idx: m.index }));
+    for (let i = 0; i < indexes.length; i++) {
+      const start = indexes[i].idx;
+      const end = i + 1 < indexes.length ? indexes[i + 1].idx : practiceText.length;
+      const chunk = practiceText.slice(start, end).trim();
+      parts.push(chunk);
+    }
+    const questions = parts.map(part => {
+      // Remove the leading 'Problem N:' heading
+      const qtext = part.replace(/^\*\*?Problem\s+\d+:?\*\*?/i, '').trim();
+      // Extract choices as lines starting with 'A)'..'E)'
+      const choiceMatches = [...qtext.matchAll(/^\s*([A-E])\)\s*(.+)$/gim)];
+      const choices = choiceMatches.map(m => ({ letter: m[1], text: m[2].trim() }));
+      // If no choices found, attempt to split by lines starting with 'A.' or 'A)'
+      let questionBody = qtext;
+      if (choices.length > 0) {
+        // Question body is everything before first choice
+        const firstChoiceIndex = qtext.search(/^[\s]*[A-E]\)/im);
+        if (firstChoiceIndex !== -1) questionBody = qtext.slice(0, firstChoiceIndex).trim();
+      }
+      return { question: questionBody, choices };
+    });
+
+    // Parse answers: find 'Problem N: X' lines and explanation lines after
+    const akMatches = [...answerText.matchAll(/(?:\*\*Problem\s+(\d+):\*\*\s*([A-E]))|(?:Problem\s+(\d+):\s*([A-E]))/gi)];
+    const answersMap = {};
+    for (const m of akMatches) {
+      const num = m[1] || m[3];
+      const ans = (m[2] || m[4] || '').trim();
+      if (num) answersMap[num] = ans;
+    }
+
+    // Extract explanations by splitting answerText into blocks after each Problem heading
+    const ansSplits = [...answerText.matchAll(/(?:\*\*Problem\s+(\d+):\*\*)|(?:Problem\s+(\d+):)/gi)];
+    for (let i = 0; i < ansSplits.length; i++) {
+      const s = ansSplits[i].index;
+      const next = i + 1 < ansSplits.length ? ansSplits[i + 1].index : answerText.length;
+      const block = answerText.slice(s, next).trim();
+      const numMatch = block.match(/(?:\*\*Problem\s+(\d+):\*\*)|(?:Problem\s+(\d+):)/i);
+      const num = (numMatch && (numMatch[1] || numMatch[2])) || null;
+      if (num) {
+        // remove header line
+        const after = block.replace(/^(?:\*\*Problem\s+\d+:\*\*|Problem\s+\d+:)\s*/i, '').trim();
+        // The first token may be the answer letter
+        const ansLetterMatch = after.match(/^([A-E])\b[:.,-]?\s*/i);
+        let explanation = after;
+        if (ansLetterMatch) {
+          explanation = after.replace(/^([A-E])\b[:.,-]?\s*/i, '').trim();
+        }
+        // find question map entry
+        const qIndex = questions.findIndex((q, idx) => idx === (Number(num) - 1));
+        if (qIndex !== -1) {
+          const correct = answersMap[num] || (ansLetterMatch && ansLetterMatch[1]) || null;
+          questions[qIndex].correct = correct; // letter
+          // convert letter to index
+          if (questions[qIndex].choices && correct) {
+            const correctIndex = questions[qIndex].choices.findIndex(c => c.letter.toUpperCase() === correct.toUpperCase());
+            questions[qIndex].correctIndex = correctIndex;
+          }
+          questions[qIndex].explanation = explanation;
+        }
+      }
+    }
+
+    // Normalize: convert choice text to full text switch
+    for (const q of questions) {
+      // If choices were empty, attempt to parse choices inline from a single line using A) B) markers
+      if (!q.choices || q.choices.length === 0) {
+        // attempt to find letters in the block
+        const inlineChoices = [...q.question.matchAll(/\b([A-E])\)\s*([^A-E\)]+)/g)];
+        if (inlineChoices.length > 0) {
+          const parsed = inlineChoices.map(m => ({ letter: m[1], text: m[2].trim() }));
+          q.choices = parsed;
+          // strip choices from question text
+          q.question = q.question.split(/\bA\)\s*/i)[0].trim();
+        }
+      }
+    }
+
+    return { questions };
+  }
 
 export default CoursePage;

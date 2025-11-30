@@ -1,0 +1,31 @@
+.quizbox-wrapper {
+  font-family: inherit;
+  margin: 16px 0;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.08);
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+.quizbox-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(255,107,107,0.12), rgba(155,89,182,0.12));
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+.quizbox-title { font-weight: 600; color: #2c2c2c; }
+.quizbox-subtitle { font-size: 12px; color: #666; }
+.quizbox-body { padding: 16px; background: #fff; }
+.quiz-question { margin-bottom: 8px; color: #222; }
+.quiz-choices { display: flex; flex-direction: column; gap: 8px; }
+.quiz-choice { display:flex; gap:12px; align-items: flex-start; padding: 10px; background: #fff; border-radius: 6px; border: 1px solid rgba(0,0,0,0.06); cursor:pointer; transition: all 120ms ease; }
+.quiz-choice .choice-letter { width: 28px; height: 28px; border-radius: 6px; display:flex; align-items:center; justify-content:center; background: rgba(0,0,0,0.03); color: #222; font-weight: 700; }
+.quiz-choice.selected { border-color: rgba(80,80,200,0.18); background: rgba(80,80,200,0.03); }
+.quiz-choice.correct { border-color: #2ecc71; background: rgba(46,204,113,0.06); }
+.quiz-choice.incorrect { border-color: #e74c3c; background: rgba(231,76,60,0.06); }
+.quiz-explanation { margin-top: 12px; padding: 12px; background: rgba(0,0,0,0.03); border-radius: 6px; color: #333; }
+.quizbox-footer { display:flex; justify-content:flex-end; padding: 12px 16px; background: linear-gradient(135deg, rgba(255,107,107,0.04), rgba(155,89,182,0.04)); }
+.btn-primary { background: linear-gradient(135deg,#FF6B6B,#9B59B6); color: white; border: none; padding: 8px 12px; border-radius: 6px; cursor:pointer; }
+.btn-ghost { background: transparent; color: #333; border: 1px solid rgba(0,0,0,0.06); padding: 8px 12px; border-radius: 6px; cursor:pointer; }
+.btn-primary:disabled, .btn-ghost:disabled { opacity: 0.5; cursor: not-allowed; }
