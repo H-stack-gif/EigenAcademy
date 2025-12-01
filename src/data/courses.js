@@ -83,6 +83,13 @@ export const courses = {
               { id: "8.3", title: "8.3: Linear Programming (Introductory)", description: "Introduction to optimization problems with linear constraints using simplex method fundamentals", contentPath: "/articles/linear-algebra/8_3.md" },
               { id: "8.4", title: "8.4: Vector Calculus Connections", description: "Connecting linear algebra to multivariable calculus through gradients, Jacobians, and directional derivatives", contentPath: "/articles/linear-algebra/8_4.md" }
             ]
+          },
+          {
+            id: "mock",
+            title: "Mock Exam",
+            topics: [
+              { id: "mock", title: "Linear Algebra Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/linear-algebra.md" }
+            ]
           }
         ]
       },
@@ -145,6 +152,13 @@ export const courses = {
               { id: "6.1", title: "6.1: Euler's Method", description: "Approximating solutions to differential equations numerically using simple Euler's method with error analysis", contentPath: "/articles/odes/6_1.md" },
               { id: "6.2", title: "6.2: Runge-Kutta Methods", description: "Higher-order numerical methods including RK2 and RK4 for improved accuracy in solving ODEs", contentPath: "/articles/odes/6_2.md" },
               { id: "6.3", title: "6.3: Mathematical Modeling", description: "Building and analyzing mathematical models for real-world phenomena using differential equations", contentPath: "/articles/odes/6_3.md" }
+            ]
+          },
+          {
+            id: "mock",
+            title: "Mock Exam",
+            topics: [
+              { id: "mock", title: "ODEs Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/odes.md" }
             ]
           }
         ]
@@ -239,6 +253,13 @@ export const courses = {
               { id: "8.5", title: "8.5: Green’s Functions for PDEs", description: "Fundamental solutions and convolution with sources", contentPath: "/articles/partial-differential-equations/8_5.md" },
               { id: "8.6", title: "8.6: Method of Images", description: "Solving PDEs with mirrored sources to satisfy boundary conditions", contentPath: "/articles/partial-differential-equations/8_6.md" }
             ]
+          },
+          {
+            id: "mock",
+            title: "Mock Exam",
+            topics: [
+              { id: "mock", title: "PDEs Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/partial-differential-equations.md" }
+            ]
           }
         ]
       },
@@ -246,6 +267,13 @@ export const courses = {
         id: "complex-analysis",
         name: "Complex Analysis",
         units: [
+          {
+            id: "mock",
+            title: "Mock Exam",
+            topics: [
+              { id: "mock", title: "Complex Analysis Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/complex-analysis.md" }
+            ]
+          },
           {
             id: "1",
             title: "Unit 1: Complex Numbers and Functions",
@@ -259,6 +287,13 @@ export const courses = {
         id: "multivariable-calculus",
         name: "Multivariable Calculus",
         units: [
+          {
+            id: "mock",
+            title: "Mock Exam",
+            topics: [
+              { id: "mock", title: "Multivariable Calculus Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/multivariable-calculus.md" }
+            ]
+          },
           {
             id: "1",
             title: "Unit 1: Vectors and the Geometry of Space",
@@ -328,6 +363,13 @@ export const courses = {
               { id: "1.2", title: "1.2: Newton's Laws", description: "Forces, free body diagrams, and applications of Newton's laws", contentPath: "/articles/physics/classical-mechanics/1_2.md" },
               { id: "1.3", title: "1.3: Energy and Momentum", description: "Work, energy conservation, and momentum & collisions", contentPath: "/articles/physics/classical-mechanics/1_3.md" }
             ]
+          },
+          {
+            id: "mock",
+            title: "Mock Exam",
+            topics: [
+              { id: "mock", title: "Classical Mechanics Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/classical-mechanics.md" }
+            ]
           }
         ]
       },
@@ -342,6 +384,13 @@ export const courses = {
             topics: [
               { id: "1.1", title: "1.1: Laws of Thermodynamics", description: "Zeroth, first, second laws and thermodynamic potentials", contentPath: "/articles/physics/thermodynamics-statmech/1_1.md" }
             ]
+          },
+          {
+            id: "mock",
+            title: "Mock Exam",
+            topics: [
+              { id: "mock", title: "Thermodynamics & StatMech Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/thermodynamics-statmech.md" }
+            ]
           }
         ]
       },
@@ -355,6 +404,13 @@ export const courses = {
             title: "Unit 1: Atomic Structure",
             topics: [
               { id: "1.1", title: "1.1: Atomic Models", description: "Bohr model, quantum numbers, and spectroscopy basics", contentPath: "/articles/physics/atomic-molecular/1_1.md" }
+            ]
+          },
+          {
+            id: "mock",
+            title: "Mock Exam",
+            topics: [
+              { id: "mock", title: "Atomic & Molecular Physics Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/atomic-molecular.md" }
             ]
           }
         ]
@@ -384,6 +440,13 @@ export const courses = {
             title: "Unit 3: Advanced Topics",
             topics: [
               { id: "3.1", title: "3.1: Advanced Topics", contentPath: "/articles/physics/electromagnetism/3_1.md" }
+            ]
+          },
+          {
+            id: "mock",
+            title: "Mock Exam",
+            topics: [
+              { id: "mock", title: "Electromagnetism Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/electromagnetism.md" }
             ]
           }
         ]
@@ -422,6 +485,13 @@ export const courses = {
               { id: "3.1", title: "3.1: Statistical Ensembles" },
               { id: "3.2", title: "3.2: Thermodynamic Applications" }
             ]
+          },
+          {
+            id: "mock",
+            title: "Mock Exam",
+            topics: [
+              { id: "mock", title: "Physical Chemistry Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/physical-chemistry.md" }
+            ]
           }
         ]
       },
@@ -444,6 +514,13 @@ export const courses = {
             topics: [
               { id: "2.1", title: "2.1: Reaction Mechanisms" },
               { id: "2.2", title: "2.2: Stereochemistry and Rearrangements" }
+            ]
+          },
+          {
+            id: "mock",
+            title: "Mock Exam",
+            topics: [
+              { id: "mock", title: "Organic Chemistry Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/organic-chemistry.md" }
             ]
           }
         ]
@@ -475,6 +552,13 @@ export const courses = {
             topics: [
               { id: "3.1", title: "3.1: Phase Diagrams" }
             ]
+          },
+          {
+            id: "mock",
+            title: "Mock Exam",
+            topics: [
+              { id: "mock", title: "Solid State Chemistry Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/solid-state-chemistry.md" }
+            ]
           }
         ]
       }
@@ -504,6 +588,13 @@ export const courses = {
             title: "Unit 3: Phase Diagrams",
             topics: [
               { id: "3.1", title: "3.1: Phase Diagrams", contentPath: "/articles/chemistry/material-science/3_1.md" }
+            ]
+          },
+          {
+            id: "mock",
+            title: "Mock Exam",
+            topics: [
+              { id: "mock", title: "Material Science Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/material-science.md" }
             ]
           }
         ]

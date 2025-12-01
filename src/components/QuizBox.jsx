@@ -4,7 +4,7 @@ import katex from 'katex';
 
 export default function QuizBox({ questions }) {
   const [index, setIndex] = useState(0);
-  const [answers, setAnswers] = useState(Array(questions.length).fill(null));
+  const [answers, setAnswers] = useState(Array(questions.length).fill(null)); // for MCQ: choice index; for FRQ: unused
   const [submitted, setSubmitted] = useState(false);
   const [htmlCache, setHtmlCache] = useState({});
 
@@ -24,11 +24,17 @@ export default function QuizBox({ questions }) {
       const map = {};
       for (let i = 0; i < questions.length; i++) {
         const q = questions[i];
-        // convert question text, choices, and explanation separately
+        // convert question text, choices / guidelines, and explanation separately
         const qHtml = convertMathThenMarkdown(parseFallback, q.question);
-        const choicesHtml = q.choices.map(c => convertMathThenMarkdown(parseFallback, c.text));
+        const choicesHtml = (q.type === 'frq'
+          ? []
+          : q.choices.map(c => convertMathThenMarkdown(parseFallback, c.text))
+        );
         const explHtml = convertMathThenMarkdown(parseFallback, q.explanation || '');
-        map[i] = { question: qHtml, choices: choicesHtml, explanation: explHtml };
+        const guidelinesHtml = q.type === 'frq'
+          ? convertMathThenMarkdown(parseFallback, q.scoringGuidelines || '')
+          : '';
+        map[i] = { question: qHtml, choices: choicesHtml, explanation: explHtml, guidelines: guidelinesHtml };
       }
       if (!cancelled) setHtmlCache(map);
     }
@@ -71,7 +77,12 @@ export default function QuizBox({ questions }) {
   }
 
   const q = questions[index];
-  const html = htmlCache[index] || { question: q.question, choices: q.choices.map(c=>c.text), explanation: q.explanation };
+  const html = htmlCache[index] || {
+    question: q.question,
+    choices: q.choices ? q.choices.map(c=>c.text) : [],
+    explanation: q.explanation,
+    guidelines: q.scoringGuidelines || ''
+  };
 
   return (
     <div className="quizbox-wrapper">
@@ -80,28 +91,44 @@ export default function QuizBox({ questions }) {
           <span style={{ fontWeight: 700, marginRight: '8px' }}>{index + 1}.</span>
           <span dangerouslySetInnerHTML={{ __html: html.question }} />
         </div>
-        <div className="quiz-choices">
-          {q.choices.map((choice, i) => {
-            const selected = answers[index] === i;
-            const correctIndex = q.correctIndex;
-            const showResult = submitted;
-            let className = 'quiz-choice';
-            if (showResult) {
-              if (i === correctIndex) className += ' correct';
-              else if (selected && i !== correctIndex) className += ' incorrect';
-            } else if (selected) {
-              className += ' selected';
-            }
-            return (
-              <div key={i} className={className} onClick={() => selectChoice(index, i)} role="button" tabIndex={0}>
-                <div className="choice-letter">{String.fromCharCode(65 + i)}</div>
-                <div className="choice-text" dangerouslySetInnerHTML={{ __html: html.choices[i] }} />
+        {q.type === 'frq' ? (
+          submitted && (
+            <div className="quiz-frq-feedback">
+              <div className="quiz-frq-section">
+                <div className="quiz-frq-label">Scoring Guidelines:</div>
+                <div
+                  className="quiz-frq-content"
+                  dangerouslySetInnerHTML={{ __html: html.guidelines || html.explanation }}
+                />
               </div>
-            );
-          })}
-        </div>
-        {submitted && (
-          <div className="quiz-explanation" dangerouslySetInnerHTML={{ __html: html.explanation }} />
+            </div>
+          )
+        ) : (
+          <>
+            <div className="quiz-choices">
+              {q.choices.map((choice, i) => {
+                const selected = answers[index] === i;
+                const correctIndex = q.correctIndex;
+                const showResult = submitted;
+                let className = 'quiz-choice';
+                if (showResult) {
+                  if (i === correctIndex) className += ' correct';
+                  else if (selected && i !== correctIndex) className += ' incorrect';
+                } else if (selected) {
+                  className += ' selected';
+                }
+                return (
+                  <div key={i} className={className} onClick={() => selectChoice(index, i)} role="button" tabIndex={0}>
+                    <div className="choice-letter">{String.fromCharCode(65 + i)}</div>
+                    <div className="choice-text" dangerouslySetInnerHTML={{ __html: html.choices[i] }} />
+                  </div>
+                );
+              })}
+            </div>
+            {submitted && (
+              <div className="quiz-explanation" dangerouslySetInnerHTML={{ __html: html.explanation }} />
+            )}
+          </>
         )}
       </div>
       <div className="quizbox-footer">
@@ -110,9 +137,26 @@ export default function QuizBox({ questions }) {
         </button>
         <div style={{ flex: 1 }} />
         {index < questions.length - 1 ? (
-          <button className="btn-arrow btn-next" onClick={next} disabled={answers[index] == null} aria-label="Next">→</button>
+          <button
+            className="btn-arrow btn-next"
+            onClick={next}
+            disabled={q.type !== 'frq' && answers[index] == null}
+            aria-label="Next"
+          >
+            →
+          </button>
         ) : (
-          <button className="btn-arrow btn-next" onClick={submit} disabled={submitted || answers[index] == null} aria-label="Submit">→</button>
+          <button
+            className="btn-arrow btn-next"
+            onClick={submit}
+            disabled={
+              submitted ||
+              (q.type !== 'frq' && answers[index] == null)
+            }
+            aria-label="Submit"
+          >
+            →
+          </button>
         )}
       </div>
     </div>

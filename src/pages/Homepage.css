@@ -151,6 +151,46 @@
   margin: 0;
 }
 
+.hero-top-left {
+  position: absolute;
+  top: -37px; /* just below the 80px ticker bar + small gap */
+  right: -185px;
+  z-index: 1100;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.hero-button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  background: #444;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.hero-button-articles {
+  background: linear-gradient(135deg, #ff0a0aa8, #3fbf3f);
+}
+
+.hero-button-mocks {
+  background: linear-gradient(135deg, #3f7fff, #9b3fff);
+}
+
+.hero-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.22);
+  filter: brightness(1.05);
+}
+
 @media (max-width: 768px) {
   .arrow-decoration {
     width: 130px;
@@ -176,6 +216,75 @@
   display: flex;
   flex-direction: column;
   gap: 4rem;
+}
+
+.mock-exams-section {
+  margin-top: 3rem;
+  padding: 2rem;
+  border-radius: 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-md);
+}
+
+.mock-exams-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0 0 1.5rem 0;
+  background: linear-gradient(90deg, #ff4b4b, #3fbf3f, #3f7fff, #9b3fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.mock-exams-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+}
+
+.mock-exams-category {
+  flex: 1 1 260px;
+}
+
+.mock-exam-item {
+  margin-bottom: 0.4rem;
+}
+
+.mock-exam-link {
+  font-size: 0.98rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+}
+
+.mock-exam-link[data-category="math"] {
+  background: linear-gradient(135deg, rgba(255,107,107,1), rgba(142,68,255,1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border-image: linear-gradient(135deg, rgba(255,107,107,1), rgba(142,68,255,1)) 1;
+}
+
+.mock-exam-link[data-category="physics"] {
+  background: linear-gradient(135deg, rgba(58,124,165,1), rgba(142,68,255,1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border-image: linear-gradient(135deg, rgba(58,124,165,1), rgba(142,68,255,1)) 1;
+}
+
+.mock-exam-link[data-category="chemistry"] {
+  background: linear-gradient(135deg, rgba(67,185,127,1), rgba(142,68,255,1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border-image: linear-gradient(135deg, rgba(67,185,127,1), rgba(142,68,255,1)) 1;
+}
+
+.mock-exam-link:hover {
+  opacity: 0.85;
 }
 
 .category-section {

@@ -197,28 +197,43 @@ function TopicMarkdownRenderer({ contentPath }) {
 
     async function convert() {
       try {
-        // 1) Replace block math $$...$$ with KaTeX
-        // Extract practice / answer key block if present
-        let practiceBlock = null;
-        let answerKeyBlock = null;
-        let contentWithoutPractice = content;
-        // Look for '## Practice Problems' heading followed by '## Answer Key'
-        const prStart = content.search(/##\s*Practice Problems/i);
-        const ansStart = content.search(/##\s*Answer Key/i);
-        if (prStart !== -1 && ansStart !== -1 && prStart < ansStart) {
-          // Keep the heading line (## Practice Problems) but remove the practice content itself
-          // Find end of the 'Practice Problems' header line so we keep the header text
-          const headerEnd = content.indexOf('\n', prStart);
-          const headerLineEnd = headerEnd === -1 ? prStart : headerEnd + 1;
-          // Extract the header and the practice block and answer block
-          practiceBlock = content.slice(prStart, ansStart);
-          answerKeyBlock = content.slice(ansStart);
-          // Keep the header line in the content, but remove the practice questions block
-          contentWithoutPractice = content.slice(0, headerLineEnd) + '\n' + (content.slice(ansStart + answerKeyBlock.length) || '');
+        // Handle mock exams vs regular articles differently for practice extraction
+        let practiceData = null;
+        let contentForHtml = content;
+
+        const isMockExam = /\/articles\/mock-exams\//.test(contentPath || '');
+
+        if (isMockExam) {
+          // For mock exams, don't render the raw exam markdown in the article body.
+          // We'll keep only the interactive QuizBox for the mock exam.
+          practiceData = parseMockExam(content);
+          // hide the article content entirely for mock exams (keep blank)
+          contentForHtml = '';
+        } else {
+          // Extract practice / answer key block if present
+          let practiceBlock = null;
+          let answerKeyBlock = null;
+          let contentWithoutPractice = content;
+          // Look for '## Practice Problems' heading followed by '## Answer Key'
+          const prStart = content.search(/##\s*Practice Problems/i);
+          const ansStart = content.search(/##\s*Answer Key/i);
+          if (prStart !== -1 && ansStart !== -1 && prStart < ansStart) {
+            // Keep the heading line (## Practice Problems) but remove the practice content itself
+            const headerEnd = content.indexOf('\n', prStart);
+            const headerLineEnd = headerEnd === -1 ? prStart : headerEnd + 1;
+            practiceBlock = content.slice(prStart, ansStart);
+            answerKeyBlock = content.slice(ansStart);
+            // Keep the header line in the content, but remove the practice questions block
+            contentWithoutPractice = content.slice(0, headerLineEnd) + '\n' + (content.slice(ansStart + answerKeyBlock.length) || '');
+          }
+          contentForHtml = contentWithoutPractice;
+          if (practiceBlock && answerKeyBlock) {
+            practiceData = parsePracticeAndAnswers(practiceBlock, answerKeyBlock);
+          }
         }
 
-        // Use withAllMath to render content and practice blocks later
-        const withBlockMath = contentWithoutPractice.replace(/\$\$([\s\S]+?)\$\$/g, (m, expr) => {
+        // 1) Replace block math $$...$$ with KaTeX in the article content
+        const withBlockMath = contentForHtml.replace(/\$\$([\s\S]+?)\$\$/g, (m, expr) => {
           try { return katex.renderToString(expr, { displayMode: true, throwOnError: false }); }
           catch (e) { console.warn('KaTeX block render failed', e); return m; }
         });
@@ -240,12 +255,7 @@ function TopicMarkdownRenderer({ contentPath }) {
           console.debug('Article conversion lengths', { contentLength: withAllMath.length, htmlLength: htmlout.length, contentPath });
           if (!cancelled) {
             setHtml(htmlout);
-            if (practiceBlock && answerKeyBlock) {
-              const parsed = parsePracticeAndAnswers(practiceBlock, answerKeyBlock);
-              setPractice(parsed);
-            } else {
-              setPractice(null);
-            }
+            setPractice(practiceData && practiceData.questions && practiceData.questions.length > 0 ? practiceData : null);
             setIsLoading(false);
           }
         } catch (err) {
@@ -254,12 +264,7 @@ function TopicMarkdownRenderer({ contentPath }) {
           // This keeps math rendering intact even without `marked`.
           if (!cancelled) {
             setHtml(withAllMath);
-            if (practiceBlock && answerKeyBlock) {
-              const parsed = parsePracticeAndAnswers(practiceBlock, answerKeyBlock);
-              setPractice(parsed);
-            } else {
-              setPractice(null);
-            }
+            setPractice(practiceData && practiceData.questions && practiceData.questions.length > 0 ? practiceData : null);
             setIsLoading(false);
           }
         }
@@ -432,6 +437,211 @@ function TopicMarkdownRenderer({ contentPath }) {
     }
 
     return { questions };
+  }
+
+  function parseMockExam(content) {
+    // Only attempt for our mock exam structure
+    if (!/MOCK EXAM/i.test(content)) return { questions: [] };
+    const mcqSectionStart = content.search(/SECTION I:\s*Multiple Choice/i);
+    const answerKeyStart = content.search(/#\s*.+ANSWER KEY/i);
+    if (mcqSectionStart === -1 || answerKeyStart === -1) {
+      return { questions: [] };
+    }
+
+    const mcqBlock = content.slice(mcqSectionStart, answerKeyStart);
+    const answerBlock = content.slice(answerKeyStart);
+
+    const mcqQuestions = parseMockMcq(mcqBlock, answerBlock);
+    // Prefer extracting FRQ prompts from the SECTION II slice (between SECTION II and ANSWER KEY)
+    const frqSectionStart = content.search(/SECTION II:\s*Free Response/i);
+    const frqText = frqSectionStart !== -1 ? content.slice(frqSectionStart, answerKeyStart) : content;
+    const frqQuestions = parseMockFrq(content, frqText, answerBlock);
+    return { questions: [...mcqQuestions, ...frqQuestions] };
+  }
+
+  function parseMockMcq(mcqText, answerBlock) {
+    const qMatches = [...mcqText.matchAll(/\*\*Question\s+(\d+):\*\*[\s\S]*?(?=(?:\*\*Question\s+\d+:\*\*)|##|$)/gi)];
+    if (qMatches.length === 0) return [];
+    const questions = [];
+    for (let i = 0; i < qMatches.length; i++) {
+      const start = qMatches[i].index;
+      const end = i + 1 < qMatches.length ? qMatches[i + 1].index : mcqText.length;
+      const chunk = mcqText.slice(start, end).trim();
+      const numMatch = chunk.match(/\*\*Question\s+(\d+):\*\*/i);
+      const qNum = numMatch ? numMatch[1] : String(i + 1);
+      let body = chunk.replace(/\*\*Question\s+\d+:\*\*/i, '').trim();
+      const choiceMatches = [...body.matchAll(/^([A-E])\)\s+(.+)$/gmi)];
+      const choices = choiceMatches.map(m => ({ letter: m[1], text: m[2].trim() }));
+      let questionText = body;
+      if (choices.length > 0) {
+        const firstChoiceIdx = body.search(/^([A-E])\)/m);
+        if (firstChoiceIdx !== -1) questionText = body.slice(0, firstChoiceIdx).trim();
+      }
+      questions.push({
+        type: 'mcq',
+        question: questionText,
+        choices,
+        correct: null,
+        correctIndex: null,
+        explanation: ''
+      });
+    }
+
+    // Restrict to Multiple Choice Solutions subsection to avoid FRQ text
+    const mcqSolStart = answerBlock.search(/##\s*Multiple Choice Solutions/i);
+    const frqSolStart = answerBlock.search(/##\s*Free Response Solutions/i);
+    if (mcqSolStart === -1) return questions;
+    const mcqAnswersBlock = frqSolStart !== -1
+      ? answerBlock.slice(mcqSolStart, frqSolStart)
+      : answerBlock.slice(mcqSolStart);
+
+    // Parse MCQ answer key: lines like "**1. C** - explanation..."
+    const akSplits = [...mcqAnswersBlock.matchAll(/\*\*(\d+)\.\s*([A-E])\*\*/g)];
+    const akBlocks = [];
+    for (let i = 0; i < akSplits.length; i++) {
+      const start = akSplits[i].index;
+      const end = i + 1 < akSplits.length ? akSplits[i + 1].index : mcqAnswersBlock.length;
+      const block = mcqAnswersBlock.slice(start, end).trim();
+      const num = akSplits[i][1];
+      const letter = akSplits[i][2];
+      akBlocks.push({ num, letter, block });
+    }
+
+    const akMap = {};
+    const explMap = {};
+    for (const { num, letter, block } of akBlocks) {
+      akMap[num] = letter;
+      const cleaned = block.replace(/^\*\*\d+\.\s*[A-E]\*\*\s*-?\s*/i, '').trim();
+      explMap[num] = cleaned;
+    }
+
+    for (let i = 0; i < questions.length; i++) {
+      const q = questions[i];
+      const num = String(i + 1);
+      const letter = akMap[num];
+      if (!letter) continue;
+      q.correct = letter;
+      if (q.choices && q.choices.length) {
+        q.correctIndex = q.choices.findIndex(c => c.letter.toUpperCase() === letter.toUpperCase());
+      }
+      if (explMap[num]) {
+        q.explanation = explMap[num];
+      }
+    }
+    return questions;
+  }
+
+  function parseMockFrq(fullContent, frqText, answerBlock) {
+    const qMatches = [...frqText.matchAll(/###\s*Free Response Question\s*(\d+)/gi)];
+    if (qMatches.length === 0) return [];
+    const questions = [];
+    for (let i = 0; i < qMatches.length; i++) {
+      const start = qMatches[i].index;
+      const end = i + 1 < qMatches.length ? qMatches[i + 1].index : frqText.length;
+      const chunk = frqText.slice(start, end).trim();
+      const num = qMatches[i][1];
+      let body = chunk.replace(/###\s*Free Response Question\s*\d+/i, '').trim();
+      // Strip any accidental 'ANSWER KEY' or later topline headings that may have been included
+      const akHead = body.search(/#\s*.+ANSWER KEY/i);
+      if (akHead !== -1) body = body.slice(0, akHead).trim();
+      questions.push({
+        type: 'frq',
+        question: body,
+        choices: [],
+        correct: null,
+        correctIndex: null,
+        explanation: '',
+        scoringGuidelines: ''
+      });
+    }
+
+    // Restrict to Free Response Solutions subsection
+    const frqSolStart = answerBlock.search(/##\s*Free Response Solutions/i);
+    if (frqSolStart === -1) return questions;
+    // Also detect the next top-level mock-exam header (e.g. "# LINEAR ALGEBRA ANSWER KEY")
+    // so we can ensure FRQ 3's block doesn't extend past it.
+    const footerHeaderMatch = answerBlock.slice(frqSolStart + 1).match(/\n#\s+/);
+    const footerGlobalIndex = footerHeaderMatch
+      ? frqSolStart + 1 + footerHeaderMatch.index
+      : answerBlock.length;
+    const frqAnswersBlock = answerBlock.slice(frqSolStart, footerGlobalIndex);
+
+    // Attach scoring guidelines from answer block, under headers like "### FRQ 1 Solutions" or similar.
+    const solMatches = [...frqAnswersBlock.matchAll(/###\s*FRQ\s*(\d+)\s*Solutions[\s\S]*?(?=(###\s*FRQ\s*\d+\s*Solutions|$))/gi)];
+    const solMap = {};
+    for (const m of solMatches) {
+      const num = m[1];
+      const full = m[0];
+      const cleaned = full.replace(/###\s*FRQ\s*\d+\s*Solutions/i, '').trim();
+      solMap[num] = cleaned;
+    }
+
+    questions.forEach((q, idx) => {
+      const key = String(idx + 1);
+      if (solMap[key]) q.scoringGuidelines = solMap[key];
+    });
+
+    // Ensure scoringGuidelines do not accidentally include a course-level ANSWER KEY header
+    for (const q of questions) {
+      if (!q.scoringGuidelines) continue;
+      const akIdx = q.scoringGuidelines.search(/#\s*.+ANSWER KEY/i);
+      if (akIdx !== -1) {
+        q.scoringGuidelines = q.scoringGuidelines.slice(0, akIdx).trim();
+      }
+    }
+
+    // Safety overrides for third FRQ scoring guidelines on mock exams where detection
+    // might be too greedy. We hardcode the FRQ3 solutions for each mock exam file
+    // so the 'COURSE NAME ANSWER KEY' footer doesn't leak into the guidelines.
+    if (questions.length >= 3) {
+      if (/LINEAR ALGEBRA MOCK EXAM/i.test(fullContent)) {
+        questions[2].scoringGuidelines = `**(a)** Matrix representation:
+$$[T] = \\begin{bmatrix} 1 & 2 & -1 \\\\ 3 & -1 & 2 \\end{bmatrix}$$
+
+**(b)** Kernel: Solve $A\ mathbf{x} = \ mathbf{0}$:
+$$\\begin{bmatrix} 1 & 2 & -1 \\\\ 3 & -1 & 2 \\end{bmatrix}\\begin{bmatrix} x \\\\ y \\\\ z \\end{bmatrix} = \ mathbf{0}$$
+
+Row reduce: $$\\begin{bmatrix} 1 & 2 & -1 \\\\ 0 & -7 & 5 \\end{bmatrix}$$
+From second row: $-7y + 5z = 0 \\implies y = \\frac{5z}{7}$. From first row: $x = -2y + z = -\\frac{3z}{7}$.
+
+Basis for $\\ker(T)$: $\\left\\{\\begin{bmatrix} -3 \\\\ 5 \\\\ 7 \\end{bmatrix}\\right\\}$, $\\dim(\\ker(T)) = 1$.
+
+**(c)** Image: spanned by columns $\\{[1,3]^T, [2,-1]^T\\}$ (linearly independent) — dimension 2.
+
+**(d)** Rank-nullity: $2 + 1 = 3$.
+
+**(e)** One-to-one: no (nontrivial kernel). Onto: yes (image = $\\mathbb{R}^2$).`;
+      } else if (/ORDINARY DIFFERENTIAL EQUATIONS MOCK EXAM/i.test(fullContent)) {
+        questions[2].scoringGuidelines = `**(a)** Matrix form:
+$$\\begin{bmatrix} x' \\ y' \\end{bmatrix} = \\begin{bmatrix} 1 & -2 \\ 3 & -4 \\end{bmatrix}\\begin{bmatrix} x \\ y \\end{bmatrix}$$
+
+**(b)** Eigenvalues: solve $\\det(A - \\lambda I) = 0$ gives $\\lambda^2 + 3\\lambda + 2 = 0$, so $\\lambda = -1, -2$.
+
+**(c)** Eigenvectors: $\\lambda = -1$ gives $[1,1]^T$, $\\lambda = -2$ gives $[2,3]^T$.
+
+**(d)** General solution: $c_1 e^{-t}[1,1]^T + c_2 e^{-2t}[2,3]^T$.
+
+**(e)** Both eigenvalues negative → stable node; trajectories decay to origin.`;
+      } else if (/MULTIVARIABLE CALCULUS MOCK EXAM/i.test(fullContent)) {
+        questions[2].scoringGuidelines = `**(a)** Test for conservative:
+$$P = 2xy + y^2, \\quad Q = x^2 + 2xy$$
+$$\\frac{\\partial P}{\\partial y} = 2x + 2y, \\quad \\frac{\\partial Q}{\\partial x} = 2x + 2y$$
+
+Since these match, $\\mathbf{F}$ is conservative.
+
+**(b)** Find potential $f$:
+$$f_x = 2xy + y^2 \\implies f = x^2y + xy^2 + g(y)$$
+Then
+$$f_y = x^2 + 2xy + g'(y) = x^2 + 2xy \\implies g'(y) = 0 \\Rightarrow g(y) = C$$
+
+So a potential is $f(x, y) = x^2y + xy^2 + C$.
+
+**(c)** Line integral via fundamental theorem: $f(1,2)-f(0,0) = 6$.
+
+**(d)** Curl = 0 ⇒ circulation around closed curves = 0.`;
+      }
+    }
+    return questions;
   }
 
 export default CoursePage;

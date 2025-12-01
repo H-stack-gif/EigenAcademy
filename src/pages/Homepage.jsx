@@ -10,14 +10,38 @@ function Homepage() {
     navigate('/courses-list');
   };
 
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <div className="homepage">
 
       <header className="hero">
         {/* Top ticker - conveyor style vertical stack moving right */}
         <Ticker />
-        
-        
+        <div className="hero-top-left">
+          <div className="hero-buttons">
+            <button
+              type="button"
+              className="hero-button hero-button-articles"
+              onClick={() => scrollToSection('articles-section')}
+            >
+              Articles
+            </button>
+            <button
+              type="button"
+              className="hero-button hero-button-mocks"
+              onClick={() => scrollToSection('mock-exams-section')}
+            >
+              Mock Exams
+            </button>
+          </div>
+        </div>
+
         <div className="logo-container">
           <img src="/image-removebg-preview.png" alt="STEM Logo" className="stem-logo" />
         </div>
@@ -28,7 +52,7 @@ function Homepage() {
         </div>
       </header>
 
-      <div className="courses-container">
+      <div className="courses-container" id="articles-section">
         {Object.entries(courses).map(([key, category]) => (
           <section
             key={key}
@@ -85,8 +109,27 @@ function Homepage() {
           </section>
         ))}
       </div>
-
-      
+      {/* Mock Exams section */}
+      <section className="mock-exams-section" id="mock-exams-section">
+        <h2 className="mock-exams-title">Mock Exams</h2>
+        <div className="mock-exams-grid">
+          {Object.entries(courses).map(([key, category]) => (
+            <div key={key} className="mock-exams-category">
+              {category.courses.map((course) => (
+                <div key={course.id} className="mock-exam-item">
+                  <Link
+                    to={`/course/${course.id}/mock`}
+                    className="mock-exam-link"
+                    data-category={key}
+                  >
+                    {course.name}
+                  </Link>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </section>
 
       <footer className="homepage-footer">
         <div className="footer-content">
