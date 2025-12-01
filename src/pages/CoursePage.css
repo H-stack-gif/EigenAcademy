@@ -29,7 +29,7 @@
   margin: 0 auto;
 }
 
-.sidebar {
+.course-sidebar {
   width: 300px;
   min-width: 300px;
   background: var(--bg-card);
@@ -44,14 +44,14 @@
   box-shadow: var(--shadow-md);
 }
 
-.sidebar-title {
+.course-sidebar-title {
   font-size: 1.75rem;
   margin-bottom: 0.5rem;
   font-weight: 600;
   line-height: 1.2;
 }
 
-.sidebar-subtitle {
+.course-sidebar-subtitle {
   font-size: 0.85rem;
   color: var(--text-secondary);
   font-style: italic;
@@ -337,7 +337,7 @@
     flex-direction: column;
   }
 
-  .sidebar {
+  .course-sidebar {
     width: 100%;
     max-width: none;
     position: static;
@@ -358,7 +358,7 @@
     padding: 1.5rem;
   }
 
-  .sidebar {
+  .course-sidebar {
     padding: 1.5rem 1rem;
   }
 

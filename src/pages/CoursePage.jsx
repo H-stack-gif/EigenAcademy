@@ -70,12 +70,12 @@ function CoursePage() {
       <Link to="/" className="back-link">← Back to Home</Link>
 
       <div className="course-layout">
-        <aside className="sidebar">
-          <h2 className="sidebar-title" style={{ color: categoryColor }}>
+        <aside className="course-sidebar">
+          <h2 className="course-sidebar-title" style={{ color: categoryColor }}>
             {course.name}
           </h2>
           {course.subtitle && (
-            <p className="sidebar-subtitle">{course.subtitle}</p>
+            <p className="course-sidebar-subtitle">{course.subtitle}</p>
           )}
 
           <nav className="units-nav">
