@@ -152,12 +152,92 @@ export const courses = {
       {
         id: "partial-differential-equations",
         name: "Partial Differential Equations",
+        subtitle: "Heat, Wave, Laplace equations and solution methods",
         units: [
           {
             id: "1",
-            title: "Unit 1: Introduction to PDEs",
+            title: "Unit 1: Introduction to Partial Differential Equations",
             topics: [
-              { id: "1.1", title: "1.1: First-order PDEs", description: "Introduction to first-order PDEs and basic solution methods", contentPath: "/articles/partial-differential-equations/1_1.md" }
+              { id: "1.1", title: "1.1: What are PDEs?", description: "Definition, order, linear vs. nonlinear, examples from physics", contentPath: "/articles/partial-differential-equations/1_1.md" },
+              { id: "1.2", title: "1.2: Classification of Second-Order PDEs", description: "Elliptic, parabolic, hyperbolic; discriminant method", contentPath: "/articles/partial-differential-equations/1_2.md" },
+              { id: "1.3", title: "1.3: Well-Posed Problems", description: "Initial conditions, boundary conditions, uniqueness and existence", contentPath: "/articles/partial-differential-equations/1_3.md" },
+              { id: "1.4", title: "1.4: Superposition Principle", description: "Linear combinations of solutions for linear PDEs", contentPath: "/articles/partial-differential-equations/1_4.md" }
+            ]
+          },
+          {
+            id: "2",
+            title: "Unit 2: First-Order Partial Differential Equations",
+            topics: [
+              { id: "2.1", title: "2.1: Linear First-Order PDEs", description: "Method of characteristics for linear first-order PDEs", contentPath: "/articles/partial-differential-equations/2_1.md" },
+              { id: "2.2", title: "2.2: Quasilinear Equations", description: "Characteristics for quasilinear PDEs", contentPath: "/articles/partial-differential-equations/2_2.md" },
+              { id: "2.3", title: "2.3: General First-Order PDEs", description: "Complete integrals and general solutions for first-order PDEs", contentPath: "/articles/partial-differential-equations/2_3.md" },
+              { id: "2.4", title: "2.4: Conservation Laws", description: "Traffic flow, Burgers' equation, and shock waves", contentPath: "/articles/partial-differential-equations/2_4.md" }
+            ]
+          },
+          {
+            id: "3",
+            title: "Unit 3: The Heat Equation",
+            topics: [
+              { id: "3.1", title: "3.1: Derivation and Physical Interpretation", description: "Heat conduction and Fourier's law", contentPath: "/articles/partial-differential-equations/3_1.md" },
+              { id: "3.2", title: "3.2: Separation of Variables", description: "Product solutions for the heat equation", contentPath: "/articles/partial-differential-equations/3_2.md" },
+              { id: "3.3", title: "3.3: Fourier Series Solutions", description: "Eigenfunction expansions for solving the heat equation", contentPath: "/articles/partial-differential-equations/3_3.md" },
+              { id: "3.4", title: "3.4: Maximum Principle", description: "Maximum principle, uniqueness and physical interpretation", contentPath: "/articles/partial-differential-equations/3_4.md" },
+              { id: "3.5", title: "3.5: Fundamental Solution", description: "Heat kernel and solutions on infinite domains", contentPath: "/articles/partial-differential-equations/3_5.md" }
+            ]
+          },
+          {
+            id: "4",
+            title: "Unit 4: The Wave Equation",
+            topics: [
+              { id: "4.1", title: "4.1: Derivation", description: "Vibrating string and Newton's law derivation", contentPath: "/articles/partial-differential-equations/4_1.md" },
+              { id: "4.2", title: "4.2: D’Alembert’s Solution", description: "Solution for the infinite string and wave propagation", contentPath: "/articles/partial-differential-equations/4_2.md" },
+              { id: "4.3", title: "4.3: Separation of Variables", description: "Standing waves and normal modes", contentPath: "/articles/partial-differential-equations/4_3.md" },
+              { id: "4.4", title: "4.4: Energy Methods", description: "Energy estimates and conservation for the wave equation", contentPath: "/articles/partial-differential-equations/4_4.md" },
+              { id: "4.5", title: "4.5: Higher Dimensions", description: "Wave equation in higher dimensions (circular membranes, Bessel functions)", contentPath: "/articles/partial-differential-equations/4_5.md" }
+            ]
+          },
+          {
+            id: "5",
+            title: "Unit 5: Laplace’s and Poisson’s Equations",
+            topics: [
+              { id: "5.1", title: "5.1: Derivation and Applications", description: "Steady-state heat, electrostatics and gravity applications", contentPath: "/articles/partial-differential-equations/5_1.md" },
+              { id: "5.2", title: "5.2: Separation of Variables in Rectangles", description: "Fourier series and separation in rectangular domains", contentPath: "/articles/partial-differential-equations/5_2.md" },
+              { id: "5.3", title: "5.3: Polar Coordinates", description: "Laplace's equation in polar coordinates, circular solutions", contentPath: "/articles/partial-differential-equations/5_3.md" },
+              { id: "5.4", title: "5.4: Maximum Principle", description: "Harmonic functions and the mean value property", contentPath: "/articles/partial-differential-equations/5_4.md" },
+              { id: "5.5", title: "5.5: Green’s Identities", description: "Green's functions and integral formulas for boundary problems", contentPath: "/articles/partial-differential-equations/5_5.md" }
+            ]
+          },
+          {
+            id: "6",
+            title: "Unit 6: Fourier Series and Orthogonal Functions",
+            topics: [
+              { id: "6.1", title: "6.1: Fourier Series Fundamentals", description: "Periodic functions and Fourier series convergence", contentPath: "/articles/partial-differential-equations/6_1.md" },
+              { id: "6.2", title: "6.2: Fourier Sine and Cosine Series", description: "Even/odd extensions and standard series techniques", contentPath: "/articles/partial-differential-equations/6_2.md" },
+              { id: "6.3", title: "6.3: Convergence Theory", description: "Modes of convergence: pointwise, uniform and mean-square", contentPath: "/articles/partial-differential-equations/6_3.md" },
+              { id: "6.4", title: "6.4: Gibbs Phenomenon", description: "Understanding overshoot near discontinuities", contentPath: "/articles/partial-differential-equations/6_4.md" },
+              { id: "6.5", title: "6.5: Generalized Fourier Series", description: "Orthogonal expansions and generalized eigenfunction series", contentPath: "/articles/partial-differential-equations/6_5.md" }
+            ]
+          },
+          {
+            id: "7",
+            title: "Unit 7: Transform Methods",
+            topics: [
+              { id: "7.1", title: "7.1: Fourier Transform", description: "Definition, properties and convolution theorem", contentPath: "/articles/partial-differential-equations/7_1.md" },
+              { id: "7.2", title: "7.2: Solving PDEs with Fourier Transforms", description: "Using transforms for PDEs on infinite domains", contentPath: "/articles/partial-differential-equations/7_2.md" },
+              { id: "7.3", title: "7.3: Laplace Transform for PDEs", description: "Time-dependent PDEs with Laplace transforms", contentPath: "/articles/partial-differential-equations/7_3.md" },
+              { id: "7.4", title: "7.4: Applications to Wave and Diffusion Equations", description: "Transform pairs and inverse transforms for wave/diffusion PDEs", contentPath: "/articles/partial-differential-equations/7_4.md" }
+            ]
+          },
+          {
+            id: "8",
+            title: "Unit 8: Sturm-Liouville Theory and Green’s Functions",
+            topics: [
+              { id: "8.1", title: "8.1: Sturm-Liouville Problems", description: "Eigenvalue problems with weight functions and orthogonality", contentPath: "/articles/partial-differential-equations/8_1.md" },
+              { id: "8.2", title: "8.2: Orthogonality of Eigenfunctions", description: "Inner products and completeness of eigenfunction sets", contentPath: "/articles/partial-differential-equations/8_2.md" },
+              { id: "8.3", title: "8.3: Eigenfunction Expansions", description: "Expanding functions using eigenfunction bases", contentPath: "/articles/partial-differential-equations/8_3.md" },
+              { id: "8.4", title: "8.4: Green’s Functions for ODEs", description: "Green's functions for ODE boundary value problems", contentPath: "/articles/partial-differential-equations/8_4.md" },
+              { id: "8.5", title: "8.5: Green’s Functions for PDEs", description: "Fundamental solutions and convolution with sources", contentPath: "/articles/partial-differential-equations/8_5.md" },
+              { id: "8.6", title: "8.6: Method of Images", description: "Solving PDEs with mirrored sources to satisfy boundary conditions", contentPath: "/articles/partial-differential-equations/8_6.md" }
             ]
           }
         ]

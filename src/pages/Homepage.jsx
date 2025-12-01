@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { courses } from '../data/courses';
 import './Homepage.css';
+// ColoredLetters removed — restoring original title
 
 function Homepage() {
   const navigate = useNavigate();
@@ -23,9 +24,8 @@ function Homepage() {
         <h1 className="main-title" onClick={handleTitleClick}>STEMfolio</h1>
         <div className="subtitle-container">
           <img src="/pngtree-creative-arrows-png-image_2951081-removebg-preview.png" alt="" className="arrow-decoration" />
-          <p className="subtitle">Advanced Mathematics, Physics & Chemistry Notes</p>
+          <p className="subtitle">Krishna Patel's collection and display of helpful articles for various advanced (undergraduate) math, physics, and chemistry courses. Articles origin from Krishna Patel's notes during his research and self-study of these courses.</p>
         </div>
-        <p className="author-name">by Krishna Patel</p>
       </header>
 
       <div className="courses-container">

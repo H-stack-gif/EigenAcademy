@@ -6,7 +6,7 @@
 /* Hamburger Menu Button */
 .hamburger-menu {
   position: fixed;
-  top: 1.5rem;
+  top: calc(80px + 1rem); /* Position right under the 80px ticker belt */
   right: 2rem;
   z-index: 1300;
   background: white;
@@ -112,7 +112,19 @@
   margin: 0;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid #E6E9F0;
+  /* Use per-letter colors (red, green, white) — no background gradient on the sidebar titles */
+  background: transparent;
+  /* legacy gradient removed for per-letter color approach */
+  background-size: initial;
+  background-position: initial;
+  background-repeat: initial;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+  background-clip: initial;
+  line-height: 1;
+  font-weight: 700;
   color: #E6E9F0;
+  -webkit-text-stroke: 0.3px rgba(230, 233, 240, 0.3);
 }
 
 .sidebar-courses {

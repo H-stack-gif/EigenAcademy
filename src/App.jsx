@@ -7,6 +7,7 @@ import CoursesListPage from './pages/CoursesListPage';
 import ErrorBoundary from './components/ErrorBoundary';
 import { courses } from './data/courses';
 import './App.css';
+// ColoredLetters usage removed — using plain titles
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
