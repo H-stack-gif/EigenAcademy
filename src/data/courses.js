@@ -164,6 +164,26 @@ export const courses = {
         ]
       },
       {
+        id: "complex-analysis",
+        name: "Complex Analysis",
+        units: [
+          {
+            id: "mock",
+            title: "Mock Exam",
+            topics: [
+              { id: "mock", title: "Complex Analysis Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/complex-analysis.md" }
+            ]
+          },
+          {
+            id: "1",
+            title: "Unit 1: Complex Numbers and Functions",
+            topics: [
+              { id: "1.1", title: "1.1: Complex Numbers and Geometry", description: "Complex arithmetic, polar form, and geometric interpretations", contentPath: "/articles/complex-analysis/1_1.md" }
+            ]
+          }
+        ]
+      },
+      {
         id: "partial-differential-equations",
         name: "Partial Differential Equations",
         subtitle: "Heat, Wave, Laplace equations and solution methods",
@@ -190,46 +210,42 @@ export const courses = {
           },
           {
             id: "3",
-            title: "Unit 3: The Heat Equation",
+            title: "Unit 3: Fourier Series and Orthogonal Functions",
             topics: [
-              { id: "3.1", title: "3.1: Derivation and Physical Interpretation", description: "Heat conduction and Fourier's law", contentPath: "/articles/partial-differential-equations/3_1.md" },
-              { id: "3.2", title: "3.2: Separation of Variables", description: "Product solutions for the heat equation", contentPath: "/articles/partial-differential-equations/3_2.md" },
-              { id: "3.3", title: "3.3: Fourier Series Solutions", description: "Eigenfunction expansions for solving the heat equation", contentPath: "/articles/partial-differential-equations/3_3.md" },
-              { id: "3.4", title: "3.4: Maximum Principle", description: "Maximum principle, uniqueness and physical interpretation", contentPath: "/articles/partial-differential-equations/3_4.md" },
-              { id: "3.5", title: "3.5: Fundamental Solution", description: "Heat kernel and solutions on infinite domains", contentPath: "/articles/partial-differential-equations/3_5.md" }
+              { id: "3.1", title: "3.1: Fourier Series Fundamentals", description: "Periodic functions, convergence and coefficient formulas", contentPath: "/articles/partial-differential-equations/3_1.md" },
+              { id: "3.2", title: "3.2: Fourier Sine and Cosine Series", description: "Even and odd extensions and boundary-matched series", contentPath: "/articles/partial-differential-equations/3_2.md" },
+              { id: "3.3", title: "3.3: Convergence Theory", description: "Pointwise, uniform and mean-square convergence", contentPath: "/articles/partial-differential-equations/3_3.md" },
+              { id: "3.4", title: "3.4: Gibbs Phenomenon and Generalized Fourier Series", description: "Overshoots near discontinuities; orthogonal expansions", contentPath: "/articles/partial-differential-equations/3_4.md" }
             ]
           },
           {
             id: "4",
-            title: "Unit 4: The Wave Equation",
+            title: "Unit 4: The Heat Equation",
             topics: [
-              { id: "4.1", title: "4.1: Derivation", description: "Vibrating string and Newton's law derivation", contentPath: "/articles/partial-differential-equations/4_1.md" },
-              { id: "4.2", title: "4.2: D’Alembert’s Solution", description: "Solution for the infinite string and wave propagation", contentPath: "/articles/partial-differential-equations/4_2.md" },
-              { id: "4.3", title: "4.3: Separation of Variables", description: "Standing waves and normal modes", contentPath: "/articles/partial-differential-equations/4_3.md" },
-              { id: "4.4", title: "4.4: Energy Methods", description: "Energy estimates and conservation for the wave equation", contentPath: "/articles/partial-differential-equations/4_4.md" },
-              { id: "4.5", title: "4.5: Higher Dimensions", description: "Wave equation in higher dimensions (circular membranes, Bessel functions)", contentPath: "/articles/partial-differential-equations/4_5.md" }
+              { id: "4.1", title: "4.1: Derivation and Physical Interpretation", description: "Heat conduction, Fourier's law, thermal diffusivity", contentPath: "/articles/partial-differential-equations/4_1.md" },
+              { id: "4.2", title: "4.2: Separation of Variables", description: "Product solutions and spatial eigenfunctions", contentPath: "/articles/partial-differential-equations/4_2.md" },
+              { id: "4.3", title: "4.3: Fourier Series Solutions", description: "Eigenfunction expansions for finite domains", contentPath: "/articles/partial-differential-equations/4_3.md" },
+              { id: "4.4", title: "4.4: Maximum Principle and Fundamental Solution", description: "Maximum principle, uniqueness proofs and the heat kernel", contentPath: "/articles/partial-differential-equations/4_4.md" }
             ]
           },
           {
             id: "5",
-            title: "Unit 5: Laplace’s and Poisson’s Equations",
+            title: "Unit 5: The Wave Equation",
             topics: [
-              { id: "5.1", title: "5.1: Derivation and Applications", description: "Steady-state heat, electrostatics and gravity applications", contentPath: "/articles/partial-differential-equations/5_1.md" },
-              { id: "5.2", title: "5.2: Separation of Variables in Rectangles", description: "Fourier series and separation in rectangular domains", contentPath: "/articles/partial-differential-equations/5_2.md" },
-              { id: "5.3", title: "5.3: Polar Coordinates", description: "Laplace's equation in polar coordinates, circular solutions", contentPath: "/articles/partial-differential-equations/5_3.md" },
-              { id: "5.4", title: "5.4: Maximum Principle", description: "Harmonic functions and the mean value property", contentPath: "/articles/partial-differential-equations/5_4.md" },
-              { id: "5.5", title: "5.5: Green’s Identities", description: "Green's functions and integral formulas for boundary problems", contentPath: "/articles/partial-differential-equations/5_5.md" }
+              { id: "5.1", title: "5.1: Derivation and Physical Interpretation", description: "Vibrating string derivation from Newton's law", contentPath: "/articles/partial-differential-equations/5_1.md" },
+              { id: "5.2", title: "5.2: D’Alembert’s Solution", description: "General infinite string solution and propagation", contentPath: "/articles/partial-differential-equations/5_2.md" },
+              { id: "5.3", title: "5.3: Separation of Variables", description: "Standing waves and normal modes", contentPath: "/articles/partial-differential-equations/5_3.md" },
+              { id: "5.4", title: "5.4: Energy Methods and Higher Dimensions", description: "Energy conservation, uniqueness, circular membranes and Bessel functions", contentPath: "/articles/partial-differential-equations/5_4.md" }
             ]
           },
           {
             id: "6",
-            title: "Unit 6: Fourier Series and Orthogonal Functions",
+            title: "Unit 6: Laplace’s and Poisson’s Equations",
             topics: [
-              { id: "6.1", title: "6.1: Fourier Series Fundamentals", description: "Periodic functions and Fourier series convergence", contentPath: "/articles/partial-differential-equations/6_1.md" },
-              { id: "6.2", title: "6.2: Fourier Sine and Cosine Series", description: "Even/odd extensions and standard series techniques", contentPath: "/articles/partial-differential-equations/6_2.md" },
-              { id: "6.3", title: "6.3: Convergence Theory", description: "Modes of convergence: pointwise, uniform and mean-square", contentPath: "/articles/partial-differential-equations/6_3.md" },
-              { id: "6.4", title: "6.4: Gibbs Phenomenon", description: "Understanding overshoot near discontinuities", contentPath: "/articles/partial-differential-equations/6_4.md" },
-              { id: "6.5", title: "6.5: Generalized Fourier Series", description: "Orthogonal expansions and generalized eigenfunction series", contentPath: "/articles/partial-differential-equations/6_5.md" }
+              { id: "6.1", title: "6.1: Derivation and Applications", description: "Steady-state heat, electrostatics, and gravity applications", contentPath: "/articles/partial-differential-equations/6_1.md" },
+              { id: "6.2", title: "6.2: Separation of Variables in Rectangles", description: "Product solutions with Fourier series for rectangular domains", contentPath: "/articles/partial-differential-equations/6_2.md" },
+              { id: "6.3", title: "6.3: Polar Coordinates", description: "Laplace's equation in polar and circular domains", contentPath: "/articles/partial-differential-equations/6_3.md" },
+              { id: "6.4", title: "6.4: Maximum Principle and Green’s Identities", description: "Harmonic functions, mean value, and integral identities", contentPath: "/articles/partial-differential-equations/6_4.md" }
             ]
           },
           {
@@ -259,26 +275,6 @@ export const courses = {
             title: "Mock Exam",
             topics: [
               { id: "mock", title: "PDEs Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/partial-differential-equations.md" }
-            ]
-          }
-        ]
-      },
-      {
-        id: "complex-analysis",
-        name: "Complex Analysis",
-        units: [
-          {
-            id: "mock",
-            title: "Mock Exam",
-            topics: [
-              { id: "mock", title: "Complex Analysis Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/complex-analysis.md" }
-            ]
-          },
-          {
-            id: "1",
-            title: "Unit 1: Complex Numbers and Functions",
-            topics: [
-              { id: "1.1", title: "1.1: Complex Numbers and Geometry", description: "Complex arithmetic, polar form, and geometric interpretations", contentPath: "/articles/complex-analysis/1_1.md" }
             ]
           }
         ]
