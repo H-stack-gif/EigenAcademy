@@ -48,11 +48,10 @@ function Homepage() {
           onClick={handleTitleClick}
           aria-label="View all STEMfolio courses"
         >
-          <img src="/image-removebg-preview.png" alt="STEMfolio logo" className="stem-logo" />
+          <img src="/goodlogo.png" alt="STEMfolio logo" className="stem-logo" />
         </button>
         <div className="subtitle-container">
           <img src="/pngtree-creative-arrows-png-image_2951081-removebg-preview.png" alt="" className="arrow-decoration" />
-          <div className="click-label">Click!</div>
           <p className="subtitle">Krishna Patel's collection and display of helpful articles for various advanced (undergraduate) math, physics, and chemistry courses. Articles origin from Krishna Patel's notes during his research and self-study of these courses.</p>
         </div>
       </header>
@@ -138,7 +137,7 @@ function Homepage() {
 
       <footer className="homepage-footer">
         <div className="footer-content">
-          <p className="footer-text">© 2024 Krishna Patel - STEMfolio</p>
+          <p className="footer-text">© 2023 Krishna Patel - EigenAcademy</p>
           <div className="footer-contact">
             <a href="mailto:createcuz@gmail.com" className="footer-link">createcuz@gmail.com</a>
             <span className="footer-separator">•</span>
