@@ -48,7 +48,7 @@ function Homepage() {
           onClick={handleTitleClick}
           aria-label="View all STEMfolio courses"
         >
-          <img src="/goodlogo.png" alt="STEMfolio logo" className="stem-logo" />
+          <img src="/eigenlogo.png" alt="STEMfolio logo" className="stem-logo" />
         </button>
         <div className="subtitle-container">
           <img src="/pngtree-creative-arrows-png-image_2951081-removebg-preview.png" alt="" className="arrow-decoration" />
