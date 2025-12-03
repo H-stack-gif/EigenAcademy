@@ -406,11 +406,78 @@ export const courses = {
         units: [
           {
             id: "1",
-            title: "Unit 1: Kinematics and Dynamics",
+            title: "Unit 1: Mathematical Foundations and Kinematics",
             topics: [
-              { id: "1.1", title: "1.1: Kinematics", description: "Motion in one and multiple dimensions; velocity and acceleration", contentPath: "/articles/physics/classical-mechanics/1_1.md" },
-              { id: "1.2", title: "1.2: Newton's Laws", description: "Forces, free body diagrams, and applications of Newton's laws", contentPath: "/articles/physics/classical-mechanics/1_2.md" },
-              { id: "1.3", title: "1.3: Energy and Momentum", description: "Work, energy conservation, and momentum & collisions", contentPath: "/articles/physics/classical-mechanics/1_3.md" }
+              { id: "1.1", title: "1.1: Review of Vector Calculus", description: "Vector operations, position/velocity/acceleration, time derivatives", contentPath: "/articles/physics/classical-mechanics/1_1.md" },
+              { id: "1.2", title: "1.2: Coordinate Systems", description: "Cartesian, polar, cylindrical, spherical, transformations", contentPath: "/articles/physics/classical-mechanics/1_2.md" },
+              { id: "1.3", title: "1.3: Kinematics in Different Frames", description: "Motion in Cartesian/polar, circular motion, centripetal acceleration", contentPath: "/articles/physics/classical-mechanics/1_3.md" },
+              { id: "1.4", title: "1.4: Relative Motion and Moving Reference Frames", description: "Velocity/acceleration in moving frames, rotating frames, Coriolis and centrifugal forces", contentPath: "/articles/physics/classical-mechanics/1_4.md" }
+            ]
+          },
+          {
+            id: "2",
+            title: "Unit 2: Newton's Laws and Force Systems",
+            topics: [
+              { id: "2.1", title: "2.1: Newton's Laws of Motion", description: "Statement, interpretation, inertial frames, force as vector", contentPath: "/articles/physics/classical-mechanics/2_1.md" },
+              { id: "2.2", title: "2.2: Common Force Laws", description: "Gravity, springs, friction, tension, normal forces, drag", contentPath: "/articles/physics/classical-mechanics/2_2.md" },
+              { id: "2.3", title: "2.3: Applications of Newton's Second Law", description: "1D/2D/3D motion, constrained motion, circular motion", contentPath: "/articles/physics/classical-mechanics/2_3.md" },
+              { id: "2.4", title: "2.4: Non-inertial Reference Frames", description: "Fictitious forces, rotating frames, Coriolis effect", contentPath: "/articles/physics/classical-mechanics/2_4.md" }
+            ]
+          },
+          {
+            id: "3",
+            title: "Unit 3: Energy, Work, and Conservative Systems",
+            topics: [
+              { id: "3.1", title: "3.1: Work and Kinetic Energy", description: "Work along a path, work-energy theorem, power", contentPath: "/articles/physics/classical-mechanics/3_1.md" },
+              { id: "3.2", title: "3.2: Conservative Forces and Potential Energy", description: "Path independence, gradient of potential, gravitational/elastic potential", contentPath: "/articles/physics/classical-mechanics/3_2.md" },
+              { id: "3.3", title: "3.3: Conservation of Energy", description: "Mechanical energy, energy diagrams, equilibrium/stability", contentPath: "/articles/physics/classical-mechanics/3_3.md" },
+              { id: "3.4", title: "3.4: Non-conservative Forces", description: "Dissipative forces, energy methods with non-conservative forces", contentPath: "/articles/physics/classical-mechanics/3_4.md" },
+              { id: "3.5", title: "3.5: Central Forces", description: "Effective potential, radial/angular motion separation", contentPath: "/articles/physics/classical-mechanics/3_5.md" }
+            ]
+          },
+          {
+            id: "4",
+            title: "Unit 4: Linear and Angular Momentum",
+            topics: [
+              { id: "4.1", title: "4.1: Linear Momentum", description: "Particle/system momentum, impulse-momentum theorem, conservation", contentPath: "/articles/physics/classical-mechanics/4_1.md" },
+              { id: "4.2", title: "4.2: Center of Mass", description: "Definition, calculation, motion, reference frame", contentPath: "/articles/physics/classical-mechanics/4_2.md" },
+              { id: "4.3", title: "4.3: Collisions", description: "Elastic/inelastic collisions, coefficient of restitution", contentPath: "/articles/physics/classical-mechanics/4_3.md" },
+              { id: "4.4", title: "4.4: Angular Momentum", description: "Definition, torque, systems of particles", contentPath: "/articles/physics/classical-mechanics/4_4.md" },
+              { id: "4.5", title: "4.5: Conservation of Angular Momentum", description: "Central forces, planetary motion, collisions", contentPath: "/articles/physics/classical-mechanics/4_5.md" }
+            ]
+          },
+          {
+            id: "5",
+            title: "Unit 5: Oscillations and Waves",
+            topics: [
+              { id: "5.1", title: "5.1: Simple Harmonic Motion (SHM)", description: "Differential equation, solutions, energy", contentPath: "/articles/physics/classical-mechanics/5_1.md" },
+              { id: "5.2", title: "5.2: Damped Oscillations", description: "Underdamped/critically damped/overdamped, quality factor", contentPath: "/articles/physics/classical-mechanics/5_2.md" },
+              { id: "5.3", title: "5.3: Driven Oscillations and Resonance", description: "Forced oscillator, steady-state, resonance, phase relationships", contentPath: "/articles/physics/classical-mechanics/5_3.md" },
+              { id: "5.4", title: "5.4: Coupled Oscillators", description: "Normal modes, eigenvalue problems, superposition of modes", contentPath: "/articles/physics/classical-mechanics/5_4.md" },
+              { id: "5.5", title: "5.5: Introduction to Wave Motion", description: "Wave equation, traveling and standing waves", contentPath: "/articles/physics/classical-mechanics/5_5.md" }
+            ]
+          },
+          {
+            id: "6",
+            title: "Unit 6: Central Forces and Orbital Mechanics",
+            topics: [
+              { id: "6.1", title: "6.1: General Central Force Problem", description: "Effective potential, radial equation of motion", contentPath: "/articles/physics/classical-mechanics/6_1.md" },
+              { id: "6.2", title: "6.2: Inverse Square Law Forces", description: "Kepler problem, orbit equation, orbital energy and momentum", contentPath: "/articles/physics/classical-mechanics/6_2.md" },
+              { id: "6.3", title: "6.3: Kepler's Laws", description: "Elliptical orbits, equal areas, T² ∝ a³", contentPath: "/articles/physics/classical-mechanics/6_3.md" },
+              { id: "6.4", title: "6.4: Orbital Dynamics", description: "Conic sections, eccentricity, escape velocity, orbit classification", contentPath: "/articles/physics/classical-mechanics/6_4.md" },
+              { id: "6.5", title: "6.5: Scattering in Central Force Fields", description: "Scattering angle, impact parameter, cross section, Rutherford scattering", contentPath: "/articles/physics/classical-mechanics/6_5.md" }
+            ]
+          },
+          {
+            id: "7",
+            title: "Unit 7: Lagrangian and Hamiltonian Mechanics",
+            topics: [
+              { id: "7.1", title: "7.1: Calculus of Variations", description: "Functional derivatives, Euler-Lagrange equation, brachistochrone problem", contentPath: "/articles/physics/classical-mechanics/7_1.md" },
+              { id: "7.2", title: "7.2: Lagrangian Mechanics", description: "Generalized coordinates, configuration space, L = T - V, Lagrange's equations", contentPath: "/articles/physics/classical-mechanics/7_2.md" },
+              { id: "7.3", title: "7.3: Applications of Lagrangian Mechanics", description: "Constrained systems, pendulum, Atwood's machine, bead on hoop", contentPath: "/articles/physics/classical-mechanics/7_3.md" },
+              { id: "7.4", title: "7.4: Symmetries and Conservation Laws", description: "Noether's theorem, cyclic coordinates, energy conservation", contentPath: "/articles/physics/classical-mechanics/7_4.md" },
+              { id: "7.5", title: "7.5: Hamiltonian Mechanics", description: "Legendre transformation, Hamilton's equations, phase space", contentPath: "/articles/physics/classical-mechanics/7_5.md" },
+              { id: "7.6", title: "7.6: Canonical Transformations", description: "Generating functions, Poisson brackets, conservation laws", contentPath: "/articles/physics/classical-mechanics/7_6.md" }
             ]
           },
           {
