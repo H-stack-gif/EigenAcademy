@@ -168,17 +168,70 @@ export const courses = {
         name: "Complex Analysis",
         units: [
           {
+            id: "1",
+            title: "Unit 1: Complex Numbers and Elementary Functions",
+            topics: [
+              { id: "1.1", title: "1.1: The Complex Number System", description: "Algebra, geometry, polar form", contentPath: "/articles/complex-analysis/1_1.md" },
+              { id: "1.2", title: "1.2: Complex Functions and Mappings", description: "Functions as transformations, limits, continuity", contentPath: "/articles/complex-analysis/1_2.md" },
+              { id: "1.3", title: "1.3: Elementary Functions", description: "Exponential, trigonometric, hyperbolic, logarithm", contentPath: "/articles/complex-analysis/1_3.md" },
+              { id: "1.4", title: "1.4: Branches and Riemann Surfaces", description: "Multivalued functions, branch points, branch cuts", contentPath: "/articles/complex-analysis/1_4.md" }
+            ]
+          },
+          {
+            id: "2",
+            title: "Unit 2: Analytic Functions and Harmonic Functions",
+            topics: [
+              { id: "2.1", title: "2.1: Complex Differentiation", description: "Definition, rules, geometric interpretation", contentPath: "/articles/complex-analysis/2_1.md" },
+              { id: "2.2", title: "2.2: Cauchy-Riemann Equations", description: "Necessary and sufficient conditions for analyticity", contentPath: "/articles/complex-analysis/2_2.md" },
+              { id: "2.3", title: "2.3: Harmonic Functions", description: "Laplace's equation, harmonic conjugates", contentPath: "/articles/complex-analysis/2_3.md" },
+              { id: "2.4", title: "2.4: Physical Interpretations", description: "Fluid flow, electrostatics, temperature", contentPath: "/articles/complex-analysis/2_4.md" }
+            ]
+          },
+          {
+            id: "3",
+            title: "Unit 3: Complex Integration and Cauchy's Theorem",
+            topics: [
+              { id: "3.1", title: "3.1: Contour Integrals", description: "Line integrals in complex plane, path independence", contentPath: "/articles/complex-analysis/3_1.md" },
+              { id: "3.2", title: "3.2: Cauchy's Theorem", description: "Fundamental theorem for analytic functions", contentPath: "/articles/complex-analysis/3_2.md" },
+              { id: "3.3", title: "3.3: Cauchy's Integral Formula", description: "Representing analytic functions by contour integrals", contentPath: "/articles/complex-analysis/3_3.md" },
+              { id: "3.4", title: "3.4: Consequences", description: "Morera's theorem, Cauchy's inequality, Liouville's theorem", contentPath: "/articles/complex-analysis/3_4.md" }
+            ]
+          },
+          {
+            id: "4",
+            title: "Unit 4: Power Series and Laurent Series",
+            topics: [
+              { id: "4.1", title: "4.1: Power Series", description: "Convergence, radius of convergence, Abel's theorem", contentPath: "/articles/complex-analysis/4_1.md" },
+              { id: "4.2", title: "4.2: Taylor Series", description: "Representing analytic functions, uniqueness", contentPath: "/articles/complex-analysis/4_2.md" },
+              { id: "4.3", title: "4.3: Laurent Series", description: "Functions with isolated singularities", contentPath: "/articles/complex-analysis/4_3.md" },
+              { id: "4.4", title: "4.4: Zeros and Singularities", description: "Classification and behavior", contentPath: "/articles/complex-analysis/4_4.md" }
+            ]
+          },
+          {
+            id: "5",
+            title: "Unit 5: The Residue Theorem and Applications",
+            topics: [
+              { id: "5.1", title: "5.1: Residues", description: "Definition, computation methods", contentPath: "/articles/complex-analysis/5_1.md" },
+              { id: "5.2", title: "5.2: Residue Theorem", description: "Evaluating contour integrals", contentPath: "/articles/complex-analysis/5_2.md" },
+              { id: "5.3", title: "5.3: Evaluation of Real Integrals", description: "Trigonometric, improper, and Fourier integrals", contentPath: "/articles/complex-analysis/5_3.md" },
+              { id: "5.4", title: "5.4: Argument Principle and Rouché's Theorem", description: "Counting zeros and poles", contentPath: "/articles/complex-analysis/5_4.md" }
+            ]
+          },
+          {
+            id: "6",
+            title: "Unit 6: Conformal Mapping and Applications",
+            topics: [
+              { id: "6.1", title: "6.1: Conformal Mappings", description: "Angle preservation, geometric properties", contentPath: "/articles/complex-analysis/6_1.md" },
+              { id: "6.2", title: "6.2: Linear Fractional Transformations", description: "Möbius transformations, cross-ratio", contentPath: "/articles/complex-analysis/6_2.md" },
+              { id: "6.3", title: "6.3: Special Mappings", description: "Exponential, logarithm, power functions", contentPath: "/articles/complex-analysis/6_3.md" },
+              { id: "6.4", title: "6.4: Applications to Boundary Value Problems", description: "Dirichlet problem, fluid flow, electrostatics", contentPath: "/articles/complex-analysis/6_4.md" }
+            ]
+          },
+          {
             id: "mock",
             title: "Mock Exam",
             topics: [
               { id: "mock", title: "Complex Analysis Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/complex-analysis.md" }
-            ]
-          },
-          {
-            id: "1",
-            title: "Unit 1: Complex Numbers and Functions",
-            topics: [
-              { id: "1.1", title: "1.1: Complex Numbers and Geometry", description: "Complex arithmetic, polar form, and geometric interpretations", contentPath: "/articles/complex-analysis/1_1.md" }
             ]
           }
         ]
