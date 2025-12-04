@@ -461,10 +461,10 @@ export const courses = {
             id: "6",
             title: "Unit 6: Central Forces and Orbital Mechanics",
             topics: [
-              { id: "6.1", title: "6.1: General Central Force Problem", description: "Effective potential, radial equation of motion", contentPath: "/articles/physics/classical-mechanics/6_1.md" },
-              { id: "6.2", title: "6.2: Inverse Square Law Forces", description: "Kepler problem, orbit equation, orbital energy and momentum", contentPath: "/articles/physics/classical-mechanics/6_2.md" },
-              { id: "6.3", title: "6.3: Kepler's Laws", description: "Elliptical orbits, equal areas, T² ∝ a³", contentPath: "/articles/physics/classical-mechanics/6_3.md" },
-              { id: "6.4", title: "6.4: Orbital Dynamics", description: "Conic sections, eccentricity, escape velocity, orbit classification", contentPath: "/articles/physics/classical-mechanics/6_4.md" },
+              { id: "6.1", title: "6.1: General Central Motion", description: "Effective potential, radial equation of motion", contentPath: "/articles/physics/classical-mechanics/6_1.md" },
+              { id: "6.2", title: "6.2: Kepler's Laws", description: "Kepler problem, orbit equation, orbital energy and momentum", contentPath: "/articles/physics/classical-mechanics/6_2.md" },
+              { id: "6.3", title: "6.3: Gravitational Potential and Field", description: "Elliptical orbits, equal areas, T² ∝ a³", contentPath: "/articles/physics/classical-mechanics/6_3.md" },
+              { id: "6.4", title: "6.4: Orbits and Orbital Energy", description: "Conic sections, eccentricity, escape velocity, orbit classification", contentPath: "/articles/physics/classical-mechanics/6_4.md" },
               { id: "6.5", title: "6.5: Scattering in Central Force Fields", description: "Scattering angle, impact parameter, cross section, Rutherford scattering", contentPath: "/articles/physics/classical-mechanics/6_5.md" }
             ]
           },
@@ -474,10 +474,9 @@ export const courses = {
             topics: [
               { id: "7.1", title: "7.1: Calculus of Variations", description: "Functional derivatives, Euler-Lagrange equation, brachistochrone problem", contentPath: "/articles/physics/classical-mechanics/7_1.md" },
               { id: "7.2", title: "7.2: Lagrangian Mechanics", description: "Generalized coordinates, configuration space, L = T - V, Lagrange's equations", contentPath: "/articles/physics/classical-mechanics/7_2.md" },
-              { id: "7.3", title: "7.3: Applications of Lagrangian Mechanics", description: "Constrained systems, pendulum, Atwood's machine, bead on hoop", contentPath: "/articles/physics/classical-mechanics/7_3.md" },
-              { id: "7.4", title: "7.4: Symmetries and Conservation Laws", description: "Noether's theorem, cyclic coordinates, energy conservation", contentPath: "/articles/physics/classical-mechanics/7_4.md" },
-              { id: "7.5", title: "7.5: Hamiltonian Mechanics", description: "Legendre transformation, Hamilton's equations, phase space", contentPath: "/articles/physics/classical-mechanics/7_5.md" },
-              { id: "7.6", title: "7.6: Canonical Transformations", description: "Generating functions, Poisson brackets, conservation laws", contentPath: "/articles/physics/classical-mechanics/7_6.md" }
+              { id: "7.3", title: "7.3: Hamiltonian Mechanics", description: "Constrained systems, pendulum, Atwood's machine, bead on hoop", contentPath: "/articles/physics/classical-mechanics/7_3.md" },
+              { id: "7.4", title: "7.4: Small Oscillations", description: "Noether's theorem, cyclic coordinates, energy conservation", contentPath: "/articles/physics/classical-mechanics/7_4.md" },
+              { id: "7.5", title: "7.5: Canonical Transformations", description: "Legendre transformation, Hamilton's equations, phase space", contentPath: "/articles/physics/classical-mechanics/7_5.md" },
             ]
           },
           {
