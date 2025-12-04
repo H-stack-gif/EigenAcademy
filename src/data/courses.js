@@ -402,7 +402,7 @@ export const courses = {
       {
         id: "classical-mechanics",
         name: "Classical Mechanics",
-        subtitle: "Kinematics, Dynamics, Energy & Momentum",
+        subtitle: "Upper-level... not to be mistaken for introductory CM",
         units: [
           {
             id: "1",
