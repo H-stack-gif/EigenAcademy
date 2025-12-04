@@ -565,7 +565,19 @@ export const courses = {
               { id: "7.1", title: "7.1: Kinetic Theory of Gases", description: "Pressure from collisions, RMS speed, equipartition theorem, effusion", contentPath: "/articles/physics/thermodynamics-statmech/7_1.md" },
               { id: "7.2", title: "7.2: Maxwell-Boltzmann Distribution", description: "Velocity/speed distributions, most probable/mean/RMS speeds, energy distribution", contentPath: "/articles/physics/thermodynamics-statmech/7_2.md" },
               { id: "7.3", title: "7.3: Collisions and Mean Free Path", description: "Collision cross section, mean free path, collision frequency, exponential distribution", contentPath: "/articles/physics/thermodynamics-statmech/7_3.md" },
-              { id: "7.4", title: "7.4: Transport Phenomena I: Diffusion and Viscosity", description: "Fick's laws, diffusion coefficient, viscosity, temperature dependence", contentPath: "/articles/physics/thermodynamics-statmech/7_4.md" }
+              { id: "7.4", title: "7.4: Transport Phenomena I: Diffusion and Viscosity", description: "Fick's laws, diffusion coefficient, viscosity, temperature dependence", contentPath: "/articles/physics/thermodynamics-statmech/7_4.md" },
+              { id: "7.5", title: "7.5: Transport Phenomena II: Thermal Conductivity", description: "Heat conduction, thermal conductivity, Fourier's law", contentPath: "/articles/physics/thermodynamics-statmech/7_5.md" }
+            ]
+          },
+          {
+            id: "8",
+            title: "Unit 8: Phase Transitions and Critical Phenomena",
+            topics: [
+              { id: "8.1", title: "8.1: Classification of Phase Transitions", description: "First-order vs. second-order transitions, order parameters, symmetry breaking", contentPath: "/articles/physics/thermodynamics-statmech/8_1.md" },
+              { id: "8.2", title: "8.2: Critical Phenomena and Scaling", description: "Critical exponents, scaling laws, universality classes", contentPath: "/articles/physics/thermodynamics-statmech/8_2.md" },
+              { id: "8.3", title: "8.3: Ising Model", description: "One-dimensional and two-dimensional Ising models, exact solutions", contentPath: "/articles/physics/thermodynamics-statmech/8_3.md" },
+              { id: "8.4", title: "8.4: Mean-Field Theory", description: "Mean-field approximation, Weiss molecular field, Curie-Weiss law", contentPath: "/articles/physics/thermodynamics-statmech/8_4.md" },
+              { id: "8.5", title: "8.5: Landau Theory and Renormalization (Introduction)", description: "Landau free energy, renormalization group concepts, scaling transformations", contentPath: "/articles/physics/thermodynamics-statmech/8_5.md" }
             ]
           },
           {
