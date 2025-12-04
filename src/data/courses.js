@@ -491,13 +491,81 @@ export const courses = {
       {
         id: "thermodynamics-statmech",
         name: "Thermodynamics & Statistical Mechanics",
-        subtitle: "Thermodynamics and Foundations of Statistical Mechanics",
         units: [
           {
             id: "1",
-            title: "Unit 1: Thermodynamics Basics",
+            title: "Unit 1: Thermodynamic Systems and the Zeroth Law",
             topics: [
-              { id: "1.1", title: "1.1: Laws of Thermodynamics", description: "Zeroth, first, second laws and thermodynamic potentials", contentPath: "/articles/physics/thermodynamics-statmech/1_1.md" }
+              { id: "1.1", title: "1.1: Thermodynamic Systems and State Variables", description: "Isolated/closed/open systems, extensive vs. intensive variables, Euler's theorem, partial derivatives", contentPath: "/articles/physics/thermodynamics-statmech/1_1.md" },
+              { id: "1.2", title: "1.2: The Zeroth Law and Temperature", description: "Thermal equilibrium, empirical/absolute temperature, integrating factors, ideal gas law", contentPath: "/articles/physics/thermodynamics-statmech/1_2.md" },
+              { id: "1.3", title: "1.3: Equations of State", description: "Ideal gas, Van der Waals, virial expansion, compressibility factor, critical points", contentPath: "/articles/physics/thermodynamics-statmech/1_3.md" },
+              { id: "1.4", title: "1.4: Mathematical Methods in Thermodynamics", description: "Exact/inexact differentials, cyclic relations, Jacobians, chain rule", contentPath: "/articles/physics/thermodynamics-statmech/1_4.md" },
+              { id: "1.5", title: "1.5: Work and Thermodynamic Processes", description: "Reversible/irreversible work, PV diagrams, isothermal/isobaric/isochoric/adiabatic/polytropic processes", contentPath: "/articles/physics/thermodynamics-statmech/1_5.md" }
+            ]
+          },
+          {
+            id: "2",
+            title: "Unit 2: The First Law of Thermodynamics",
+            topics: [
+              { id: "2.1", title: "2.1: The First Law and Internal Energy", description: "dU = δQ - δW, state vs. path functions, energy conservation", contentPath: "/articles/physics/thermodynamics-statmech/2_1.md" },
+              { id: "2.2", title: "2.2: Heat Capacity and Enthalpy", description: "C_V, C_P, enthalpy, Mayer's relation, adiabatic index", contentPath: "/articles/physics/thermodynamics-statmech/2_2.md" },
+              { id: "2.3", title: "2.3: Thermodynamic Processes for Ideal Gases", description: "Isothermal, adiabatic, isobaric, isochoric, free expansion", contentPath: "/articles/physics/thermodynamics-statmech/2_3.md" },
+              { id: "2.4", title: "2.4: Real Gases and Joule-Thomson Effect", description: "Joule coefficient, Joule-Thomson coefficient, inversion temperature, liquefaction", contentPath: "/articles/physics/thermodynamics-statmech/2_4.md" },
+              { id: "2.5", title: "2.5: Differential Equations in Thermodynamics", description: "ODEs/PDEs in heat transfer, Newton's cooling law, heat diffusion equation", contentPath: "/articles/physics/thermodynamics-statmech/2_5.md" }
+            ]
+          },
+          {
+            id: "3",
+            title: "Unit 3: The Second Law and Entropy",
+            topics: [
+              { id: "3.1", title: "3.1: The Second Law of Thermodynamics", description: "Kelvin-Planck and Clausius statements, heat engines, refrigerators, irreversibility", contentPath: "/articles/physics/thermodynamics-statmech/3_1.md" },
+              { id: "3.2", title: "3.2: Carnot Cycle and Thermodynamic Temperature", description: "Carnot efficiency, temperature scale, reversible vs. irreversible cycles", contentPath: "/articles/physics/thermodynamics-statmech/3_2.md" },
+              { id: "3.3", title: "3.3: Entropy and the Clausius Theorem", description: "Clausius inequality, entropy definition, reversible/irreversible processes, entropy increase principle", contentPath: "/articles/physics/thermodynamics-statmech/3_3.md" },
+              { id: "3.4", title: "3.4: Entropy Changes in Various Processes", description: "Ideal gas processes, free expansion, mixing, phase transitions, heat transfer", contentPath: "/articles/physics/thermodynamics-statmech/3_4.md" },
+              { id: "3.5", title: "3.5: Statistical Interpretation of Entropy", description: "Boltzmann formula, multiplicity, Gibbs entropy, information theory, third law", contentPath: "/articles/physics/thermodynamics-statmech/3_5.md" }
+            ]
+          },
+          {
+            id: "4",
+            title: "Unit 4: Thermodynamic Potentials and Relations",
+            topics: [
+              { id: "4.1", title: "4.1: Thermodynamic Potentials and Legendre Transforms", description: "U, H, F, G, natural variables, Legendre transformations", contentPath: "/articles/physics/thermodynamics-statmech/4_1.md" },
+              { id: "4.2", title: "4.2: Maxwell Relations and Thermodynamic Identities", description: "Derivation, four Maxwell relations, thermodynamic square, response functions", contentPath: "/articles/physics/thermodynamics-statmech/4_2.md" },
+              { id: "4.3", title: "4.3: Response Functions and Stability", description: "Compressibility, expansion coefficient, stability criteria, Hessian matrices", contentPath: "/articles/physics/thermodynamics-statmech/4_3.md" },
+              { id: "4.4", title: "4.4: Chemical Potential and Phase Equilibrium", description: "Gibbs-Duhem relation, Clausius-Clapeyron equation, phase diagrams, Gibbs phase rule", contentPath: "/articles/physics/thermodynamics-statmech/4_4.md" },
+              { id: "4.5", title: "4.5: Open Systems and Chemical Reactions", description: "Grand canonical ensemble (preview), equilibrium constant, Van't Hoff equation", contentPath: "/articles/physics/thermodynamics-statmech/4_5.md" }
+            ]
+          },
+          {
+            id: "5",
+            title: "Unit 5: Classical Statistical Mechanics",
+            topics: [
+              { id: "5.1", title: "5.1: Foundations of Statistical Mechanics", description: "Phase space, ensembles, ergodic hypothesis, Liouville's theorem", contentPath: "/articles/physics/thermodynamics-statmech/5_1.md" },
+              { id: "5.2", title: "5.2: Microcanonical Ensemble", description: "Density of states, entropy, temperature, pressure, ideal gas example", contentPath: "/articles/physics/thermodynamics-statmech/5_2.md" },
+              { id: "5.3", title: "5.3: Canonical Ensemble and Partition Function", description: "Boltzmann distribution, partition function, free energy, average energy, fluctuations", contentPath: "/articles/physics/thermodynamics-statmech/5_3.md" },
+              { id: "5.4", title: "5.4: Applications of Canonical Ensemble", description: "Two-state systems, harmonic oscillators, ideal gas, equipartition theorem, Gibbs paradox", contentPath: "/articles/physics/thermodynamics-statmech/5_4.md" },
+              { id: "5.5", title: "5.5: Grand Canonical Ensemble", description: "Grand partition function, grand potential, average particle number, fugacity, fluctuations", contentPath: "/articles/physics/thermodynamics-statmech/5_5.md" }
+            ]
+          },
+          {
+            id: "6",
+            title: "Unit 6: Quantum Statistical Mechanics",
+            topics: [
+              { id: "6.1", title: "6.1: Quantum Statistics and Indistinguishability", description: "Fermions vs. bosons, occupation numbers, Fock space", contentPath: "/articles/physics/thermodynamics-statmech/6_1.md" },
+              { id: "6.2", title: "6.2: Fermi-Dirac Statistics", description: "Distribution, Fermi energy, density of states, degenerate Fermi gas", contentPath: "/articles/physics/thermodynamics-statmech/6_2.md" },
+              { id: "6.3", title: "6.3: Bose-Einstein Statistics", description: "Distribution, BEC, critical temperature, condensate fraction, photon gas", contentPath: "/articles/physics/thermodynamics-statmech/6_3.md" },
+              { id: "6.4", title: "6.4: Blackbody Radiation and Photon Gas", description: "Planck distribution, Stefan-Boltzmann law, Wien's law, CMB", contentPath: "/articles/physics/thermodynamics-statmech/6_4.md" },
+              { id: "6.5", title: "6.5: Debye and Einstein Models of Solids", description: "Einstein heat capacity, Debye model, T³ law, Dulong-Petit law", contentPath: "/articles/physics/thermodynamics-statmech/6_5.md" }
+            ]
+          },
+          {
+            id: "7",
+            title: "Unit 7: Kinetic Theory and Transport Phenomena",
+            topics: [
+              { id: "7.1", title: "7.1: Kinetic Theory of Gases", description: "Pressure from collisions, RMS speed, equipartition theorem, effusion", contentPath: "/articles/physics/thermodynamics-statmech/7_1.md" },
+              { id: "7.2", title: "7.2: Maxwell-Boltzmann Distribution", description: "Velocity/speed distributions, most probable/mean/RMS speeds, energy distribution", contentPath: "/articles/physics/thermodynamics-statmech/7_2.md" },
+              { id: "7.3", title: "7.3: Collisions and Mean Free Path", description: "Collision cross section, mean free path, collision frequency, exponential distribution", contentPath: "/articles/physics/thermodynamics-statmech/7_3.md" },
+              { id: "7.4", title: "7.4: Transport Phenomena I: Diffusion and Viscosity", description: "Fick's laws, diffusion coefficient, viscosity, temperature dependence", contentPath: "/articles/physics/thermodynamics-statmech/7_4.md" }
             ]
           },
           {
