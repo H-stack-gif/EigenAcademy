@@ -316,11 +316,9 @@ export const courses = {
             title: "Unit 8: Sturm-Liouville Theory and Green’s Functions",
             topics: [
               { id: "8.1", title: "8.1: Sturm-Liouville Problems", description: "Eigenvalue problems with weight functions and orthogonality", contentPath: "/articles/partial-differential-equations/8_1.md" },
-              { id: "8.2", title: "8.2: Orthogonality of Eigenfunctions", description: "Inner products and completeness of eigenfunction sets", contentPath: "/articles/partial-differential-equations/8_2.md" },
-              { id: "8.3", title: "8.3: Eigenfunction Expansions", description: "Expanding functions using eigenfunction bases", contentPath: "/articles/partial-differential-equations/8_3.md" },
-              { id: "8.4", title: "8.4: Green’s Functions for ODEs", description: "Green's functions for ODE boundary value problems", contentPath: "/articles/partial-differential-equations/8_4.md" },
-              { id: "8.5", title: "8.5: Green’s Functions for PDEs", description: "Fundamental solutions and convolution with sources", contentPath: "/articles/partial-differential-equations/8_5.md" },
-              { id: "8.6", title: "8.6: Method of Images", description: "Solving PDEs with mirrored sources to satisfy boundary conditions", contentPath: "/articles/partial-differential-equations/8_6.md" }
+              { id: "8.2", title: "8.2: Eigenfunction Expansions", description: "Inner products and completeness of eigenfunction sets", contentPath: "/articles/partial-differential-equations/8_2.md" },
+              { id: "8.3", title: "8.3: Green's Functions for ODEs", description: "Expanding functions using eigenfunction bases", contentPath: "/articles/partial-differential-equations/8_3.md" },
+              { id: "8.4", title: "8.4: Green’s Functions for PDEs", description: "Green's functions for ODE boundary value problems", contentPath: "/articles/partial-differential-equations/8_4.md" },
             ]
           },
           {
