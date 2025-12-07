@@ -588,6 +588,86 @@ export const courses = {
         ]
       },
       {
+        id: "fluid-mechanics",
+        name: "Fluid Mechanics",
+        units: [
+          {
+            id: "1",
+            title: "Unit 1: Fluid Properties and Statics",
+            topics: [
+              { id: "1.1", title: "1.1: Continuum Hypothesis and Fluid Properties", description: "Continuum approximation, density and pressure as continuous fields, Newtonian and non-Newtonian fluids", contentPath: "/articles/physics/fluid-mechanics/1_1.md" },
+              { id: "1.2", title: "1.2: Viscosity and Non-Newtonian Fluids", description: "Molecular origins of viscosity, Newton's law of viscosity, constitutive relations for non-Newtonian fluids", contentPath: "/articles/physics/fluid-mechanics/1_2.md" },
+              { id: "1.3", title: "1.3: Fluid Statics and Pressure Distribution", description: "Hydrostatic equilibrium, pressure variation with depth, forces on submerged surfaces, Archimedes' principle", contentPath: "/articles/physics/fluid-mechanics/1_3.md" },
+              { id: "1.4", title: "1.4: Surface Tension and Capillarity", description: "Young-Laplace equation, contact angles and wetting, capillary rise", contentPath: "/articles/physics/fluid-mechanics/1_4.md" }
+            ]
+          },
+          {
+            id: "2",
+            title: "Unit 2: Fluid Kinematics and Conservation Laws",
+            topics: [
+              { id: "2.1", title: "2.1: Kinematics: Describing Fluid Motion", description: "Lagrangian vs. Eulerian descriptions, material derivative, streamlines, pathlines, and streaklines", contentPath: "/articles/physics/fluid-mechanics/2_1.md" },
+              { id: "2.2", title: "2.2: Rate-of-Strain and Vorticity", description: "Velocity gradient decomposition, strain rate and rotation, vorticity and circulation", contentPath: "/articles/physics/fluid-mechanics/2_2.md" },
+              { id: "2.3", title: "2.3: Conservation of Mass: Continuity Equation", description: "Reynolds transport theorem, continuity equation derivation, incompressibility condition", contentPath: "/articles/physics/fluid-mechanics/2_3.md" },
+              { id: "2.4", title: "2.4: Conservation of Momentum: Euler and Navier-Stokes Equations", description: "Euler equation for inviscid flow, Navier-Stokes equations with viscous stress, boundary conditions", contentPath: "/articles/physics/fluid-mechanics/2_4.md" },
+              { id: "2.5", title: "2.5: Conservation of Energy", description: "First law for flowing fluids, energy equation, viscous dissipation, Bernoulli preview", contentPath: "/articles/physics/fluid-mechanics/2_5.md" },
+              { id: "2.6", title: "2.6: Dimensional Analysis and Similarity", description: "Buckingham Pi theorem, Reynolds, Froude, and Mach numbers, dynamic similarity", contentPath: "/articles/physics/fluid-mechanics/2_6.md" }
+            ]
+          },
+          {
+            id: "3",
+            title: "Unit 3: Inviscid Flow and Potential Theory",
+            topics: [
+              { id: "3.1", title: "3.1: Bernoulli's Equation and Applications", description: "Bernoulli's principle, stagnation pressure, flow measurement applications", contentPath: "/articles/physics/fluid-mechanics/3_1.md" },
+              { id: "3.2", title: "3.2: Potential Flow Theory", description: "Irrotational flows, velocity potential, Laplace equation, stream function, elementary solutions", contentPath: "/articles/physics/fluid-mechanics/3_2.md" },
+              { id: "3.3", title: "3.3: Complex Potential and Conformal Mapping", description: "Complex potential, Cauchy-Riemann conditions, Joukowski transformation, Kutta-Joukowski theorem", contentPath: "/articles/physics/fluid-mechanics/3_3.md" },
+              { id: "3.4", title: "3.4: Vorticity Dynamics and Circulation", description: "Vorticity transport, Kelvin's circulation theorem, Helmholtz theorems, Biot-Savart law", contentPath: "/articles/physics/fluid-mechanics/3_4.md" },
+              { id: "3.5", title: "3.5: Lifting Surfaces and Added Mass", description: "Thin airfoil theory, Kutta condition, lifting line theory, added mass concept", contentPath: "/articles/physics/fluid-mechanics/3_5.md" }
+            ]
+          },
+          {
+            id: "4",
+            title: "Unit 4: Viscous Flow and Boundary Layers",
+            topics: [
+              { id: "4.1", title: "4.1: Exact Solutions to Navier-Stokes Equations", description: "Couette flow, Poiseuille flow, Stokes flow around sphere, similarity solutions", contentPath: "/articles/physics/fluid-mechanics/4_1.md" },
+              { id: "4.2", title: "4.2: Laminar Boundary Layers: Prandtl's Theory", description: "Prandtl's approximation, Blasius solution, von Kármán momentum integral", contentPath: "/articles/physics/fluid-mechanics/4_2.md" },
+              { id: "4.3", title: "4.3: Boundary Layer Separation and Drag", description: "Separation criterion, adverse pressure gradients, pressure drag vs. skin friction, drag crisis", contentPath: "/articles/physics/fluid-mechanics/4_3.md" },
+              { id: "4.4", title: "4.4: Viscous Flow in Pipes and Channels", description: "Laminar to turbulent transition, Hagen-Poiseuille law, friction factor, Moody diagram", contentPath: "/articles/physics/fluid-mechanics/4_4.md" },
+              { id: "4.5", title: "4.5: Lubrication Theory", description: "Reynolds lubrication equation, thin film flows, slider and squeeze film bearings", contentPath: "/articles/physics/fluid-mechanics/4_5.md" }
+            ]
+          },
+          {
+            id: "5",
+            title: "Unit 5: Turbulence and Instability",
+            topics: [
+              { id: "5.1", title: "5.1: Instability and Transition to Turbulence", description: "Linear stability analysis, Orr-Sommerfeld problem, Rayleigh criterion, Tollmien-Schlichting waves", contentPath: "/articles/physics/fluid-mechanics/5_1.md" },
+              { id: "5.2", title: "5.2: Reynolds Decomposition and Averaged Equations", description: "Mean and fluctuating components, RANS equations, Reynolds stress tensor, closure problem", contentPath: "/articles/physics/fluid-mechanics/5_2.md" },
+              { id: "5.3", title: "5.3: Turbulence Modeling", description: "Mixing length, eddy viscosity, k-ε model, Reynolds Stress Models, LES and DNS", contentPath: "/articles/physics/fluid-mechanics/5_3.md" },
+              { id: "5.4", title: "5.4: Energy Cascade and Kolmogorov Theory", description: "Richardson cascade, Kolmogorov microscales, -5/3 power law, isotropy at small scales", contentPath: "/articles/physics/fluid-mechanics/5_4.md" },
+              { id: "5.5", title: "5.5: Wall-Bounded Turbulence", description: "Turbulent boundary layer structure, law of the wall, velocity defect law, surface roughness effects", contentPath: "/articles/physics/fluid-mechanics/5_5.md" }
+            ]
+          },
+          {
+            id: "6",
+            title: "Unit 6: Compressible Flow",
+            topics: [
+              { id: "6.1", title: "6.1: Thermodynamics of Compressible Flow", description: "Ideal gas equation of state, speed of sound, Mach number, isentropic relations, stagnation properties", contentPath: "/articles/physics/fluid-mechanics/6_1.md" },
+              { id: "6.2", title: "6.2: One-Dimensional Isentropic Flow", description: "Area-velocity relation, de Laval nozzle, choked flow, critical area ratio", contentPath: "/articles/physics/fluid-mechanics/6_2.md" },
+              { id: "6.3", title: "6.3: Normal and Oblique Shock Waves", description: "Rankine-Hugoniot conditions, entropy increase, oblique shocks, detached shocks", contentPath: "/articles/physics/fluid-mechanics/6_3.md" },
+              { id: "6.4", title: "6.4: Expansion Waves and Prandtl-Meyer Flow", description: "Isentropic expansion fan, Prandtl-Meyer function, method of characteristics, Mach lines", contentPath: "/articles/physics/fluid-mechanics/6_4.md" },
+              { id: "6.5", title: "6.5: Quasi-One-Dimensional Flow with Friction and Heat Transfer", description: "Fanno flow with friction, Rayleigh flow with heat addition, thermal choking, h-s and T-s diagrams", contentPath: "/articles/physics/fluid-mechanics/6_5.md" },
+              { id: "6.6", title: "6.6: Multidimensional Supersonic Flow", description: "Linearized supersonic flow, Ackeret formula, shock-expansion theory, transonic area rule, hypersonic similarity", contentPath: "/articles/physics/fluid-mechanics/6_6.md" }
+            ]
+          },
+          {
+            id: "mock",
+            title: "Mock Exam",
+            topics: [
+              { id: "mock", title: "Fluid Mechanics Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/fluid-mechanics.md" }
+            ]
+          }
+        ]
+      },
+      {
         id: "atomic-molecular",
         name: "Atomic & Molecular Physics",
         subtitle: "Quantum basics for atoms and molecules",
