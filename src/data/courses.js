@@ -1,98 +1,8 @@
 export const courses = {
-  math: {
-    title: "Mathematics",
+  analyticMath: {
+    title: "Analytic Mathematics",
     color: "#FF6B6B",
     courses: [
-      {
-        id: "linear-algebra",
-        name: "Linear Algebra",
-        units: [
-          {
-            id: "1",
-            title: "Unit 1: Systems of Linear Equations and Matrices",
-            topics: [
-              { id: "1.1", title: "1.1: Systems of Linear Equations", description: "Introduction to solving systems of linear equations using algebraic and geometric interpretations", contentPath: "/articles/linear-algebra/1_1.md" },
-              { id: "1.2", title: "1.2: Row Reduction and Echelon Forms", description: "Gaussian elimination and reduced row echelon form for solving linear systems systematically", contentPath: "/articles/linear-algebra/1_2.md" },
-              { id: "1.3", title: "1.3: Matrix Operations", description: "Matrix addition, scalar multiplication, matrix multiplication, and transpose operations with their properties", contentPath: "/articles/linear-algebra/1_3.md" },
-              { id: "1.4", title: "1.4: Matrix Inverses", description: "Computing and applying matrix inverses to solve equations and understand invertibility conditions", contentPath: "/articles/linear-algebra/1_4.md" }
-            ]
-          },
-          {
-            id: "2",
-            title: "Unit 2: Vector Spaces",
-            topics: [
-              { id: "2.1", title: "2.1: Vector Spaces and Subspaces", description: "Abstract vector spaces, axioms, and identifying subspaces within vector spaces", contentPath: "/articles/linear-algebra/2_1.md" },
-              { id: "2.2", title: "2.2: Linear Independence", description: "Determining when sets of vectors are linearly independent or dependent using linear combinations", contentPath: "/articles/linear-algebra/2_2.md" },
-              { id: "2.3", title: "2.3: Bases and Dimension", description: "Finding bases for vector spaces and subspaces and computing their dimensions", contentPath: "/articles/linear-algebra/2_3.md" },
-              { id: "2.4", title: "2.4: Coordinate Systems", description: "Representing vectors in different coordinate systems using basis transformations and change of basis matrices", contentPath: "/articles/linear-algebra/2_4.md" }
-            ]
-          },
-          {
-            id: "3",
-            title: "Unit 3: Linear Transformations",
-            topics: [
-              { id: "3.1", title: "3.1: Introduction to Linear Transformations", description: "Defining and understanding linear transformations between vector spaces with matrix representations", contentPath: "/articles/linear-algebra/3_1.md" },
-              { id: "3.2", title: "3.2: Kernel and Range", description: "Finding the kernel (null space) and range (column space) of linear transformations and their properties", contentPath: "/articles/linear-algebra/3_2.md" },
-              { id: "3.3", title: "3.3: Composition and Invertibility", description: "Composing linear transformations and determining when a transformation is invertible", contentPath: "/articles/linear-algebra/3_3.md" }
-            ]
-          },
-          {
-            id: "4",
-            title: "Unit 4: Determinants",
-            topics: [
-              { id: "4.1", title: "4.1: Determinant Calculation", description: "Computing determinants using cofactor expansion, row reduction, and special matrix forms", contentPath: "/articles/linear-algebra/4_1.md" },
-              { id: "4.2", title: "4.2: Properties of Determinants", description: "Exploring determinant properties including multiplicativity, row operations, and transpose relationships", contentPath: "/articles/linear-algebra/4_2.md" },
-              { id: "4.3", title: "4.3: Geometric Interpretation", description: "Understanding determinants as volume scaling factors and their geometric significance in transformations", contentPath: "/articles/linear-algebra/4_3.md" }
-            ]
-          },
-          {
-            id: "5",
-            title: "Unit 5: Eigenvalues and Eigenvectors",
-            topics: [
-              { id: "5.1", title: "5.1: Eigenvalues and Eigenvectors", description: "Finding eigenvalues and eigenvectors of matrices using characteristic polynomials and eigenspaces", contentPath: "/articles/linear-algebra/5_1.md" },
-              { id: "5.2", title: "5.2: Diagonalization", description: "Diagonalizing matrices when possible and understanding the conditions for diagonalizability", contentPath: "/articles/linear-algebra/5_2.md" },
-              { id: "5.3", title: "5.3: Applications of Eigenvalues", description: "Applying eigenvalue theory to dynamical systems, differential equations, and data analysis problems", contentPath: "/articles/linear-algebra/5_3.md" }
-            ]
-          },
-          {
-            id: "6",
-            title: "Unit 6: Orthogonality and Least Squares",
-            topics: [
-              { id: "6.1", title: "6.1: Inner Products and Orthogonality", description: "Defining inner products, norms, and angles between vectors with orthogonality conditions", contentPath: "/articles/linear-algebra/6_1.md" },
-              { id: "6.2", title: "6.2: Orthogonal Projections", description: "Projecting vectors onto subspaces and finding closest approximations using orthogonal projections", contentPath: "/articles/linear-algebra/6_2.md" },
-              { id: "6.3", title: "6.3: Orthogonal Bases and Gram-Schmidt", description: "Constructing orthonormal bases from arbitrary bases using the Gram-Schmidt orthogonalization process", contentPath: "/articles/linear-algebra/6_3.md" },
-              { id: "6.4", title: "6.4: QR Factorization", description: "Decomposing matrices into orthogonal and upper triangular factors for computational applications", contentPath: "/articles/linear-algebra/6_4.md" },
-              { id: "6.5", title: "6.5: Least Squares Problems", description: "Solving overdetermined systems and regression problems using least squares minimization techniques", contentPath: "/articles/linear-algebra/6_5.md" }
-            ]
-          },
-          {
-            id: "7",
-            title: "Unit 7: Symmetric Matrices and Quadratic Forms",
-            topics: [
-              { id: "7.1", title: "7.1: Symmetric Matrices", description: "Properties of symmetric matrices including real eigenvalues and orthogonal eigenvector sets", contentPath: "/articles/linear-algebra/7_1.md" },
-              { id: "7.2", title: "7.2: Quadratic Forms", description: "Analyzing quadratic forms, their matrix representations, and classification as positive or negative definite", contentPath: "/articles/linear-algebra/7_2.md" },
-              { id: "7.3", title: "7.3: Applications of Spectral Decomposition", description: "Using spectral theorem for symmetric matrices in optimization, geometry, and principal component analysis", contentPath: "/articles/linear-algebra/7_3.md" }
-            ]
-          },
-          {
-            id: "8",
-            title: "Unit 8: Additional Topics and Applications",
-            topics: [
-              { id: "8.1", title: "8.1: Complex Vector Spaces", description: "Extending linear algebra concepts to complex vector spaces with complex eigenvalues and inner products", contentPath: "/articles/linear-algebra/8_1.md" },
-              { id: "8.2", title: "8.2: Singular Value Decomposition", description: "SVD factorization of matrices for data compression, dimensionality reduction, and numerical stability", contentPath: "/articles/linear-algebra/8_2.md" },
-              { id: "8.3", title: "8.3: Linear Programming (Introductory)", description: "Introduction to optimization problems with linear constraints using simplex method fundamentals", contentPath: "/articles/linear-algebra/8_3.md" },
-              { id: "8.4", title: "8.4: Vector Calculus Connections", description: "Connecting linear algebra to multivariable calculus through gradients, Jacobians, and directional derivatives", contentPath: "/articles/linear-algebra/8_4.md" }
-            ]
-          },
-          {
-            id: "mock",
-            title: "Mock Exam",
-            topics: [
-              { id: "mock", title: "Linear Algebra Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/linear-algebra.md" }
-            ]
-          }
-        ]
-      },
       {
         id: "odes",
         name: "Ordinary Differential Equations",
@@ -390,11 +300,170 @@ export const courses = {
             ]
           }
         ]
+      },
+      {
+        id: "real-analysis",
+        name: "Real Analysis",
+        subtitle: "Rigorous foundations of calculus",
+        units: [
+          {
+            id: "1",
+            title: "Unit 1: Real Numbers and Sequences",
+            topics: [
+              { id: "1.1", title: "1.1: Real Numbers and Completeness", description: "Axioms of real numbers, supremum and infimum, completeness axiom", contentPath: "/articles/real-analysis/1_1.md" }
+            ]
+          },
+          {
+            id: "mock",
+            title: "Mock Exam",
+            topics: [
+              { id: "mock", title: "Real Analysis Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/real-analysis.md" }
+            ]
+          }
+        ]
       }
     ]
   },
-  physics: {
-    title: "Physics",
+  algebraicMath: {
+    title: "Algebraic Mathematics",
+    color: "#8E44FF",
+    courses: [
+      {
+        id: "linear-algebra",
+        name: "Linear Algebra",
+        units: [
+          {
+            id: "1",
+            title: "Unit 1: Systems of Linear Equations and Matrices",
+            topics: [
+              { id: "1.1", title: "1.1: Systems of Linear Equations", description: "Introduction to solving systems of linear equations using algebraic and geometric interpretations", contentPath: "/articles/linear-algebra/1_1.md" },
+              { id: "1.2", title: "1.2: Row Reduction and Echelon Forms", description: "Gaussian elimination and reduced row echelon form for solving linear systems systematically", contentPath: "/articles/linear-algebra/1_2.md" },
+              { id: "1.3", title: "1.3: Matrix Operations", description: "Matrix addition, scalar multiplication, matrix multiplication, and transpose operations with their properties", contentPath: "/articles/linear-algebra/1_3.md" },
+              { id: "1.4", title: "1.4: Matrix Inverses", description: "Computing and applying matrix inverses to solve equations and understand invertibility conditions", contentPath: "/articles/linear-algebra/1_4.md" }
+            ]
+          },
+          {
+            id: "2",
+            title: "Unit 2: Vector Spaces",
+            topics: [
+              { id: "2.1", title: "2.1: Vector Spaces and Subspaces", description: "Abstract vector spaces, axioms, and identifying subspaces within vector spaces", contentPath: "/articles/linear-algebra/2_1.md" },
+              { id: "2.2", title: "2.2: Linear Independence", description: "Determining when sets of vectors are linearly independent or dependent using linear combinations", contentPath: "/articles/linear-algebra/2_2.md" },
+              { id: "2.3", title: "2.3: Bases and Dimension", description: "Finding bases for vector spaces and subspaces and computing their dimensions", contentPath: "/articles/linear-algebra/2_3.md" },
+              { id: "2.4", title: "2.4: Coordinate Systems", description: "Representing vectors in different coordinate systems using basis transformations and change of basis matrices", contentPath: "/articles/linear-algebra/2_4.md" }
+            ]
+          },
+          {
+            id: "3",
+            title: "Unit 3: Linear Transformations",
+            topics: [
+              { id: "3.1", title: "3.1: Introduction to Linear Transformations", description: "Defining and understanding linear transformations between vector spaces with matrix representations", contentPath: "/articles/linear-algebra/3_1.md" },
+              { id: "3.2", title: "3.2: Kernel and Range", description: "Finding the kernel (null space) and range (column space) of linear transformations and their properties", contentPath: "/articles/linear-algebra/3_2.md" },
+              { id: "3.3", title: "3.3: Composition and Invertibility", description: "Composing linear transformations and determining when a transformation is invertible", contentPath: "/articles/linear-algebra/3_3.md" }
+            ]
+          },
+          {
+            id: "4",
+            title: "Unit 4: Determinants",
+            topics: [
+              { id: "4.1", title: "4.1: Determinant Calculation", description: "Computing determinants using cofactor expansion, row reduction, and special matrix forms", contentPath: "/articles/linear-algebra/4_1.md" },
+              { id: "4.2", title: "4.2: Properties of Determinants", description: "Exploring determinant properties including multiplicativity, row operations, and transpose relationships", contentPath: "/articles/linear-algebra/4_2.md" },
+              { id: "4.3", title: "4.3: Geometric Interpretation", description: "Understanding determinants as volume scaling factors and their geometric significance in transformations", contentPath: "/articles/linear-algebra/4_3.md" }
+            ]
+          },
+          {
+            id: "5",
+            title: "Unit 5: Eigenvalues and Eigenvectors",
+            topics: [
+              { id: "5.1", title: "5.1: Eigenvalues and Eigenvectors", description: "Finding eigenvalues and eigenvectors of matrices using characteristic polynomials and eigenspaces", contentPath: "/articles/linear-algebra/5_1.md" },
+              { id: "5.2", title: "5.2: Diagonalization", description: "Diagonalizing matrices when possible and understanding the conditions for diagonalizability", contentPath: "/articles/linear-algebra/5_2.md" },
+              { id: "5.3", title: "5.3: Applications of Eigenvalues", description: "Applying eigenvalue theory to dynamical systems, differential equations, and data analysis problems", contentPath: "/articles/linear-algebra/5_3.md" }
+            ]
+          },
+          {
+            id: "6",
+            title: "Unit 6: Orthogonality and Least Squares",
+            topics: [
+              { id: "6.1", title: "6.1: Inner Products and Orthogonality", description: "Defining inner products, norms, and angles between vectors with orthogonality conditions", contentPath: "/articles/linear-algebra/6_1.md" },
+              { id: "6.2", title: "6.2: Orthogonal Projections", description: "Projecting vectors onto subspaces and finding closest approximations using orthogonal projections", contentPath: "/articles/linear-algebra/6_2.md" },
+              { id: "6.3", title: "6.3: Orthogonal Bases and Gram-Schmidt", description: "Constructing orthonormal bases from arbitrary bases using the Gram-Schmidt orthogonalization process", contentPath: "/articles/linear-algebra/6_3.md" },
+              { id: "6.4", title: "6.4: QR Factorization", description: "Decomposing matrices into orthogonal and upper triangular factors for computational applications", contentPath: "/articles/linear-algebra/6_4.md" },
+              { id: "6.5", title: "6.5: Least Squares Problems", description: "Solving overdetermined systems and regression problems using least squares minimization techniques", contentPath: "/articles/linear-algebra/6_5.md" }
+            ]
+          },
+          {
+            id: "7",
+            title: "Unit 7: Symmetric Matrices and Quadratic Forms",
+            topics: [
+              { id: "7.1", title: "7.1: Symmetric Matrices", description: "Properties of symmetric matrices including real eigenvalues and orthogonal eigenvector sets", contentPath: "/articles/linear-algebra/7_1.md" },
+              { id: "7.2", title: "7.2: Quadratic Forms", description: "Analyzing quadratic forms, their matrix representations, and classification as positive or negative definite", contentPath: "/articles/linear-algebra/7_2.md" },
+              { id: "7.3", title: "7.3: Applications of Spectral Decomposition", description: "Using spectral theorem for symmetric matrices in optimization, geometry, and principal component analysis", contentPath: "/articles/linear-algebra/7_3.md" }
+            ]
+          },
+          {
+            id: "8",
+            title: "Unit 8: Additional Topics and Applications",
+            topics: [
+              { id: "8.1", title: "8.1: Complex Vector Spaces", description: "Extending linear algebra concepts to complex vector spaces with complex eigenvalues and inner products", contentPath: "/articles/linear-algebra/8_1.md" },
+              { id: "8.2", title: "8.2: Singular Value Decomposition", description: "SVD factorization of matrices for data compression, dimensionality reduction, and numerical stability", contentPath: "/articles/linear-algebra/8_2.md" },
+              { id: "8.3", title: "8.3: Linear Programming (Introductory)", description: "Introduction to optimization problems with linear constraints using simplex method fundamentals", contentPath: "/articles/linear-algebra/8_3.md" },
+              { id: "8.4", title: "8.4: Vector Calculus Connections", description: "Connecting linear algebra to multivariable calculus through gradients, Jacobians, and directional derivatives", contentPath: "/articles/linear-algebra/8_4.md" }
+            ]
+          },
+          {
+            id: "mock",
+            title: "Mock Exam",
+            topics: [
+              { id: "mock", title: "Linear Algebra Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/linear-algebra.md" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "tensor-calculus",
+        name: "Tensor Calculus",
+        subtitle: "Differential geometry and tensor analysis",
+        units: [
+          {
+            id: "1",
+            title: "Unit 1: Introduction to Tensors",
+            topics: [
+              { id: "1.1", title: "1.1: Introduction to Tensors and Index Notation", description: "Tensor basics, Einstein summation convention, contravariant and covariant components", contentPath: "/articles/tensor-calculus/1_1.md" }
+            ]
+          },
+          {
+            id: "mock",
+            title: "Mock Exam",
+            topics: [
+              { id: "mock", title: "Tensor Calculus Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/tensor-calculus.md" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "group-theory",
+        name: "Group Theory",
+        subtitle: "Algebraic structures and symmetry",
+        units: [
+          {
+            id: "1",
+            title: "Unit 1: Groups and Basic Properties",
+            topics: [
+              { id: "1.1", title: "1.1: Groups and Basic Properties", description: "Definition of groups, examples, basic theorems, subgroups", contentPath: "/articles/group-theory/1_1.md" }
+            ]
+          },
+          {
+            id: "mock",
+            title: "Mock Exam",
+            topics: [
+              { id: "mock", title: "Group Theory Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/group-theory.md" }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  classicalPhysics: {
+    title: "Classical Physics",
     color: "#3A7CA5",
     courses: [
       {
@@ -723,7 +792,13 @@ export const courses = {
             ]
           }
         ]
-      },
+      }
+    ]
+  },
+  modernPhysics: {
+    title: "Modern Physics",
+    color: "#00A3A6",
+    courses: [
       {
         id: "quantum-mechanics-1",
         name: "Quantum Mechanics 1",
@@ -861,6 +936,48 @@ export const courses = {
             ]
           }
         ]
+      },
+      {
+        id: "special-relativity",
+        name: "Special Relativity",
+        subtitle: "Spacetime and relativistic mechanics",
+        units: [
+          {
+            id: "1",
+            title: "Unit 1: Foundations of Special Relativity",
+            topics: [
+              { id: "1.1", title: "1.1: Lorentz Transformations and Spacetime", description: "Postulates of special relativity, Lorentz transformations, spacetime diagrams", contentPath: "/articles/physics/special-relativity/1_1.md" }
+            ]
+          },
+          {
+            id: "mock",
+            title: "Mock Exam",
+            topics: [
+              { id: "mock", title: "Special Relativity Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/special-relativity.md" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "quantum-field-theory",
+        name: "Quantum Field Theory",
+        subtitle: "Quantum mechanics of fields and particles",
+        units: [
+          {
+            id: "1",
+            title: "Unit 1: Canonical Quantization",
+            topics: [
+              { id: "1.1", title: "1.1: Canonical Quantization and Free Fields", description: "Field quantization, creation and annihilation operators, Fock space", contentPath: "/articles/physics/quantum-field-theory/1_1.md" }
+            ]
+          },
+          {
+            id: "mock",
+            title: "Mock Exam",
+            topics: [
+              { id: "mock", title: "Quantum Field Theory Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/quantum-field-theory.md" }
+            ]
+          }
+        ]
       }
     ]
   },
@@ -937,38 +1054,38 @@ export const courses = {
         ]
       },
       {
-        id: "solid-state-chemistry",
-        name: "Solid State Chemistry",
-        subtitle: "Crystal structures, bonding, and solid properties",
+        id: "organic-chemistry-2",
+        name: "Organic Chemistry 2",
+        subtitle: "Advanced organic reactions and synthesis",
         units: [
           {
             id: "1",
-            title: "Unit 1: Crystal and Solid Structure",
+            title: "Unit 1: Advanced Reactions",
             topics: [
-              { id: "1.1", title: "1.1: Crystal Lattices and Unit Cells", description: "Bravais lattices, unit cell types and basic diffraction concepts", contentPath: "/articles/chemistry/solid-state-chemistry/1_1.md" },
-              { id: "1.2", title: "1.2: Bonding and Band Theory", description: "Overview of bonding in solids and basic band theory", contentPath: "/articles/chemistry/solid-state-chemistry/1_2.md" }
+              { id: "1.1", title: "1.1: Conjugated Systems and Diels-Alder", description: "Conjugation, resonance, and cycloaddition reactions", contentPath: "/articles/chemistry/organic-chemistry-2/1_1.md" },
+              { id: "1.2", title: "1.2: Aromatic Chemistry", description: "Electrophilic aromatic substitution and reactions", contentPath: "/articles/chemistry/organic-chemistry-2/1_2.md" }
             ]
           },
           {
             id: "2",
-            title: "Unit 2: Material Properties",
+            title: "Unit 2: Carbonyl Chemistry",
             topics: [
-              { id: "2.1", title: "2.1: Imperfections in Solids" },
-              { id: "2.2", title: "2.2: Mechanical Properties" }
+              { id: "2.1", title: "2.1: Aldehydes and Ketones" },
+              { id: "2.2", title: "2.2: Carboxylic Acids and Derivatives" }
             ]
           },
           {
             id: "3",
-            title: "Unit 3: Phase Diagrams",
+            title: "Unit 3: Synthesis and Mechanisms",
             topics: [
-              { id: "3.1", title: "3.1: Phase Diagrams" }
+              { id: "3.1", title: "3.1: Retrosynthetic Analysis" }
             ]
           },
           {
             id: "mock",
             title: "Mock Exam",
             topics: [
-              { id: "mock", title: "Solid State Chemistry Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/solid-state-chemistry.md" }
+              { id: "mock", title: "Organic Chemistry 2 Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/organic-chemistry-2.md" }
             ]
           }
         ]

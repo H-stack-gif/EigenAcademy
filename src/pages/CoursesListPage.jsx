@@ -6,9 +6,9 @@ function CoursesListPage() {
   return (
     <div className="courses-list-page">
       <div className="courses-list-container">
-        {/* Math Courses */}
+        {/* Analytic Math Courses */}
         <div className="course-list-section">
-          {courses.math.courses.map((course) => (
+          {courses.analyticMath.courses.map((course) => (
             <Link 
               key={course.id} 
               to={`/course/${course.id}/1.1`}
@@ -19,13 +19,39 @@ function CoursesListPage() {
           ))}
         </div>
 
-        {/* Physics Courses */}
+        {/* Algebraic Math Courses */}
         <div className="course-list-section">
-          {courses.physics.courses.map((course) => (
+          {courses.algebraicMath.courses.map((course) => (
+            <Link 
+              key={course.id} 
+              to={`/course/${course.id}/1.1`}
+              className="course-list-title algebraic-math-gradient"
+            >
+              {course.name}
+            </Link>
+          ))}
+        </div>
+
+        {/* Classical Physics Courses */}
+        <div className="course-list-section">
+          {courses.classicalPhysics.courses.map((course) => (
             <Link 
               key={course.id} 
               to={`/course/${course.id}/1.1`}
               className="course-list-title physics-gradient"
+            >
+              {course.name}
+            </Link>
+          ))}
+        </div>
+
+        {/* Modern Physics Courses */}
+        <div className="course-list-section">
+          {courses.modernPhysics.courses.map((course) => (
+            <Link 
+              key={course.id} 
+              to={`/course/${course.id}/1.1`}
+              className="course-list-title modern-physics-gradient"
             >
               {course.name}
             </Link>

@@ -1,5 +1,5 @@
-# Solid State Chemistry Mock Exam
+# Organic Chemistry 2 Mock Exam
 
-This is a placeholder for the Solid State Chemistry mock exam.
+This is a placeholder for the Organic Chemistry 2 mock exam.
 
 Replace with your full mock exam questions and solutions.

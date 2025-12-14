@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import Homepage from './pages/Homepage';
 import CoursePage from './pages/CoursePage';
@@ -9,22 +9,21 @@ import { courses } from './data/courses';
 import './App.css';
 // ColoredLetters usage removed — using plain titles
 
-function App() {
+function AppContent() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <Router>
-      <div className="app">
-        {/* Hamburger menu button */}
-        <button 
-          className="hamburger-menu" 
-          onClick={() => setSidebarOpen(!sidebarOpen)}
-          aria-label="Toggle navigation menu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+    <div className="app">
+      {/* Hamburger menu button */}
+      <button 
+        className="hamburger-menu" 
+        onClick={() => setSidebarOpen(!sidebarOpen)}
+        aria-label="Toggle navigation menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
         {/* Sidebar overlay */}
         {sidebarOpen && (
@@ -74,6 +73,13 @@ function App() {
         </Routes>
         </ErrorBoundary>
       </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 }

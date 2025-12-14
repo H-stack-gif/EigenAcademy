@@ -63,10 +63,14 @@ function Homepage() {
             className="category-section"
             style={{
               ['--accent']: category.color,
-              ['--border']: key === 'math'
+              ['--border']: key === 'analyticMath'
                 ? 'linear-gradient(135deg, rgba(255,107,107,0.55), rgba(142,68,255,0.55))'
-                : key === 'physics'
+                : key === 'algebraicMath'
+                ? 'linear-gradient(135deg, rgba(142,68,255,0.55), rgba(255,215,0,0.55))'
+                : key === 'classicalPhysics'
                 ? 'linear-gradient(135deg, rgba(58,124,165,0.55), rgba(142,68,255,0.55))'
+                : key === 'modernPhysics'
+                ? 'linear-gradient(135deg, rgba(0,206,209,0.55), rgba(142,68,255,0.55))'
                 : 'linear-gradient(135deg, rgba(67,185,127,0.55), rgba(142,68,255,0.55))'
             }}>
             <h2 className="category-title">
@@ -163,7 +167,7 @@ function Ticker() {
     'Thermodynamics & StatMech',
     'Heat and Mass Transfer',
     'Physical Chemistry',
-    'Solid State Chemistry',
+    'Organic Chemistry 2',
     'Organic Chemistry',
     'Material Science'
   ];

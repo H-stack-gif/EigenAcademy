@@ -149,8 +149,8 @@
 
 .hero-top-left {
   position: absolute;
-  top: -37px; /* just below the 80px ticker bar + small gap */
-  right: -185px;
+  top: 2rem;
+  right: calc(48px + 2.5rem);
   z-index: 1100;
 }
 
@@ -255,7 +255,7 @@
   padding-bottom: 2px;
 }
 
-.mock-exam-link[data-category="math"] {
+.mock-exam-link[data-category="analyticMath"] {
   background: linear-gradient(135deg, rgba(255,107,107,1), rgba(142,68,255,1));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -263,12 +263,28 @@
   border-image: linear-gradient(135deg, rgba(255,107,107,1), rgba(142,68,255,1)) 1;
 }
 
-.mock-exam-link[data-category="physics"] {
+.mock-exam-link[data-category="algebraicMath"] {
+  background: linear-gradient(135deg, rgba(142,68,255,1), rgba(255,215,0,1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border-image: linear-gradient(135deg, rgba(142,68,255,1), rgba(255,215,0,1)) 1;
+}
+
+.mock-exam-link[data-category="classicalPhysics"] {
   background: linear-gradient(135deg, rgba(58,124,165,1), rgba(142,68,255,1));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   border-image: linear-gradient(135deg, rgba(58,124,165,1), rgba(142,68,255,1)) 1;
+}
+
+.mock-exam-link[data-category="modernPhysics"] {
+  background: linear-gradient(135deg, rgba(0,206,209,1), rgba(142,68,255,1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border-image: linear-gradient(135deg, rgba(0,206,209,1), rgba(142,68,255,1)) 1;
 }
 
 .mock-exam-link[data-category="chemistry"] {

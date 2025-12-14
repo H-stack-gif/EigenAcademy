@@ -147,8 +147,8 @@
   padding-bottom: 0.35rem;
 }
 
-/* Math gradient (red to purple) */
-.sidebar-course-link[data-category="math"] {
+/* Analytic Math gradient (red to purple) */
+.sidebar-course-link[data-category="analyticMath"] {
   background: linear-gradient(135deg, rgba(255,107,107,1), rgba(142,68,255,1));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -157,14 +157,34 @@
   border-image: linear-gradient(135deg, rgba(255,107,107,1), rgba(142,68,255,1)) 1;
 }
 
-/* Physics gradient (blue to purple) */
-.sidebar-course-link[data-category="physics"] {
+/* Algebraic Math gradient (purple to yellow) */
+.sidebar-course-link[data-category="algebraicMath"] {
+  background: linear-gradient(135deg, rgba(142,68,255,1), rgba(255,215,0,1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(135deg, rgba(142,68,255,1), rgba(255,215,0,1)) 1;
+}
+
+/* Classical Physics gradient (blue to purple) */
+.sidebar-course-link[data-category="classicalPhysics"] {
   background: linear-gradient(135deg, rgba(58,124,165,1), rgba(142,68,255,1));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   border-bottom: 2px solid transparent;
   border-image: linear-gradient(135deg, rgba(58,124,165,1), rgba(142,68,255,1)) 1;
+}
+
+/* Modern Physics gradient (cyan to purple) */
+.sidebar-course-link[data-category="modernPhysics"] {
+  background: linear-gradient(135deg, rgba(0,206,209,1), rgba(142,68,255,1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(135deg, rgba(0,206,209,1), rgba(142,68,255,1)) 1;
 }
 
 /* Chemistry gradient (green to purple) */
