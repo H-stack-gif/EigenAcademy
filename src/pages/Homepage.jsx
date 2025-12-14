@@ -57,7 +57,7 @@ function Homepage() {
 
         <div className="additional-text">
           <p>Text books included under course title. Problem sets and exams are not.</p>
-          <p>U1 - Lower to Middle undergraduate. U2 - Middle to Upper undergraduate. G1 - Upper undergraduate to Lower graduate. G2 - Lower to Middle graduate.</p>
+          <p>1 - Lower to Middle undergraduate. 2 - Middle to Upper undergraduate. 3 - Upper undergraduate to Lower graduate. 4 - Lower to Middle graduate.</p>
         </div>
       </header>
 
@@ -85,6 +85,7 @@ function Homepage() {
             <div className="courses-grid">
               {category.courses.map((course) => (
                 <div key={course.id} className="course-card">
+                  <div className="course-badge" data-category={key}>{course.badge}</div>
                   <Link
                     to={`/course/${course.id}`}
                     className="course-link"

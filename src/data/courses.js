@@ -4,9 +4,82 @@ export const courses = {
     color: "#FF6B6B",
     courses: [
       {
+        id: "multivariable-calculus",
+        name: "Multivariable Calculus",
+        subtitle: "Multivariable Calculus",
+        badge: "1",
+        units: [
+          {
+            id: "1",
+            title: "Unit 1: First-Order Differential Equations",
+            topics: [
+              { id: "1.1", title: "1.1: Introduction and Direction Fields", description: "Introducing differential equations with graphical solution methods using direction fields and slope fields", contentPath: "/articles/odes/1_1.md" },
+              { id: "1.2", title: "1.2: Separable Equations", description: "Solving first-order differential equations by separating variables and integrating both sides", contentPath: "/articles/odes/1_2.md" },
+              { id: "1.3", title: "1.3: Linear First-Order Equations", description: "Solving linear first-order ODEs using integrating factors and analyzing their solutions", contentPath: "/articles/odes/1_3.md" },
+              { id: "1.4", title: "1.4: Exact Equations and Substitutions", description: "Identifying and solving exact differential equations and using substitution methods for nonlinear equations", contentPath: "/articles/odes/1_4.md" }
+            ]
+          },
+          {
+            id: "2",
+            title: "Unit 2: Second-Order Linear Differential Equations",
+            topics: [
+              { id: "2.1", title: "2.1: Homogeneous Equations with Constant Coefficients", description: "Solving homogeneous second-order linear ODEs using characteristic equations and exponential solutions", contentPath: "/articles/odes/2_1.md" },
+              { id: "2.2", title: "2.2: Method of Undetermined Coefficients", description: "Finding particular solutions to nonhomogeneous equations by guessing solution forms based on forcing functions", contentPath: "/articles/odes/2_2.md" },
+              { id: "2.3", title: "2.3: Variation of Parameters", description: "General method for finding particular solutions to nonhomogeneous linear ODEs using parameter variation", contentPath: "/articles/odes/2_3.md" },
+              { id: "2.4", title: "2.4: Applications: Mechanical and Electrical Systems", description: "Modeling spring-mass systems, RLC circuits, and damped oscillations using second-order differential equations", contentPath: "/articles/odes/2_4.md" }
+            ]
+          },
+          {
+            id: "3",
+            title: "Unit 3: Systems of Differential Equations",
+            topics: [
+              { id: "3.1", title: "3.1: Systems and Matrix Form", description: "Representing systems of first-order ODEs in matrix form and solving using eigenvalues and eigenvectors", contentPath: "/articles/odes/3_1.md" },
+              { id: "3.2", title: "3.2: Phase Plane Analysis", description: "Visualizing solution trajectories in the phase plane and classifying equilibrium points of linear systems", contentPath: "/articles/odes/3_2.md" },
+              { id: "3.3", title: "3.3: Nonlinear Systems and Linearization", description: "Analyzing nonlinear systems by linearizing near equilibrium points and studying stability behavior", contentPath: "/articles/odes/3_3.md" }
+            ]
+          },
+          {
+            id: "4",
+            title: "Unit 4: Laplace Transforms",
+            topics: [
+              { id: "4.1", title: "4.1: Laplace Transform Definition and Properties", description: "Defining the Laplace transform and exploring linearity, shifting, and differentiation properties", contentPath: "/articles/odes/4_1.md" },
+              { id: "4.2", title: "4.2: Inverse Laplace Transforms", description: "Computing inverse Laplace transforms using partial fractions and transform tables", contentPath: "/articles/odes/4_2.md" },
+              { id: "4.3", title: "4.3: Solving IVPs with Laplace Transforms", description: "Applying Laplace transforms to solve initial value problems for linear differential equations", contentPath: "/articles/odes/4_3.md" },
+              { id: "4.4", title: "4.4: Step Functions and Impulses", description: "Modeling discontinuous forcing functions using unit step functions and Dirac delta impulses", contentPath: "/articles/odes/4_4.md" }
+            ]
+          },
+          {
+            id: "5",
+            title: "Unit 5: Series Solutions and Special Functions",
+            topics: [
+              { id: "5.1", title: "5.1: Power Series Solutions", description: "Finding series solutions to differential equations by assuming power series forms and matching coefficients", contentPath: "/articles/odes/5_1.md" },
+              { id: "5.2", title: "5.2: Frobenius Method", description: "Extending power series methods to equations with singular points using the Frobenius technique", contentPath: "/articles/odes/5_2.md" },
+              { id: "5.3", title: "5.3: Bessel and Legendre Equations", description: "Studying special functions arising from Bessel and Legendre differential equations in physics and engineering", contentPath: "/articles/odes/5_3.md" }
+            ]
+          },
+          {
+            id: "6",
+            title: "Unit 6: Numerical Methods and Modeling",
+            topics: [
+              { id: "6.1", title: "6.1: Euler's Method", description: "Approximating solutions to differential equations numerically using simple Euler's method with error analysis", contentPath: "/articles/odes/6_1.md" },
+              { id: "6.2", title: "6.2: Runge-Kutta Methods", description: "Higher-order numerical methods including RK2 and RK4 for improved accuracy in solving ODEs", contentPath: "/articles/odes/6_2.md" },
+              { id: "6.3", title: "6.3: Mathematical Modeling", description: "Building and analyzing mathematical models for real-world phenomena using differential equations", contentPath: "/articles/odes/6_3.md" }
+            ]
+          },
+          {
+            id: "mock",
+            title: "Mock Exam",
+            topics: [
+              { id: "mock", title: "ODEs Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/odes.md" }
+            ]
+          }
+        ]
+      },
+      {
         id: "odes",
         name: "Ordinary Differential Equations",
         subtitle: "Ordinary Differential Equations",
+        badge: "2",
         units: [
           {
             id: "1",
@@ -78,6 +151,7 @@ export const courses = {
         id: "complex-analysis",
         name: "Complex Analysis",
         subtitle: "Complex Analysis",
+        badge: "3",
         units: [
           {
             id: "1",
@@ -152,6 +226,7 @@ export const courses = {
         id: "partial-differential-equations",
         name: "Partial Differential Equations",
         subtitle: "Heat, Wave, Laplace equations and solution methods",
+        badge: "3",
         units: [
           {
             id: "1",
@@ -243,71 +318,10 @@ export const courses = {
         ]
       },
       {
-        id: "multivariable-calculus",
-        name: "Multivariable Calculus",
-        subtitle: "Multivariable Calculus",
-        units: [
-          {
-            id: "mock",
-            title: "Mock Exam",
-            topics: [
-              { id: "mock", title: "Multivariable Calculus Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/multivariable-calculus.md" }
-            ]
-          },
-          {
-            id: "1",
-            title: "Unit 1: Vectors and the Geometry of Space",
-            topics: [
-              { id: "1.1", title: "1.1: Vectors in Space", description: "Three-dimensional vectors, vector operations, magnitude, and unit vectors in Cartesian coordinates", contentPath: "/articles/multivariable-calculus/1_1.md" },
-              { id: "1.2", title: "1.2: Dot Product and Cross Product", description: "Computing dot products for projections and angles, and cross products for orthogonal vectors and areas", contentPath: "/articles/multivariable-calculus/1_2.md" },
-              { id: "1.3", title: "1.3: Lines, Planes, and Surfaces", description: "Equations of lines and planes in 3D space, and visualizing quadric surfaces and level sets", contentPath: "/articles/multivariable-calculus/1_3.md" }
-            ]
-          },
-          {
-            id: "2",
-            title: "Unit 2: Vector-Valued Functions",
-            topics: [
-              { id: "2.1", title: "2.1: Curves and Parametrizations", description: "Parametric curves in space, position vectors, and representing motion along curves", contentPath: "/articles/multivariable-calculus/2_1.md" },
-              { id: "2.2", title: "2.2: Derivatives and Integrals", description: "Differentiating and integrating vector-valued functions to find velocity, acceleration, and displacement", contentPath: "/articles/multivariable-calculus/2_2.md" },
-              { id: "2.3", title: "2.3: Arc Length and Curvature", description: "Computing arc length of space curves and measuring curvature using tangent and normal vectors", contentPath: "/articles/multivariable-calculus/2_3.md" }
-            ]
-          },
-          {
-            id: "3",
-            title: "Unit 3: Partial Derivatives",
-            topics: [
-              { id: "3.1", title: "3.1: Functions of Several Variables", description: "Multivariable functions, domains, graphs, level curves, and contour plots for visualization", contentPath: "/articles/multivariable-calculus/3_1.md" },
-              { id: "3.2", title: "3.2: Partial Derivatives", description: "Computing partial derivatives with respect to each variable and interpreting their geometric meaning", contentPath: "/articles/multivariable-calculus/3_2.md" },
-              { id: "3.3", title: "3.3: Chain Rule and Directional Derivatives", description: "Multivariable chain rule for composite functions and computing directional derivatives using gradients", contentPath: "/articles/multivariable-calculus/3_3.md" },
-              { id: "3.4", title: "3.4: Optimization and Lagrange Multipliers", description: "Finding extrema of multivariable functions using critical points and constrained optimization with Lagrange multipliers", contentPath: "/articles/multivariable-calculus/3_4.md" }
-            ]
-          },
-          {
-            id: "4",
-            title: "Unit 4: Multiple Integrals",
-            topics: [
-              { id: "4.1", title: "4.1: Double Integrals", description: "Evaluating double integrals over rectangular and general regions to compute volumes and areas", contentPath: "/articles/multivariable-calculus/4_1.md" },
-              { id: "4.2", title: "4.2: Double Integrals in Polar Coordinates", description: "Converting to polar coordinates for circular and radial symmetry in double integration problems", contentPath: "/articles/multivariable-calculus/4_2.md" },
-              { id: "4.3", title: "4.3: Triple Integrals", description: "Computing triple integrals over three-dimensional regions for volume, mass, and center of mass calculations", contentPath: "/articles/multivariable-calculus/4_3.md" },
-              { id: "4.4", title: "4.4: Cylindrical and Spherical Coordinates", description: "Using cylindrical and spherical coordinate systems to simplify triple integrals with symmetry", contentPath: "/articles/multivariable-calculus/4_4.md" }
-            ]
-          },
-          {
-            id: "5",
-            title: "Unit 5: Vector Calculus",
-            topics: [
-              { id: "5.1", title: "5.1: Vector Fields", description: "Understanding vector fields, conservative fields, and potential functions in two and three dimensions", contentPath: "/articles/multivariable-calculus/5_1.md" },
-              { id: "5.2", title: "5.2: Line Integrals", description: "Computing line integrals of scalar and vector fields along curves for work and circulation", contentPath: "/articles/multivariable-calculus/5_2.md" },
-              { id: "5.3", title: "5.3: Curl and Divergence", description: "Calculating curl and divergence of vector fields and interpreting their physical meanings", contentPath: "/articles/multivariable-calculus/5_3.md" },
-              { id: "5.4", title: "5.4: Surface Integrals and Major Theorems", description: "Surface integrals and fundamental theorems including Green's, Stokes', and Divergence Theorems", contentPath: "/articles/multivariable-calculus/5_4.md" }
-            ]
-          }
-        ]
-      },
-      {
         id: "real-analysis",
         name: "Real Analysis",
         subtitle: "Rigorous foundations of calculus",
+        badge: "3",
         units: [
           {
             id: "1",
@@ -335,6 +349,7 @@ export const courses = {
         id: "linear-algebra",
         name: "Linear Algebra",
         subtitle: "Linear Algebra",
+        badge: "2",
         units: [
           {
             id: "1",
@@ -426,6 +441,7 @@ export const courses = {
         id: "tensor-calculus",
         name: "Tensor Calculus",
         subtitle: "Differential geometry and tensor analysis",
+        badge: "3",
         units: [
           {
             id: "1",
@@ -447,6 +463,7 @@ export const courses = {
         id: "group-theory",
         name: "Group Theory",
         subtitle: "Algebraic structures and symmetry",
+        badge: "3",
         units: [
           {
             id: "1",
@@ -474,6 +491,7 @@ export const courses = {
         id: "classical-mechanics",
         name: "Classical Mechanics",
         subtitle: "Upper-level... not to be mistaken for introductory CM",
+        badge: "3",
         units: [
           {
             id: "1",
@@ -563,6 +581,7 @@ export const courses = {
         id: "thermodynamics-statmech",
         name: "Thermodynamics & Statistical Mechanics",
         subtitle: "Thermodynamics & Statistical Mechanics",
+        badge: "3",
         units: [
           {
             id: "1",
@@ -665,6 +684,7 @@ export const courses = {
         id: "fluid-mechanics",
         name: "Fluid Mechanics",
         subtitle: "Fluid Mechanics",
+        badge: "3",
         units: [
           {
             id: "1",
@@ -746,6 +766,7 @@ export const courses = {
         id: "heat-mass-transfer",
         name: "Heat and Mass Transfer",
         subtitle: "Energy and mass transport phenomena",
+        badge: "3",
         units: [
           {
             id: "1",
@@ -767,6 +788,7 @@ export const courses = {
         id: "electromagnetism",
         name: "Electromagnetism",
         subtitle: "Electromagnetism",
+        badge: "3",
         units: [
           {
             id: "1",
@@ -807,9 +829,32 @@ export const courses = {
     color: "#00A3A6",
     courses: [
       {
+        id: "special-relativity",
+        name: "Special Relativity",
+        subtitle: "Spacetime and relativistic mechanics",
+        badge: "2",
+        units: [
+          {
+            id: "1",
+            title: "Unit 1: Foundations of Special Relativity",
+            topics: [
+              { id: "1.1", title: "1.1: Lorentz Transformations and Spacetime", description: "Postulates of special relativity, Lorentz transformations, spacetime diagrams", contentPath: "/articles/physics/special-relativity/1_1.md" }
+            ]
+          },
+          {
+            id: "mock",
+            title: "Mock Exam",
+            topics: [
+              { id: "mock", title: "Special Relativity Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/special-relativity.md" }
+            ]
+          }
+        ]
+      },
+      {
         id: "quantum-mechanics-1",
         name: "Quantum Mechanics 1",
         subtitle: "Foundations of quantum theory",
+        badge: "3",
         units: [
           {
             id: "1",
@@ -876,6 +921,7 @@ export const courses = {
         id: "quantum-mechanics-2",
         name: "Quantum Mechanics 2",
         subtitle: "Advanced quantum theory and applications",
+        badge: "4",
         units: [
           {
             id: "6",
@@ -945,30 +991,10 @@ export const courses = {
         ]
       },
       {
-        id: "special-relativity",
-        name: "Special Relativity",
-        subtitle: "Spacetime and relativistic mechanics",
-        units: [
-          {
-            id: "1",
-            title: "Unit 1: Foundations of Special Relativity",
-            topics: [
-              { id: "1.1", title: "1.1: Lorentz Transformations and Spacetime", description: "Postulates of special relativity, Lorentz transformations, spacetime diagrams", contentPath: "/articles/physics/special-relativity/1_1.md" }
-            ]
-          },
-          {
-            id: "mock",
-            title: "Mock Exam",
-            topics: [
-              { id: "mock", title: "Special Relativity Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/special-relativity.md" }
-            ]
-          }
-        ]
-      },
-      {
         id: "quantum-field-theory",
         name: "Quantum Field Theory",
         subtitle: "Quantum mechanics of fields and particles",
+        badge: "4",
         units: [
           {
             id: "1",
@@ -993,9 +1019,79 @@ export const courses = {
     color: "#4A9B7F",
     courses: [
       {
+        id: "organic-chemistry",
+        name: "Organic Chemistry",
+        subtitle: "Organic Chemistry — Structure, Reaction & Mechanisms",
+        badge: "2",
+        units: [
+          {
+            id: "1",
+            title: "Unit 1: Structure and Bonding",
+            topics: [
+              { id: "1.1", title: "1.1: Structure and Bonding", contentPath: "/articles/chemistry/organic-chemistry/1_1.md" },
+              { id: "1.2", title: "1.2: Alkanes and Functional Groups", contentPath: "/articles/chemistry/organic-chemistry/1_2.md" }
+            ]
+          },
+          {
+            id: "2",
+            title: "Unit 2: Reactions and Mechanisms",
+            topics: [
+              { id: "2.1", title: "2.1: Reaction Mechanisms" },
+              { id: "2.2", title: "2.2: Stereochemistry and Rearrangements" }
+            ]
+          },
+          {
+            id: "mock",
+            title: "Mock Exam",
+            topics: [
+              { id: "mock", title: "Organic Chemistry Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/organic-chemistry.md" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "material-science",
+        name: "Introduction to Material Science",
+        subtitle: "Introduction to Material Science",
+        badge: "2",
+        units: [
+          {
+            id: "1",
+            title: "Unit 1: Atomic Structure and Crystals",
+            topics: [
+              { id: "1.1", title: "1.1: Atomic Structure and Bonding", contentPath: "/articles/chemistry/material-science/1_1.md" },
+              { id: "1.2", title: "1.2: Crystal Structures", contentPath: "/articles/chemistry/material-science/1_2.md" }
+            ]
+          },
+          {
+            id: "2",
+            title: "Unit 2: Material Properties",
+            topics: [
+              { id: "2.1", title: "2.1: Imperfections in Solids", contentPath: "/articles/chemistry/material-science/2_1.md" },
+              { id: "2.2", title: "2.2: Mechanical Properties", contentPath: "/articles/chemistry/material-science/2_2.md" }
+            ]
+          },
+          {
+            id: "3",
+            title: "Unit 3: Phase Diagrams",
+            topics: [
+              { id: "3.1", title: "3.1: Phase Diagrams", contentPath: "/articles/chemistry/material-science/3_1.md" }
+            ]
+          },
+          {
+            id: "mock",
+            title: "Mock Exam",
+            topics: [
+              { id: "mock", title: "Material Science Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/material-science.md" }
+            ]
+          }
+        ]
+      },
+      {
         id: "physical-chemistry",
         name: "Physical Chemistry",
         subtitle: "Thermodynamics, Kinetics & Quantum Chemistry",
+        badge: "3",
         units: [
           {
             id: "1",
@@ -1031,39 +1127,10 @@ export const courses = {
         ]
       },
       {
-        id: "organic-chemistry",
-        name: "Organic Chemistry",
-        subtitle: "Organic Chemistry — Structure, Reaction & Mechanisms",
-        units: [
-          {
-            id: "1",
-            title: "Unit 1: Structure and Bonding",
-            topics: [
-              { id: "1.1", title: "1.1: Structure and Bonding", contentPath: "/articles/chemistry/organic-chemistry/1_1.md" },
-              { id: "1.2", title: "1.2: Alkanes and Functional Groups", contentPath: "/articles/chemistry/organic-chemistry/1_2.md" }
-            ]
-          },
-          {
-            id: "2",
-            title: "Unit 2: Reactions and Mechanisms",
-            topics: [
-              { id: "2.1", title: "2.1: Reaction Mechanisms" },
-              { id: "2.2", title: "2.2: Stereochemistry and Rearrangements" }
-            ]
-          },
-          {
-            id: "mock",
-            title: "Mock Exam",
-            topics: [
-              { id: "mock", title: "Organic Chemistry Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/organic-chemistry.md" }
-            ]
-          }
-        ]
-      },
-      {
         id: "organic-chemistry-2",
         name: "Organic Chemistry 2",
         subtitle: "Advanced organic reactions and synthesis",
+        badge: "3",
         units: [
           {
             id: "1",
@@ -1093,44 +1160,6 @@ export const courses = {
             title: "Mock Exam",
             topics: [
               { id: "mock", title: "Organic Chemistry 2 Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/organic-chemistry-2.md" }
-            ]
-          }
-        ]
-      }
-    ,
-      {
-        id: "material-science",
-        name: "Introduction to Material Science",
-        subtitle: "Introduction to Material Science",
-        units: [
-          {
-            id: "1",
-            title: "Unit 1: Atomic Structure and Crystals",
-            topics: [
-              { id: "1.1", title: "1.1: Atomic Structure and Bonding", contentPath: "/articles/chemistry/material-science/1_1.md" },
-              { id: "1.2", title: "1.2: Crystal Structures", contentPath: "/articles/chemistry/material-science/1_2.md" }
-            ]
-          },
-          {
-            id: "2",
-            title: "Unit 2: Material Properties",
-            topics: [
-              { id: "2.1", title: "2.1: Imperfections in Solids", contentPath: "/articles/chemistry/material-science/2_1.md" },
-              { id: "2.2", title: "2.2: Mechanical Properties", contentPath: "/articles/chemistry/material-science/2_2.md" }
-            ]
-          },
-          {
-            id: "3",
-            title: "Unit 3: Phase Diagrams",
-            topics: [
-              { id: "3.1", title: "3.1: Phase Diagrams", contentPath: "/articles/chemistry/material-science/3_1.md" }
-            ]
-          },
-          {
-            id: "mock",
-            title: "Mock Exam",
-            topics: [
-              { id: "mock", title: "Material Science Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/material-science.md" }
             ]
           }
         ]
