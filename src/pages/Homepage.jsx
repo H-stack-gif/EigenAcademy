@@ -156,10 +156,12 @@ export default Homepage;
 function Ticker() {
   const items = [
     'Classical Mechanics',
+    'Quantum Mechanics 1',
+    'Quantum Mechanics 2',
     'Partial Differential Equations',
     'Complex Analysis',
     'Thermodynamics & StatMech',
-    'Atomic & Molecular Physics',
+    'Heat and Mass Transfer',
     'Physical Chemistry',
     'Solid State Chemistry',
     'Organic Chemistry',

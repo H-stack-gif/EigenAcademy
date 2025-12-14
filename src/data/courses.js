@@ -668,22 +668,22 @@ export const courses = {
         ]
       },
       {
-        id: "atomic-molecular",
-        name: "Atomic & Molecular Physics",
-        subtitle: "Quantum basics for atoms and molecules",
+        id: "heat-mass-transfer",
+        name: "Heat and Mass Transfer",
+        subtitle: "Energy and mass transport phenomena",
         units: [
           {
             id: "1",
-            title: "Unit 1: Atomic Structure",
+            title: "Unit 1: Conduction Heat Transfer",
             topics: [
-              { id: "1.1", title: "1.1: Atomic Models", description: "Bohr model, quantum numbers, and spectroscopy basics", contentPath: "/articles/physics/atomic-molecular/1_1.md" }
+              { id: "1.1", title: "1.1: Fourier's Law and Steady-State Conduction", description: "Fundamentals of heat conduction and thermal conductivity", contentPath: "/articles/physics/heat-mass-transfer/1_1.md" }
             ]
           },
           {
             id: "mock",
             title: "Mock Exam",
             topics: [
-              { id: "mock", title: "Atomic & Molecular Physics Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/atomic-molecular.md" }
+              { id: "mock", title: "Heat and Mass Transfer Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/heat-mass-transfer.md" }
             ]
           }
         ]
@@ -720,6 +720,48 @@ export const courses = {
             title: "Mock Exam",
             topics: [
               { id: "mock", title: "Electromagnetism Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/electromagnetism.md" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "quantum-mechanics-1",
+        name: "Quantum Mechanics 1",
+        subtitle: "Foundations of quantum theory",
+        units: [
+          {
+            id: "1",
+            title: "Unit 1: Foundations of Quantum Mechanics",
+            topics: [
+              { id: "1.1", title: "1.1: Wave-Particle Duality and the Schrödinger Equation", description: "Introduction to quantum mechanics fundamentals", contentPath: "/articles/physics/quantum-mechanics-1/1_1.md" }
+            ]
+          },
+          {
+            id: "mock",
+            title: "Mock Exam",
+            topics: [
+              { id: "mock", title: "Quantum Mechanics 1 Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/quantum-mechanics-1.md" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "quantum-mechanics-2",
+        name: "Quantum Mechanics 2",
+        subtitle: "Advanced quantum theory and applications",
+        units: [
+          {
+            id: "1",
+            title: "Unit 1: Angular Momentum and Spin",
+            topics: [
+              { id: "1.1", title: "1.1: Angular Momentum and Spin", description: "Angular momentum operators and quantum spin", contentPath: "/articles/physics/quantum-mechanics-2/1_1.md" }
+            ]
+          },
+          {
+            id: "mock",
+            title: "Mock Exam",
+            topics: [
+              { id: "mock", title: "Quantum Mechanics 2 Mock Exam", description: "Comprehensive mock exam for the full course", contentPath: "/articles/mock-exams/quantum-mechanics-2.md" }
             ]
           }
         ]
