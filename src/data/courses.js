@@ -731,9 +731,54 @@ export const courses = {
         units: [
           {
             id: "1",
-            title: "Unit 1: Foundations of Quantum Mechanics",
+            title: "Unit 1: Mathematical Foundations and Formalism",
             topics: [
-              { id: "1.1", title: "1.1: Wave-Particle Duality and the Schrödinger Equation", description: "Introduction to quantum mechanics fundamentals", contentPath: "/articles/physics/quantum-mechanics-1/1_1.md" }
+              { id: "1.1", title: "1.1: Hilbert Spaces, Operators, and Observables", description: "Mathematical framework of quantum mechanics: state spaces, operators, and measurement", contentPath: "/articles/physics/quantum-mechanics-1/1_1.md" },
+              { id: "1.2", title: "1.2: Measurement, Eigenvalues, and Uncertainty", description: "Quantum measurement theory, eigenvalue problems, and the uncertainty principle", contentPath: "/articles/physics/quantum-mechanics-1/1_2.md" },
+              { id: "1.3", title: "1.3: Time Evolution and the Schrödinger Equation", description: "Time-dependent and time-independent Schrödinger equations and quantum dynamics", contentPath: "/articles/physics/quantum-mechanics-1/1_3.md" },
+              { id: "1.4", title: "1.4: Dirac Notation and Matrix Mechanics", description: "Bra-ket notation and matrix representation of quantum mechanics", contentPath: "/articles/physics/quantum-mechanics-1/1_4.md" },
+              { id: "1.5", title: "1.5: Heisenberg Picture and Equations of Motion", description: "Alternative formulations of quantum mechanics and time evolution of operators", contentPath: "/articles/physics/quantum-mechanics-1/1_5.md" }
+            ]
+          },
+          {
+            id: "2",
+            title: "Unit 2: One-Dimensional Quantum Systems",
+            topics: [
+              { id: "2.1", title: "2.1: Infinite Square Well and Finite Square Well", description: "Particle in a box: energy quantization and bound states", contentPath: "/articles/physics/quantum-mechanics-1/2_1.md" },
+              { id: "2.2", title: "2.2: Harmonic Oscillator (Analytical and Algebraic Methods)", description: "Quantum harmonic oscillator: ladder operators and energy spectrum", contentPath: "/articles/physics/quantum-mechanics-1/2_2.md" },
+              { id: "2.3", title: "2.3: Free Particle and Wave Packets", description: "Free particle solutions and the wave packet approach to quantum mechanics", contentPath: "/articles/physics/quantum-mechanics-1/2_3.md" },
+              { id: "2.4", title: "2.4: Delta Function Potential and Tunneling", description: "Scattering and tunneling through potential barriers", contentPath: "/articles/physics/quantum-mechanics-1/2_4.md" }
+            ]
+          },
+          {
+            id: "3",
+            title: "Unit 3: Three-Dimensional Systems and Angular Momentum",
+            topics: [
+              { id: "3.1", title: "3.1: Schrödinger Equation in 3D and Central Potentials", description: "Extension to three dimensions and separation of variables for central potentials", contentPath: "/articles/physics/quantum-mechanics-1/3_1.md" },
+              { id: "3.2", title: "3.2: Orbital Angular Momentum", description: "Angular momentum operators, eigenvalues, and spherical harmonics", contentPath: "/articles/physics/quantum-mechanics-1/3_2.md" },
+              { id: "3.3", title: "3.3: Hydrogen Atom", description: "Exact solution of the hydrogen atom and quantum numbers", contentPath: "/articles/physics/quantum-mechanics-1/3_3.md" },
+              { id: "3.4", title: "3.4: Radial Equation and Effective Potential", description: "Radial wave functions and the centrifugal barrier", contentPath: "/articles/physics/quantum-mechanics-1/3_4.md" },
+              { id: "3.5", title: "3.5: 3D Harmonic Oscillator", description: "Three-dimensional harmonic oscillator and degeneracy", contentPath: "/articles/physics/quantum-mechanics-1/3_5.md" }
+            ]
+          },
+          {
+            id: "4",
+            title: "Unit 4: Spin and Identical Particles",
+            topics: [
+              { id: "4.1", title: "4.1: Spin-1/2 and Pauli Matrices", description: "Intrinsic angular momentum: spin and its matrix representation", contentPath: "/articles/physics/quantum-mechanics-1/4_1.md" },
+              { id: "4.2", title: "4.2: Addition of Angular Momentum and Clebsch-Gordan", description: "Combining angular momenta and Clebsch-Gordan coefficients", contentPath: "/articles/physics/quantum-mechanics-1/4_2.md" },
+              { id: "4.3", title: "4.3: Identical Particles and Exchange Symmetry", description: "Indistinguishability, symmetrization, and the Pauli exclusion principle", contentPath: "/articles/physics/quantum-mechanics-1/4_3.md" },
+              { id: "4.4", title: "4.4: Quantum Statistics (Fermi-Dirac and Bose-Einstein)", description: "Statistical mechanics of fermions and bosons", contentPath: "/articles/physics/quantum-mechanics-1/4_4.md" }
+            ]
+          },
+          {
+            id: "5",
+            title: "Unit 5: Time-Independent Perturbation Theory",
+            topics: [
+              { id: "5.1", title: "5.1: Non-degenerate Perturbation Theory", description: "Approximate methods for systems with small perturbations", contentPath: "/articles/physics/quantum-mechanics-1/5_1.md" },
+              { id: "5.2", title: "5.2: Degenerate Perturbation Theory and Fine Structure", description: "Perturbation theory for degenerate states and fine structure corrections", contentPath: "/articles/physics/quantum-mechanics-1/5_2.md" },
+              { id: "5.3", title: "5.3: Zeeman and Stark Effects", description: "Atoms in external magnetic and electric fields", contentPath: "/articles/physics/quantum-mechanics-1/5_3.md" },
+              { id: "5.4", title: "5.4: Hyperfine Structure", description: "Nuclear spin effects and hyperfine splitting of atomic energy levels", contentPath: "/articles/physics/quantum-mechanics-1/5_4.md" }
             ]
           },
           {
@@ -751,10 +796,61 @@ export const courses = {
         subtitle: "Advanced quantum theory and applications",
         units: [
           {
-            id: "1",
-            title: "Unit 1: Angular Momentum and Spin",
+            id: "6",
+            title: "Unit 6: Time-Dependent Perturbation Theory",
             topics: [
-              { id: "1.1", title: "1.1: Angular Momentum and Spin", description: "Angular momentum operators and quantum spin", contentPath: "/articles/physics/quantum-mechanics-2/1_1.md" }
+              { id: "6.1", title: "6.1: Time-Dependent Perturbation Theory and Fermi's Golden Rule", description: "Transitions between quantum states and decay rates", contentPath: "/articles/physics/quantum-mechanics-2/6_1.md" },
+              { id: "6.2", title: "6.2: Absorption and Emission of Radiation", description: "Interaction of atoms with electromagnetic radiation", contentPath: "/articles/physics/quantum-mechanics-2/6_2.md" },
+              { id: "6.3", title: "6.3: Selection Rules", description: "Allowed and forbidden transitions in atomic systems", contentPath: "/articles/physics/quantum-mechanics-2/6_3.md" },
+              { id: "6.4", title: "6.4: Adiabatic Theorem and Berry's Phase", description: "Slowly varying systems and geometric phases", contentPath: "/articles/physics/quantum-mechanics-2/6_4.md" }
+            ]
+          },
+          {
+            id: "7",
+            title: "Unit 7: Scattering Theory",
+            topics: [
+              { id: "7.1", title: "7.1: Cross Sections and Born Approximation", description: "Quantum scattering formalism and perturbative approximations", contentPath: "/articles/physics/quantum-mechanics-2/7_1.md" },
+              { id: "7.2", title: "7.2: Partial Wave Analysis", description: "Angular momentum decomposition of scattering states", contentPath: "/articles/physics/quantum-mechanics-2/7_2.md" },
+              { id: "7.3", title: "7.3: Phase Shifts and Resonances", description: "Scattering phase shifts and resonance phenomena", contentPath: "/articles/physics/quantum-mechanics-2/7_3.md" },
+              { id: "7.4", title: "7.4: Identical Particles in Scattering", description: "Exchange effects in quantum scattering processes", contentPath: "/articles/physics/quantum-mechanics-2/7_4.md" }
+            ]
+          },
+          {
+            id: "8",
+            title: "Unit 8: Approximation Methods",
+            topics: [
+              { id: "8.1", title: "8.1: Variational Principle", description: "Variational method for estimating ground state energies", contentPath: "/articles/physics/quantum-mechanics-2/8_1.md" },
+              { id: "8.2", title: "8.2: WKB Approximation and Tunneling", description: "Semiclassical approximation for slowly varying potentials", contentPath: "/articles/physics/quantum-mechanics-2/8_2.md" },
+              { id: "8.3", title: "8.3: Density Matrix Formalism", description: "Mixed states and the statistical description of quantum systems", contentPath: "/articles/physics/quantum-mechanics-2/8_3.md" }
+            ]
+          },
+          {
+            id: "9",
+            title: "Unit 9: Relativistic Quantum Mechanics",
+            topics: [
+              { id: "9.1", title: "9.1: Klein-Gordon Equation", description: "Relativistic quantum mechanics for spin-0 particles", contentPath: "/articles/physics/quantum-mechanics-2/9_1.md" },
+              { id: "9.2", title: "9.2: Dirac Equation and Spinors", description: "Relativistic equation for spin-1/2 particles and spinor formalism", contentPath: "/articles/physics/quantum-mechanics-2/9_2.md" },
+              { id: "9.3", title: "9.3: Hydrogen Atom with Dirac Equation", description: "Relativistic corrections to the hydrogen atom spectrum", contentPath: "/articles/physics/quantum-mechanics-2/9_3.md" },
+              { id: "9.4", title: "9.4: Feynman Propagator", description: "Green's functions and propagators in quantum field theory", contentPath: "/articles/physics/quantum-mechanics-2/9_4.md" },
+              { id: "9.5", title: "9.5: Antiparticles and CPT", description: "Antimatter and discrete symmetries in relativistic quantum mechanics", contentPath: "/articles/physics/quantum-mechanics-2/9_5.md" }
+            ]
+          },
+          {
+            id: "10",
+            title: "Unit 10: Quantum Theory of Radiation",
+            topics: [
+              { id: "10.1", title: "10.1: Field Quantization and Photons", description: "Quantization of the electromagnetic field", contentPath: "/articles/physics/quantum-mechanics-2/10_1.md" },
+              { id: "10.2", title: "10.2: Coherent States and Photon Statistics", description: "Quantum states of light and statistical properties of photons", contentPath: "/articles/physics/quantum-mechanics-2/10_2.md" },
+              { id: "10.3", title: "10.3: Spontaneous Emission and Lamb Shift", description: "Vacuum fluctuations and radiative corrections to atomic spectra", contentPath: "/articles/physics/quantum-mechanics-2/10_3.md" }
+            ]
+          },
+          {
+            id: "11",
+            title: "Unit 11: Path Integrals and Advanced Topics",
+            topics: [
+              { id: "11.1", title: "11.1: Feynman Path Integral Formulation", description: "Sum over histories approach to quantum mechanics", contentPath: "/articles/physics/quantum-mechanics-2/11_1.md" },
+              { id: "11.2", title: "11.2: Gauge Theories and Aharonov-Bohm Effect", description: "Gauge invariance and topological phases in quantum mechanics", contentPath: "/articles/physics/quantum-mechanics-2/11_2.md" },
+              { id: "11.3", title: "11.3: Entanglement, Decoherence, and Foundations", description: "Quantum information, measurement problem, and interpretations of quantum mechanics", contentPath: "/articles/physics/quantum-mechanics-2/11_3.md" }
             ]
           },
           {
