@@ -136,6 +136,20 @@
   margin: 0;
 }
 
+.additional-text {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.additional-text p {
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  color: var(--text-secondary);
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
 .click-label {
   position: absolute;
   top: -330px;
@@ -389,11 +403,13 @@
 }
 
 .course-subtitle {
-  font-size: 0.85rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.95rem;
   color: var(--text-secondary);
-  font-weight: 300;
-  font-style: italic;
-  margin-top: 0.25rem;
+  font-weight: 200;
+  font-style: normal;
+  margin-top: 0.5rem;
+  letter-spacing: 0.01em;
 }
 
 .units-preview {

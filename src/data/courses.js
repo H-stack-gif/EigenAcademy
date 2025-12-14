@@ -6,6 +6,7 @@ export const courses = {
       {
         id: "odes",
         name: "Ordinary Differential Equations",
+        subtitle: "Ordinary Differential Equations",
         units: [
           {
             id: "1",
@@ -76,6 +77,7 @@ export const courses = {
       {
         id: "complex-analysis",
         name: "Complex Analysis",
+        subtitle: "Complex Analysis",
         units: [
           {
             id: "1",
@@ -243,6 +245,7 @@ export const courses = {
       {
         id: "multivariable-calculus",
         name: "Multivariable Calculus",
+        subtitle: "Multivariable Calculus",
         units: [
           {
             id: "mock",
@@ -331,6 +334,7 @@ export const courses = {
       {
         id: "linear-algebra",
         name: "Linear Algebra",
+        subtitle: "Linear Algebra",
         units: [
           {
             id: "1",
@@ -558,6 +562,7 @@ export const courses = {
       {
         id: "thermodynamics-statmech",
         name: "Thermodynamics & Statistical Mechanics",
+        subtitle: "Thermodynamics & Statistical Mechanics",
         units: [
           {
             id: "1",
@@ -659,6 +664,7 @@ export const courses = {
       {
         id: "fluid-mechanics",
         name: "Fluid Mechanics",
+        subtitle: "Fluid Mechanics",
         units: [
           {
             id: "1",
@@ -760,6 +766,7 @@ export const courses = {
       {
         id: "electromagnetism",
         name: "Electromagnetism",
+        subtitle: "Electromagnetism",
         units: [
           {
             id: "1",
@@ -1094,6 +1101,7 @@ export const courses = {
       {
         id: "material-science",
         name: "Introduction to Material Science",
+        subtitle: "Introduction to Material Science",
         units: [
           {
             id: "1",

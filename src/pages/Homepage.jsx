@@ -54,6 +54,11 @@ function Homepage() {
           <img src="/pngtree-creative-arrows-png-image_2951081-removebg-preview.png" alt="" className="arrow-decoration" />
           <p className="subtitle">Krishna Patel's collection and display of helpful articles for various advanced (undergraduate) math, physics, and chemistry courses. Articles origin from Krishna Patel's notes during his research and self-study of these courses.</p>
         </div>
+
+        <div className="additional-text">
+          <p>Text books included under course title. Problem sets and exams are not.</p>
+          <p>U1 - Lower to Middle undergraduate. U2 - Middle to Upper undergraduate. G1 - Upper undergraduate to Lower graduate. G2 - Lower to Middle graduate.</p>
+        </div>
       </header>
 
       <div className="courses-container" id="articles-section">

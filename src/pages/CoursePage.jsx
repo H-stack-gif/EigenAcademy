@@ -74,9 +74,6 @@ function CoursePage() {
           <h2 className="course-sidebar-title" style={{ color: categoryColor }}>
             {course.name}
           </h2>
-          {course.subtitle && (
-            <p className="course-sidebar-subtitle">{course.subtitle}</p>
-          )}
 
           <nav className="units-nav">
             {course.units.map((unit) => (
