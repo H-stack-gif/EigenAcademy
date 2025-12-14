@@ -163,8 +163,8 @@
 
 .hero-top-left {
   position: absolute;
-  top: 2rem;
-  right: calc(48px + 2.5rem);
+  top: -2.3rem;
+  right: calc(48px + -7rem);
   z-index: 1100;
 }
 

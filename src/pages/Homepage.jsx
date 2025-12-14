@@ -56,7 +56,7 @@ function Homepage() {
         </div>
 
         <div className="additional-text">
-          <p>Text books included under course title. Problem sets and exams are not.</p>
+          <p>Textbooks used by KP included under course title. Problem sets and exams are not.</p>
           <p>1 - Lower to Middle undergraduate. 2 - Middle to Upper undergraduate. 3 - Upper undergraduate to Lower graduate. 4 - Lower to Middle graduate.</p>
         </div>
       </header>
