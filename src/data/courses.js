@@ -6,7 +6,7 @@ export const courses = {
       {
         id: "multivariable-calculus",
         name: "Multivariable Calculus",
-        subtitle: "Multivariable Calculus",
+        subtitle: "Spivak, Apostol",
         badge: "1",
         units: [
           {
@@ -78,7 +78,7 @@ export const courses = {
       {
         id: "odes",
         name: "Ordinary Differential Equations",
-        subtitle: "Ordinary Differential Equations",
+        subtitle: "Perko, Hirsch Smale & Devaney",
         badge: "2",
         units: [
           {
@@ -150,7 +150,7 @@ export const courses = {
       {
         id: "complex-analysis",
         name: "Complex Analysis",
-        subtitle: "Complex Analysis",
+        subtitle: "Ahlfors, Churchill & Brown",
         badge: "3",
         units: [
           {
@@ -320,7 +320,7 @@ export const courses = {
       {
         id: "real-analysis",
         name: "Real Analysis",
-        subtitle: "Rigorous foundations of calculus",
+        subtitle: "Rudin, Tao",
         badge: "3",
         units: [
           {
@@ -348,7 +348,7 @@ export const courses = {
       {
         id: "linear-algebra",
         name: "Linear Algebra",
-        subtitle: "Linear Algebra",
+        subtitle: "Axler, Halmos, Strang",
         badge: "2",
         units: [
           {
@@ -440,7 +440,7 @@ export const courses = {
       {
         id: "tensor-calculus",
         name: "Tensor Calculus",
-        subtitle: "Differential geometry and tensor analysis",
+        subtitle: "Lichnerowicz",
         badge: "3",
         units: [
           {
@@ -462,7 +462,7 @@ export const courses = {
       {
         id: "group-theory",
         name: "Group Theory",
-        subtitle: "Algebraic structures and symmetry",
+        subtitle: "Tinkham, Farmer",
         badge: "3",
         units: [
           {
@@ -490,7 +490,7 @@ export const courses = {
       {
         id: "classical-mechanics",
         name: "Classical Mechanics",
-        subtitle: "Upper-level... not to be mistaken for introductory CM",
+        subtitle: "Taylor, Goldstein",
         badge: "3",
         units: [
           {
@@ -580,7 +580,7 @@ export const courses = {
       {
         id: "thermodynamics-statmech",
         name: "Thermodynamics & Statistical Mechanics",
-        subtitle: "Thermodynamics & Statistical Mechanics",
+        subtitle: "Reif, Pathria & D. Beale",
         badge: "3",
         units: [
           {
@@ -683,7 +683,7 @@ export const courses = {
       {
         id: "fluid-mechanics",
         name: "Fluid Mechanics",
-        subtitle: "Fluid Mechanics",
+        subtitle: "M. White, Batchelor",
         badge: "3",
         units: [
           {
@@ -765,7 +765,7 @@ export const courses = {
       {
         id: "heat-mass-transfer",
         name: "Heat and Mass Transfer",
-        subtitle: "Energy and mass transport phenomena",
+        subtitle: "Bird Stewart & Lightfoot",
         badge: "3",
         units: [
           {
@@ -787,7 +787,7 @@ export const courses = {
       {
         id: "electromagnetism",
         name: "Electromagnetism",
-        subtitle: "Electromagnetism",
+        subtitle: "Griffiths, Jackson",
         badge: "3",
         units: [
           {
@@ -831,7 +831,7 @@ export const courses = {
       {
         id: "special-relativity",
         name: "Special Relativity",
-        subtitle: "Spacetime and relativistic mechanics",
+        subtitle: "A.P French",
         badge: "2",
         units: [
           {
@@ -853,7 +853,7 @@ export const courses = {
       {
         id: "quantum-mechanics-1",
         name: "Quantum Mechanics 1",
-        subtitle: "Foundations of quantum theory",
+        subtitle: "Griffiths, Shankar",
         badge: "3",
         units: [
           {
@@ -920,7 +920,7 @@ export const courses = {
       {
         id: "quantum-mechanics-2",
         name: "Quantum Mechanics 2",
-        subtitle: "Advanced quantum theory and applications",
+        subtitle: "Sakurai, Townsend",
         badge: "4",
         units: [
           {
@@ -993,7 +993,7 @@ export const courses = {
       {
         id: "quantum-field-theory",
         name: "Quantum Field Theory",
-        subtitle: "Quantum mechanics of fields and particles",
+        subtitle: "Schwartz, Lancaster & Blundell",
         badge: "4",
         units: [
           {
@@ -1021,7 +1021,7 @@ export const courses = {
       {
         id: "organic-chemistry",
         name: "Organic Chemistry",
-        subtitle: "Organic Chemistry — Structure, Reaction & Mechanisms",
+        subtitle: "Klein, Clayden",
         badge: "2",
         units: [
           {
@@ -1052,7 +1052,7 @@ export const courses = {
       {
         id: "material-science",
         name: "Introduction to Material Science",
-        subtitle: "Introduction to Material Science",
+        subtitle: "Callister",
         badge: "2",
         units: [
           {
@@ -1090,7 +1090,7 @@ export const courses = {
       {
         id: "physical-chemistry",
         name: "Physical Chemistry",
-        subtitle: "Thermodynamics, Kinetics & Quantum Chemistry",
+        subtitle: "McQuarrie, Atkins",
         badge: "3",
         units: [
           {
@@ -1129,7 +1129,7 @@ export const courses = {
       {
         id: "organic-chemistry-2",
         name: "Organic Chemistry 2",
-        subtitle: "Advanced organic reactions and synthesis",
+        subtitle: "Klein, Clayden",
         badge: "3",
         units: [
           {
