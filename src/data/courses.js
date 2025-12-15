@@ -225,7 +225,7 @@ export const courses = {
       {
         id: "partial-differential-equations",
         name: "Partial Differential Equations",
-        subtitle: "Heat, Wave, Laplace equations and solution methods",
+        subtitle: "Strauss, Olver",
         badge: "3",
         units: [
           {
