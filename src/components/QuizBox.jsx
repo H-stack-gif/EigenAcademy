@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './QuizBox.css';
 import katex from 'katex';
 
-export default function QuizBox({ questions }) {
+export default function QuizBox({ questions, categoryKey }) {
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState(Array(questions.length).fill(null)); // for MCQ: choice index; for FRQ: unused
   const [submitted, setSubmitted] = useState(false);
@@ -85,7 +85,7 @@ export default function QuizBox({ questions }) {
   };
 
   return (
-    <div className="quizbox-wrapper">
+    <div className="quizbox-wrapper" data-category={categoryKey}>
       <div className="quizbox-body">
         <div className="quiz-question">
           <span style={{ fontWeight: 700, marginRight: '8px' }}>{index + 1}.</span>

@@ -23,6 +23,16 @@ function Homepage() {
       <header className="hero">
         {/* Top ticker - conveyor style vertical stack moving right */}
         <Ticker />
+        
+        {/* Schrödinger's Cat Icon */}
+        <Link to="/course/quantum-mechanics-1/1.2">
+          <img 
+            src="/schrodingers-cat-icon-represented-by-260nw-2620312185.jpg-removebg-preview.png" 
+            alt="Schrödinger's Cat" 
+            className="schrodingers-cat-icon" 
+          />
+        </Link>
+        
         <div className="hero-top-left">
           <div className="hero-buttons">
             <button
@@ -56,8 +66,8 @@ function Homepage() {
         </div>
 
         <div className="additional-text">
-          <p>Textbooks used by KP included under course title. Problem sets and exams are not.</p>
-          <p>1 - Lower to Middle undergraduate. 2 - Middle to Upper undergraduate. 3 - Upper undergraduate to Lower graduate. 4 - Lower to Middle graduate.</p>
+          <p className="textbook-info">Textbooks used by KP included under course title. Problem sets and exams are not.</p>
+          <p className="difficulty-levels">1 - Lower to Middle undergraduate. 2 - Middle to Upper undergraduate. 3 - Upper undergraduate to Lower graduate. 4 - Lower to Middle graduate.</p>
         </div>
       </header>
 

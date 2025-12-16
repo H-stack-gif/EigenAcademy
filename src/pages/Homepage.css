@@ -19,7 +19,7 @@
 .ticker-bar { background: linear-gradient(90deg, rgba(255,107,107,0.95), rgba(58,124,165,0.95), rgba(67,185,127,0.95), rgba(142,68,255,0.95)); color: #000; display:flex; align-items:center; height:80px; padding: 0; border-bottom-left-radius: 0; border-bottom-right-radius: 0; position: relative; overflow: hidden; }
 .ticker-track { display: flex; align-items: center; animation: slide-left 28s linear infinite; }
 .ticker-column { display:flex; flex: none; flex-direction:row; justify-content: flex-start; align-items: center; padding: 0 60px; box-sizing: border-box; gap: 160px; }
-.ticker-row { color: #000; font-weight: 900; letter-spacing: 0.02em; font-family: 'Poppins', 'Roboto Slab', serif; font-size: 2.4rem; transform: scaleY(1.0); white-space: nowrap; line-height: 1; }
+.ticker-row { color: #000; font-weight: 900; letter-spacing: 0.02em; font-family: 'Computer Modern Bold Extended', serif; font-size: 2.4rem; transform: scaleY(1.0); white-space: nowrap; line-height: 1; -webkit-text-stroke: 0.8px rgba(0, 0, 0, 0.3); }
 
 @keyframes slide-left {
   from { transform: translateX(0%); }
@@ -46,6 +46,36 @@
 /* hide decorations on small screens */
 @media (max-width: 768px) {
   .decor-benzene, .decor-atom { display: none; }
+}
+
+/* Schrödinger's Cat Icon in top left */
+.schrodingers-cat-icon {
+  position: fixed;
+  top: 95px;
+  left: 25px;
+  width: 120px;
+  height: auto;
+  z-index: 1100;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+  transition: transform 0.3s ease;
+  object-fit: cover;
+  object-position: top;
+  clip-path: inset(0 0 15% 0);
+}
+
+.schrodingers-cat-icon {
+  cursor: pointer;
+}
+
+.schrodingers-cat-icon:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .schrodingers-cat-icon {
+    width: 90px;
+    left: 15px;
+  }
 }
 
 /* (removed) snowflake decorations — user requested these gone */
@@ -129,6 +159,7 @@
 }
 
 .subtitle {
+  font-family: 'Computer Modern Bold Extended', serif;
   font-size: clamp(1rem, 2vw, 1.25rem);
   color: var(--text-secondary);
   font-weight: 300;
@@ -142,12 +173,26 @@
 }
 
 .additional-text p {
+  font-family: 'Computer Modern Bold Extended', serif;
   font-size: clamp(0.85rem, 1.5vw, 1rem);
   color: var(--text-secondary);
   font-weight: 300;
   letter-spacing: 0.05em;
-  margin: 0.5rem 0;
+  margin: 1rem 0;
   line-height: 1.6;
+}
+
+.textbook-info {
+  font-size: clamp(1rem, 1.8vw, 1.15rem) !important;
+}
+
+.difficulty-levels {
+  font-size: clamp(1rem, 1.8vw, 1.15rem) !important;
+  background: linear-gradient(90deg, #FF6B6B 0%, #3A7CA5 25%, #4A9B7F 50%, #00A3A6 75%, #8E44FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 .click-label {
@@ -175,6 +220,7 @@
 }
 
 .hero-button {
+  font-family: 'Computer Modern Bold Extended', serif;
   border: none;
   border-radius: 999px;
   padding: 0.5rem 1.4rem;
@@ -238,6 +284,7 @@
 }
 
 .mock-exams-title {
+  font-family: 'Computer Modern Bold Extended', serif;
   font-size: 2.2rem;
   font-weight: 800;
   margin: 0 0 1.5rem 0;
@@ -262,6 +309,7 @@
 }
 
 .mock-exam-link {
+  font-family: 'Computer Modern Bold Extended', serif;
   font-size: 0.98rem;
   font-weight: 600;
   text-decoration: none;
@@ -330,6 +378,7 @@
 }
 
 .category-title {
+  font-family: 'Computer Modern Bold Extended', serif;
   font-size: 2.8rem; /* increased from 2.4rem */
   font-weight: 900;
   margin: 0 0 1rem 0;
@@ -440,6 +489,7 @@
 }
 
 .course-name {
+  font-family: 'Computer Modern Bold Extended', serif;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   font-weight: 600;
@@ -451,10 +501,10 @@
 }
 
 .course-subtitle {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Computer Modern Bold Extended', serif;
   font-size: 0.95rem;
   color: var(--text-secondary);
-  font-weight: 200;
+  font-weight: 300;
   font-style: normal;
   margin-top: 0.5rem;
   margin-right: 5rem;
@@ -474,6 +524,7 @@
 }
 
 .unit-item {
+  font-family: 'Computer Modern Bold Extended', serif;
   font-size: 0.95rem;
   color: var(--accent); /* use section's accent color */
   padding: 0.5rem 0.75rem;
@@ -499,6 +550,7 @@
 }
 
 .topic-item {
+  font-family: 'Computer Modern Bold Extended', serif;
   display: block;
   font-size: 0.8rem;
   color: var(--text-secondary);

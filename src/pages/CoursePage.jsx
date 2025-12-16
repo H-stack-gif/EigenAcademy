@@ -10,6 +10,7 @@ function CoursePage() {
   const { courseId, topicId } = useParams();
   const [course, setCourse] = useState(null);
   const [categoryColor, setCategoryColor] = useState('#000');
+  const [categoryKey, setCategoryKey] = useState('');
 
   useEffect(() => {
     // Find the course and its category
@@ -18,6 +19,7 @@ function CoursePage() {
       if (foundCourse) {
         setCourse(foundCourse);
         setCategoryColor(category.color);
+        setCategoryKey(key);
         console.debug('Loaded course', foundCourse.id, 'category', key);
         break;
       }
@@ -122,7 +124,7 @@ function CoursePage() {
                 </div>
               )}
               {currentTopicData?.contentPath && (
-                <TopicMarkdownRenderer contentPath={currentTopicData.contentPath} />
+                <TopicMarkdownRenderer contentPath={currentTopicData.contentPath} categoryKey={categoryKey} />
               )}
             </div>
 
@@ -161,7 +163,7 @@ function CoursePage() {
   );
 }
 
-function TopicMarkdownRenderer({ contentPath }) {
+function TopicMarkdownRenderer({ contentPath, categoryKey }) {
   const [content, setContent] = useState(null);
   // Keep html state declared unconditionally so hooks order is stable across renders
   const [html, setHtml] = useState(null);
@@ -337,7 +339,7 @@ function TopicMarkdownRenderer({ contentPath }) {
       <div className="article-content markdown-body" dangerouslySetInnerHTML={{ __html: html }} />
       {practice && practice.questions && practice.questions.length > 0 && (
         <div style={{ marginTop: 18 }}>
-          <QuizBox questions={practice.questions} />
+          <QuizBox questions={practice.questions} categoryKey={categoryKey} />
         </div>
       )}
     </>

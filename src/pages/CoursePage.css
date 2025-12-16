@@ -46,6 +46,7 @@
 }
 
 .course-sidebar-title {
+  font-family: 'Computer Modern Bold Extended', serif;
   font-size: 1.75rem;
   margin-bottom: 0;
   font-weight: 600;
@@ -53,7 +54,7 @@
 }
 
 .course-sidebar-subtitle {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Computer Modern Bold Extended', serif;
   font-size: 1.5rem;
   color: var(--text-secondary);
   font-style: normal;
@@ -79,6 +80,7 @@
 }
 
 .nav-unit-title {
+  font-family: 'Computer Modern Bold Extended', serif;
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--text-primary);
@@ -98,6 +100,7 @@
 }
 
 .topic-nav-item {
+  font-family: 'Computer Modern Bold Extended', serif;
   display: block;
   background: rgba(255, 255, 255, 0.02);
   border: none;
@@ -137,6 +140,7 @@
 }
 
 .content-title {
+  font-family: 'Computer Modern Bold Extended', serif;
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 600;
   line-height: 1.2;
@@ -156,10 +160,10 @@
 }
 
 .article-placeholder-text {
-  font-family: 'Spectral', Georgia, serif;
+  font-family: 'Computer Modern Serif', Georgia, serif;
   font-weight: 400;
   color: var(--text-primary);
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   line-height: 1.7;
   margin: 0;
 }
@@ -214,16 +218,18 @@
 }
 
 .markdown-body {
+  font-family: 'Computer Modern Serif', Georgia, serif;
   margin-top: 1.25rem;
   /* comfortable default reading values */
   line-height: 1.65;
-  font-size: 1rem;
+  font-size: 1.22rem;
 }
 
 .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5 {
+  font-family: 'Computer Modern Bold Extended', serif;
   color: var(--text-primary);
   margin-top: 1.25rem;
-  margin-bottom: 0.6rem;
+  margin-bottom: 1.2rem;
   line-height: 1.2;
 }
 
@@ -324,6 +330,7 @@
 }
 
 .nav-label-text {
+  font-family: 'Computer Modern Bold Extended', serif;
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -332,6 +339,7 @@
 }
 
 .nav-topic-title {
+  font-family: 'Computer Modern Bold Extended', serif;
   font-size: 0.9rem;
   color: var(--text-primary);
   font-weight: 400;
