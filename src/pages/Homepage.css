@@ -195,6 +195,28 @@
   color: transparent;
 }
 
+.newest-course-link {
+  display: inline-block;
+  margin-top: 2rem;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 900;
+  font-family: 'Computer Modern Bold Extended', serif;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  background: linear-gradient(90deg, #FF6B6B 0%, #3A7CA5 25%, #4A9B7F 50%, #00A3A6 75%, #8E44FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+.newest-course-link:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
 .click-label {
   position: absolute;
   top: -330px;

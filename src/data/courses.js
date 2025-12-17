@@ -992,15 +992,100 @@ export const courses = {
       },
       {
         id: "quantum-field-theory",
-        name: "Quantum Field Theory",
-        subtitle: "Schwartz, Lancaster & Blundell",
+        name: "Quantum Field Theory (All)",
+        subtitle: "Peskin & Schroeder, Srednicki",
         badge: "4",
         units: [
           {
             id: "1",
-            title: "Unit 1: Canonical Quantization",
+            title: "Unit 1: Classical Field Theory and Canonical Quantization",
             topics: [
-              { id: "1.1", title: "1.1: Canonical Quantization and Free Fields", description: "Field quantization, creation and annihilation operators, Fock space", contentPath: "/articles/physics/quantum-field-theory/1_1.md" }
+              { id: "1.1", title: "1.1: Lagrangian Formalism and Noether's Theorem", description: "Action, Euler-Lagrange equations, Noether's theorem, symmetry and conservation laws", contentPath: "/articles/physics/quantum-field-theory/1_1.md" },
+              { id: "1.2", title: "1.2: Klein-Gordon, Dirac, and EM Fields (Classical)", description: "Classical KG, Dirac, Maxwell fields, gauge invariance, spinors", contentPath: "/articles/physics/quantum-field-theory/1_2.md" },
+              { id: "1.3", title: "1.3: Quantization of Scalar Fields", description: "Canonical quantization, creation/annihilation operators, Fock space, Casimir effect", contentPath: "/articles/physics/quantum-field-theory/1_3.md" },
+              { id: "1.4", title: "1.4: Quantization of Dirac Fields", description: "Anticommutation relations, fermion operators, spin-statistics theorem", contentPath: "/articles/physics/quantum-field-theory/1_4.md" },
+              { id: "1.5", title: "1.5: Quantization of EM Field", description: "Photon quantization, gauge fixing, transverse polarizations, massless modes", contentPath: "/articles/physics/quantum-field-theory/1_5.md" },
+              { id: "1.6", title: "1.6: Causality, Propagators, Fock Space", description: "Microcausality, Feynman propagator, retarded/advanced functions, Källén-Lehmann", contentPath: "/articles/physics/quantum-field-theory/1_6.md" }
+            ]
+          },
+          {
+            id: "2",
+            title: "Unit 2: Interacting Theories and Perturbation Theory",
+            topics: [
+              { id: "2.1", title: "2.1: Interaction Picture and Dyson Series", description: "Interaction picture, S-matrix, Dyson series expansion, adiabatic switching", contentPath: "/articles/physics/quantum-field-theory/2_1.md" },
+              { id: "2.2", title: "2.2: Wick's Theorem and Contractions", description: "Normal ordering, contractions, Wick's theorem for bosons and fermions", contentPath: "/articles/physics/quantum-field-theory/2_2.md" },
+              { id: "2.3", title: "2.3: Feynman Diagrams and Rules", description: "Graphical representation, vertices, propagators, symmetry factors, topology", contentPath: "/articles/physics/quantum-field-theory/2_3.md" },
+              { id: "2.4", title: "2.4: LSZ Reduction Formula", description: "Relating S-matrix to correlation functions, on-shell amplitudes, amputated diagrams", contentPath: "/articles/physics/quantum-field-theory/2_4.md" },
+              { id: "2.5", title: "2.5: Cross Sections and Decay Rates", description: "Scattering amplitudes, LIPS, Mandelstam variables, optical theorem", contentPath: "/articles/physics/quantum-field-theory/2_5.md" },
+              { id: "2.6", title: "2.6: Causality and Vacuum Structure", description: "Propagator types, Källén-Lehmann representation, vacuum energy, cluster decomposition", contentPath: "/articles/physics/quantum-field-theory/2_6.md" }
+            ]
+          },
+          {
+            id: "3",
+            title: "Unit 3: Quantum Electrodynamics",
+            topics: [
+              { id: "3.1", title: "3.1: QED Lagrangian and Feynman Rules", description: "U(1) gauge theory, minimal coupling, QED Feynman rules, gauge choices", contentPath: "/articles/physics/quantum-field-theory/3_1.md" },
+              { id: "3.2", title: "3.2: Tree-Level QED Processes", description: "e⁺e⁻ annihilation, Compton scattering, Bhabha/Møller, spinor traces", contentPath: "/articles/physics/quantum-field-theory/3_2.md" },
+              { id: "3.3", title: "3.3: Ward Identity and Gauge Invariance", description: "Ward-Takahashi identity, gauge invariance constraints, photon mass protection", contentPath: "/articles/physics/quantum-field-theory/3_3.md" },
+              { id: "3.4", title: "3.4: One-Loop QED Corrections", description: "Anomalous magnetic moment, form factors, vertex corrections, precision tests", contentPath: "/articles/physics/quantum-field-theory/3_4.md" },
+              { id: "3.5", title: "3.5: Fock Space Applications", description: "Multi-particle states, coherent states, squeezed states, classical limit", contentPath: "/articles/physics/quantum-field-theory/3_5.md" }
+            ]
+          },
+          {
+            id: "4",
+            title: "Unit 4: Path Integral Formulation",
+            topics: [
+              { id: "4.1", title: "4.1: Path Integral for Scalar Fields", description: "Partition function, functional derivatives, Gaussian integrals, correlation functions", contentPath: "/articles/physics/quantum-field-theory/4_1.md" },
+              { id: "4.2", title: "4.2: Euclidean Path Integrals", description: "Wick rotation, Euclidean QFT, connection to statistical mechanics, instantons", contentPath: "/articles/physics/quantum-field-theory/4_2.md" },
+              { id: "4.3", title: "4.3: Grassmann Path Integrals for Fermions", description: "Grassmann variables, Berezin integration, fermion determinants, loop signs", contentPath: "/articles/physics/quantum-field-theory/4_3.md" },
+              { id: "4.4", title: "4.4: Gauge Fixing and Faddeev-Popov Ghosts", description: "Faddeev-Popov procedure, ghost fields, gauge fixing, unitarity in non-Abelian theories", contentPath: "/articles/physics/quantum-field-theory/4_4.md" }
+            ]
+          },
+          {
+            id: "5",
+            title: "Unit 5: Renormalization and Running Couplings",
+            topics: [
+              { id: "5.1", title: "5.1: UV Divergences and Regularization", description: "Loop divergences, dimensional regularization, MS̄ scheme, power counting", contentPath: "/articles/physics/quantum-field-theory/5_1.md" },
+              { id: "5.2", title: "5.2: Renormalization in QED", description: "Bare vs renormalized parameters, counterterms, Z factors, Ward identities", contentPath: "/articles/physics/quantum-field-theory/5_2.md" },
+              { id: "5.3", title: "5.3: Vacuum Polarization and Charge Screening", description: "Photon self-energy, running α(q²), Uehling potential, Lamb shift", contentPath: "/articles/physics/quantum-field-theory/5_3.md" },
+              { id: "5.4", title: "5.4: IR Divergences and Soft Photons", description: "Infrared divergences, Bloch-Nordsieck, soft photon theorem, KLN theorem", contentPath: "/articles/physics/quantum-field-theory/5_4.md" },
+              { id: "5.5", title: "5.5: Running Coupling and RG Equations", description: "Callan-Symanzik equation, beta functions, QED Landau pole, QCD asymptotic freedom", contentPath: "/articles/physics/quantum-field-theory/5_5.md" },
+              { id: "5.6", title: "5.6: Effective Field Theory", description: "Wilsonian EFT, operator dimensions, matching, SM as EFT, dimension-6 operators", contentPath: "/articles/physics/quantum-field-theory/5_6.md" }
+            ]
+          },
+          {
+            id: "6",
+            title: "Unit 6: Non-Abelian Gauge Theories",
+            topics: [
+              { id: "6.1", title: "6.1: Yang-Mills Lagrangian and Gauge Symmetry", description: "Non-Abelian gauge groups, structure constants, field strength, self-interactions", contentPath: "/articles/physics/quantum-field-theory/6_1.md" },
+              { id: "6.2", title: "6.2: QCD Feynman Rules", description: "SU(3) color, gluon propagators, 3-gluon/4-gluon vertices, ghosts, color algebra", contentPath: "/articles/physics/quantum-field-theory/6_2.md" },
+              { id: "6.3", title: "6.3: Asymptotic Freedom", description: "QCD beta function, running αs(μ), ΛQCD scale, deep inelastic scattering", contentPath: "/articles/physics/quantum-field-theory/6_3.md" },
+              { id: "6.4", title: "6.4: Confinement", description: "Color confinement, linear potential, string breaking, lattice QCD, quark-gluon plasma", contentPath: "/articles/physics/quantum-field-theory/6_4.md" },
+              { id: "6.5", title: "6.5: Deep Inelastic Scattering and Partons", description: "DIS, structure functions, parton model, PDFs, DGLAP evolution, splitting functions", contentPath: "/articles/physics/quantum-field-theory/6_5.md" }
+            ]
+          },
+          {
+            id: "7",
+            title: "Unit 7: Spontaneous Symmetry Breaking and Electroweak",
+            topics: [
+              { id: "7.1", title: "7.1: SSB in Scalar Theories", description: "Spontaneous symmetry breaking, Mexican hat potential, Goldstone bosons", contentPath: "/articles/physics/quantum-field-theory/7_1.md" },
+              { id: "7.2", title: "7.2: Goldstone's Theorem", description: "Goldstone's theorem, broken generators, massless modes, vacuum manifold", contentPath: "/articles/physics/quantum-field-theory/7_2.md" },
+              { id: "7.3", title: "7.3: Higgs Mechanism (Abelian)", description: "Abelian Higgs mechanism, gauge boson mass, unitary gauge, longitudinal modes", contentPath: "/articles/physics/quantum-field-theory/7_3.md" },
+              { id: "7.4", title: "7.4: Electroweak Theory", description: "SU(2)×U(1) gauge theory, Higgs doublet, W/Z masses, Weinberg angle, fermion masses", contentPath: "/articles/physics/quantum-field-theory/7_4.md" },
+              { id: "7.5", title: "7.5: Higgs Phenomenology", description: "Higgs production/decay, discovery channels, mass measurements, couplings to mass", contentPath: "/articles/physics/quantum-field-theory/7_5.md" },
+              { id: "7.6", title: "7.6: Precision Electroweak Tests", description: "S/T/U parameters, Z-pole measurements, W mass, radiative corrections, global fits", contentPath: "/articles/physics/quantum-field-theory/7_6.md" }
+            ]
+          },
+          {
+            id: "8",
+            title: "Unit 8: Advanced Topics",
+            topics: [
+              { id: "8.1", title: "8.1: Chiral Anomaly and Triangle Diagrams", description: "ABJ anomaly, triangle diagrams, π⁰→γγ decay, axial U(1) problem", contentPath: "/articles/physics/quantum-field-theory/8_1.md" },
+              { id: "8.2", title: "8.2: Instantons and Theta Vacua", description: "Instantons, winding numbers, theta vacua, strong CP problem, axion solution", contentPath: "/articles/physics/quantum-field-theory/8_2.md" },
+              { id: "8.3", title: "8.3: Anomaly Cancellation in SM", description: "Gauge anomalies, triangle cancellation, quark-lepton symmetry, GUT implications", contentPath: "/articles/physics/quantum-field-theory/8_3.md" },
+              { id: "8.4", title: "8.4: Introduction to Supersymmetry", description: "SUSY algebra, superfields, hierarchy problem, MSSM, LSP dark matter", contentPath: "/articles/physics/quantum-field-theory/8_4.md" },
+              { id: "8.5", title: "8.5: Grand Unified Theories", description: "SU(5), SO(10) unification, proton decay, seesaw mechanism, coupling unification", contentPath: "/articles/physics/quantum-field-theory/8_5.md" },
+              { id: "8.6", title: "8.6: Quantum Gravity and String Theory (Brief)", description: "Quantum gravity problem, string theory, extra dimensions, loop quantum gravity", contentPath: "/articles/physics/quantum-field-theory/8_6.md" }
             ]
           },
           {

@@ -68,6 +68,10 @@ function Homepage() {
         <div className="additional-text">
           <p className="textbook-info">Textbooks used by KP included under course title. Problem sets and exams are not.</p>
           <p className="difficulty-levels">1 - Lower to Middle undergraduate. 2 - Middle to Upper undergraduate. 3 - Upper undergraduate to Lower graduate. 4 - Lower to Middle graduate.</p>
+          
+          <Link to="/course/quantum-field-theory" className="newest-course-link">
+            CLICK HERE TO EXPLORE NEWEST COURSE!
+          </Link>
         </div>
       </header>
 
